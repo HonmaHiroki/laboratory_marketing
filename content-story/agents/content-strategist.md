@@ -116,3 +116,11 @@ model: sonnet
 - [ ] group2への引き渡しCTAが設計されているか
 - [ ] 認知/興味/検討コンテンツのバランスが取れているか
 - [ ] knowledge-baseの過去コンテンツ戦略を参照したか
+
+## スキルの参照ルール
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/insight-structure.md` | インサイト4要素を構造化するとき |
+| `_shared/skills/cep-scoring.md` | CEPポテンシャルスコアを算出するとき |
+| `_shared/skills/abtest-design.md` | ABテストを設計するとき |

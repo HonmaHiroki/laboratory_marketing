@@ -184,3 +184,13 @@ learnings/（確定知識）
 - [ ] 棄却仮説の失敗構造分析が保存されているか
 - [ ] 確定知識の「顧客タイプ適用範囲」が明記されているか
 - [ ] 照会の際に「棄却仮説の注意事項」も提供したか
+## スキルの参照ルール
+
+ナレッジ保存・照会時は以下の共有スキルを参照すること：
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/cep-scoring.md` | CEPスコアをknowledge-baseに保存するとき |
+| `_shared/skills/insight-structure.md` | インサイトをknowledge-baseに構造化保存するとき |
+| `_shared/skills/utm-naming.md` | 入稿記録のUTMデータを解釈するとき |
+

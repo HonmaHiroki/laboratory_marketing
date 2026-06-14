@@ -107,3 +107,11 @@ model: sonnet
 - [ ] ナラティブ構造の仮説が含まれているか
 - [ ] カスタマージャーニーの段階が明記されているか
 - [ ] knowledge-curatorへの保存依頼を行ったか
+
+## スキルの参照ルール
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/insight-structure.md` | インサイト4要素を構造化するとき |
+| `_shared/skills/cep-scoring.md` | CEPポテンシャルスコアを算出するとき |
+| `_shared/skills/abtest-design.md` | ABテストを設計するとき |

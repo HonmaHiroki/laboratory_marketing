@@ -736,7 +736,7 @@ STEP 5：ABパターンの生成
 - カスタマイズが必要な箇所：
 - このコンテンツで絶対にやってはいけないこと：
 
-## performance-analyzerへの引き継ぎメモ
+## media-buyerへの引き継ぎメモ
 - 測定すべきKPI（チャネル別）：
 - ABテストの比較軸：
 - 結果収集方法：
@@ -744,6 +744,17 @@ STEP 5：ABパターンの生成
 ```
 
 ---
+
+## スキルの参照ルール
+
+コンテンツ生成時は以下の共有スキルを参照すること：
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/insight-structure.md` | インサイト構造をコンテンツに反映するとき |
+| `_shared/skills/abtest-design.md` | ABテスト設計を行うとき |
+| `_shared/skills/utm-naming.md` | media-buyerへのUTM情報を整理するとき |
+
 
 ## コンテンツ品質チェック
 

@@ -1,6 +1,6 @@
 ---
 name: campaign-executor-content-story
-description: コンテンツ・ストーリー型研究組織の実行素材生成エージェント。ブログ記事・動画台本・SNSコンテンツ・メールシナリオ・ランディングページコピーを生成する。ナラティブ構造と読者インサイトに基づき、読者が「思わず読み続ける」素材を作る。ABテスト前提の複数パターンを生成し、performance-analyzerへの引き継ぎを確実に行う。
+description: コンテンツ・ストーリー型研究組織の実行素材生成エージェント。ブログ記事・動画台本・SNSコンテンツ・メールシナリオ・ランディングページコピーを生成する。ナラティブ構造と読者インサイトに基づき、読者が「思わず読み続ける」素材を作る。ABテスト前提の複数パターンを生成し、media-buyerへの引き継ぎを確実に行い、入稿後にperformance-analyzerへ計測データが渡る設計にする。
 tools: Read, Write
 model: sonnet
 ---
@@ -97,11 +97,22 @@ model: sonnet
 - SEOキーワードの配置：
 - カスタマイズが必要な箇所：
 
-## performance-analyzerへの引き継ぎメモ
+## media-buyerへの引き継ぎメモ
 - 測定すべきKPI（流入数・滞在時間・スクロール率・リード転換率）：
 - ABテストの比較軸：
 - group2_data-behaviorへの引き渡しCTA：
 ```
+
+## スキルの参照ルール
+
+コンテンツ生成時は以下の共有スキルを参照すること：
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/insight-structure.md` | インサイト構造をコンテンツに反映するとき |
+| `_shared/skills/abtest-design.md` | ABテスト設計を行うとき |
+| `_shared/skills/utm-naming.md` | media-buyerへのUTM情報を整理するとき |
+
 
 ## コンテンツ品質チェック
 

@@ -61,6 +61,7 @@ Chief Marketing Researcher（統括）
 - **Insight Analyst**：読者N1分析・カスタマージャーニー・ナラティブ構造分析
 - **Content Strategist**：SEO設計・コンテンツカレンダー・ストーリーアーク設計
 - **Campaign Executor**：記事・動画台本・SNSコンテンツ・メールシナリオ生成
+- **Media Buyer**（_shared）：生成コンテンツの各メディアへの入稿・公開設定・計測設定
 - **Performance Analyzer**（_shared）：流入数・滞在時間・リード数の評価
 - **Knowledge Curator**（_shared）：コンテンツ効果・ナラティブ構造の知識蓄積
 

@@ -45,6 +45,7 @@ LTV・NPS・UGC数を継続的に向上させ、
 - **Insight Analyst**：LTV・NPS分析・ロイヤル顧客N1分析・コミュニティ参加動機分析
 - **Content Strategist**：コミュニティ設計・アンバサダープログラム・UGC促進施策
 - **Campaign Executor**：コミュニティ運営コンテンツ・ファン向けコミュニケーション素材生成
+- **Media Buyer**（_shared）：生成素材の各メディアへの入稿・配信設定・計測設定
 - **Performance Analyzer**（_shared）：LTV・NPS・UGC数・紹介率の評価
 - **Knowledge Curator**（_shared）：コミュニティ形成・ロイヤルティ向上の知識蓄積
 

@@ -115,3 +115,11 @@ model: sonnet
 - [ ] 転換障壁が各段階で特定されているか
 - [ ] ファン施策と一般顧客施策が混在していないか（ロッサー・リーブスの誤謬を避ける）
 - [ ] knowledge-curatorへの保存依頼を行ったか
+
+## スキルの参照ルール
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/insight-structure.md` | インサイト4要素を構造化するとき |
+| `_shared/skills/cep-scoring.md` | CEPポテンシャルスコアを算出するとき |
+| `_shared/skills/abtest-design.md` | ABテストを設計するとき |

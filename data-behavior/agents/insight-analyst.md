@@ -647,3 +647,13 @@ total_incremental = sum(incremental_by_single) + incremental_by_overlap
 - [ ] ニーズではなくインサイト（隠れた動機）を捉えているか
 - [ ] ブランド規模に合った想起指標を使っているか
 - [ ] knowledge-curatorへの保存依頼を行ったか
+## スキルの参照ルール
+
+分析時は以下の共有スキルを参照すること：
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/insight-structure.md` | インサイト4要素を構造化するとき |
+| `_shared/skills/cep-scoring.md` | CEPポテンシャルスコアを算出するとき（STEP 7） |
+| `_shared/skills/abtest-design.md` | 仮説の検証方法を設計するとき |
+

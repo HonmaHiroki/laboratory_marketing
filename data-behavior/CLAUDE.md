@@ -60,6 +60,10 @@
                      
     Insight Analyst         Campaign Executor       Knowledge Curator
     分析・仮説生成            施策実行素材の生成          知識管理・ナレッジ蓄積
+
+                            Media Buyer ★NEW
+                            各メディアへの入稿・
+                            配信設定・計測設定
 ```
 
 #### 各エージェントの責任範囲

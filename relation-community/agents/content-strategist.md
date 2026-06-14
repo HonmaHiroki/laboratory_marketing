@@ -113,3 +113,11 @@ model: sonnet
 - [ ] 自発性を引き出す仕組み（強制ではなく動機設計）になっているか
 - [ ] ファン向け施策が未顧客向け施策と混在していないか
 - [ ] group2・group3との連携ポイントが設計されているか
+
+## スキルの参照ルール
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/insight-structure.md` | インサイト4要素を構造化するとき |
+| `_shared/skills/cep-scoring.md` | CEPポテンシャルスコアを算出するとき |
+| `_shared/skills/abtest-design.md` | ABテストを設計するとき |
