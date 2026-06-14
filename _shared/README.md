@@ -4,11 +4,23 @@
 全グループが共有して使うエージェント定義ファイルです。
 各グループの `.claude/agents/` からシンボリックリンクまたはコピーして使用します。
 
-| ファイル | 役割 |
-|---------|------|
-| `market-scout.md` | 8つのAPIとWEBアンケートからデータ収集（v4） |
-| `knowledge-curator.md` | ナレッジベースの照会・保存・管理 |
-| `performance-analyzer.md` | 実務結果の評価・仮説照合 |
+| ファイル | 役割 | 部門 |
+|---------|------|------|
+| `market-scout.md` | 8つのAPIとWEBアンケートからデータ収集（v4） | RESEARCH |
+| `knowledge-curator.md` | ナレッジベースの照会・保存・管理 | LEARNING |
+| `performance-analyzer.md` | 実務結果の評価・仮説照合 | LEARNING |
+| `media-buyer.md` | 13チャネルへの入稿・配信設定・計測設定 | ACTION |
+
+## skills/
+複数のエージェントが共通して使う処理手順・計算式・フォーマットを定義したスキルファイルです。
+エージェントのプロンプト内から参照して使用します。
+
+| ファイル | 内容 | 使用するエージェント |
+|--------|------|------------------|
+| `cep-scoring.md` | CEPポテンシャルスコアの算出手順 | insight-analyst / content-strategist |
+| `insight-structure.md` | インサイト4要素の構造化フォーマット | market-scout / insight-analyst |
+| `abtest-design.md` | ABテスト16項目の設計テンプレート | campaign-executor / media-buyer |
+| `utm-naming.md` | UTMパラメータの命名規則 | media-buyer / performance-analyzer |
 
 ## knowledge-base/
 全グループが参照できる共通ナレッジです。

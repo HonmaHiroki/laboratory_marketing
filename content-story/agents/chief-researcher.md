@@ -69,3 +69,16 @@ model: sonnet
 - コンテンツ経由のリード（検討意欲が高い読者）を定期的にgroup2に引き渡す
 - 引き渡し時に「どのコンテンツ・CEPから来たリードか」を必ず明記する
 - group2からのフィードバック（転換率）をknowledge-baseに記録してコンテンツを改善する
+
+---
+
+## スキルの参照ルール
+
+タスク実行時は以下の共有スキルを参照すること：
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/cep-scoring.md` | CEPポテンシャルスコアを算出するとき |
+| `_shared/skills/insight-structure.md` | インサイトを構造化するとき |
+| `_shared/skills/abtest-design.md` | ABテストを設計するとき |
+| `_shared/skills/utm-naming.md` | UTMパラメータを命名するとき |

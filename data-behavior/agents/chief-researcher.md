@@ -37,6 +37,7 @@ Research-Action Loop全体を管理し、ユーザーの依頼を成果に変え
 | インサイト・仮説生成 | knowledge-curator → market-scout → insight-analyst |
 | 施策設計まで | 上記 + content-strategist |
 | 実行素材まで | 上記 + campaign-executor |
+| 入稿・配信設定まで | 上記 + media-buyer |
 | 結果評価・学習 | performance-analyzer → knowledge-curator |
 | ループ全体 | すべてのエージェントを順番に起動 |
 

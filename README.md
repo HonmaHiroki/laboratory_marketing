@@ -27,13 +27,22 @@
 
 ## 共有リソース
 
-`_shared/` に全グループ共通のエージェント・ナレッジを集約しています。
+`_shared/` に全グループ共通のエージェント・スキル・ナレッジを集約しています。
 
-- `_shared/agents/market-scout.md` — 8つのAPIを使う市場調査エージェント（v4）
-- `_shared/agents/knowledge-curator.md` — 全組織共通の知識管理エージェント
-- `_shared/agents/performance-analyzer.md` — 全組織共通の結果評価エージェント
-- `_shared/knowledge-base/` — 全グループが参照できる市場・競合・確定知識
-- `_shared/templates/` — 新グループ作成用テンプレート
+**共有エージェント（agents/）**
+- `market-scout.md` — 8つのAPIとWEBアンケートからデータ収集（RESEARCH）
+- `knowledge-curator.md` — 全組織共通の知識管理（LEARNING）
+- `performance-analyzer.md` — 全組織共通の結果評価（LEARNING）
+- `media-buyer.md` — 13チャネルへの入稿・配信設定・計測設定（ACTION）★
+
+**共有スキル（skills/）**
+- `cep-scoring.md` — CEPポテンシャルスコアの算出手順
+- `insight-structure.md` — インサイト4要素の構造化フォーマット
+- `abtest-design.md` — ABテスト16項目の設計テンプレート
+- `utm-naming.md` — 13チャネル対応のUTMパラメータ命名規則
+
+**共有ナレッジ（knowledge-base/）**
+- 全グループが参照できる市場・競合・確定知識
 
 ## 新グループの追加手順
 

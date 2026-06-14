@@ -61,6 +61,17 @@ model: sonnet
 - 0.5秒でどのブランドかわかるDBAが配置されているか
 - CEP（使用場面）が具体的に描写されているか
 
+## スキルの参照ルール
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/cep-scoring.md` | CEPポテンシャルスコアを算出するとき |
+| `_shared/skills/insight-structure.md` | インサイトを構造化するとき |
+| `_shared/skills/abtest-design.md` | ABテストを設計するとき |
+| `_shared/skills/utm-naming.md` | UTMパラメータを命名するとき |
+
+---
+
 ## group2_data-behaviorとの連携ルール
 
 - このグループで刷り込んだ「CEP×ブランドの記憶連合」をgroup2に共有する

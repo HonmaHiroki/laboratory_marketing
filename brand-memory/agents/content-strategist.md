@@ -102,3 +102,11 @@ model: sonnet
 - [ ] 3つの断絶ポイントへの対策が含まれているか
 - [ ] 未顧客へのリーチが優先されているか
 - [ ] ファン向け表現が未顧客向け施策に混入していないか
+
+## スキルの参照ルール
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/insight-structure.md` | インサイト4要素を構造化するとき |
+| `_shared/skills/cep-scoring.md` | CEPポテンシャルスコアを算出するとき |
+| `_shared/skills/abtest-design.md` | ABテストを設計するとき |

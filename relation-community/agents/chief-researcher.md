@@ -83,3 +83,16 @@ group3_brand-memory へ口コミ・UGCが認知を生む（ループ）
 ## group3への口コミ・UGC活用提案
 ## 次のループへの推奨アクション
 ```
+
+---
+
+## スキルの参照ルール
+
+タスク実行時は以下の共有スキルを参照すること：
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/cep-scoring.md` | CEPポテンシャルスコアを算出するとき |
+| `_shared/skills/insight-structure.md` | インサイトを構造化するとき |
+| `_shared/skills/abtest-design.md` | ABテストを設計するとき |
+| `_shared/skills/utm-naming.md` | UTMパラメータを命名するとき |
