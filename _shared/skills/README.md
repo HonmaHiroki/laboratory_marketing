@@ -34,6 +34,8 @@
 | `hypothesis-format.md` | 仮説の記述フォーマット（信頼度付き） | insight-analyst / performance-analyzer |
 | `report-format.md` | 最終レポートの共通フォーマット | chief-researcher |
 | `utm-naming.md` | UTMパラメータの命名規則 | media-buyer / performance-analyzer |
+| `sales-letter.md` | セールスレター設計（ベネフィット〜P.S.の全構造） | campaign-executor（全グループ） |
+| `sales-script.md` | セールススクリプト設計（商談の脳科学・4つの物語・障害対処） | campaign-executor（全グループ） |
 
 ---
 
