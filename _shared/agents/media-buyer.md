@@ -363,6 +363,8 @@ STEP 3：製造仕様の指示
 
 **入稿先：** CMS / 自社開発環境 / Webサーバー
 
+**参照スキル：** `_shared/skills/site-design.md`（パフォーマンスバジェット170KB・構造化マークアップJSON-LD・Atomic Designの仕様確認に使用）
+
 ```
 STEP 1：CMS/開発環境の確認
   CMS種別：WordPress / Shopify / その他
