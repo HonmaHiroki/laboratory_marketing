@@ -38,6 +38,10 @@
 | `sales-script.md` | セールススクリプト設計（商談の脳科学・4つの物語・障害対処） | campaign-executor（全グループ） |
 | `article-writing.md` | 記事作成（SEO・LLMO対応・ニーズ調査〜校閲23項目） | campaign-executor / content-strategist（全グループ） |
 | `site-design.md` | WEBサイト構築設計（戦略〜要件〜構造〜骨格〜システム設計） | campaign-executor / content-strategist（全グループ） |
+| `abm-account-selection.md` | ABMアカウント選定・ICPスコアリング（6指標・優先度判定） | account-intelligence-analyst / abm-strategist（toB） |
+| `stakeholder-analysis.md` | ステークホルダー分析（5分類・パワーマップ・チャンピオン育成） | stakeholder-mapper / abm-strategist（toB） |
+| `proposal-writing.md` | 提案書・ROI試算書・RFP回答書設計（ステークホルダー別8ステップ構成） | sales-enablement-executor / abm-strategist（toB） |
+| `customer-success.md` | ヘルススコア・NRR・チャーン評価・QBR設計 | customer-success-analyzer（toB） |
 
 ---
 
