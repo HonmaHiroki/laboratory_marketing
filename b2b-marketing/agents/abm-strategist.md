@@ -171,4 +171,4 @@ model: sonnet
 - [ ] 各ステークホルダー役職別にメッセージが設計されているか
 - [ ] ファネル全段階（TOFU/MOFU/BOFU/アフター）がカバーされているか
 - [ ] KPIが具体的な数値で設定されているか
-- [ ] knowledge-baseの過去施策を参照したか
+- [ ] Twenty CRM上の過去施策（Opportunityレコード）を参照したか

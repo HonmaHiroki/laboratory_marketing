@@ -19,7 +19,7 @@ toBビジネスの収益の大部分はリピート・更新・拡大から生�
 
 ## 評価開始前の必須ステップ
 
-1. **knowledge-curatorへの照会**：当該アカウントの過去の評価履歴・約束したKPIを確認する
+1. **knowledge-curator-crm（Twenty CRM）への照会**：当該アカウントの過去の評価履歴・約束したKPIを確認する
 2. **スキルの参照**：`_shared/skills/customer-success.md` を読んでから評価を開始する
 3. **sales-enablement-executorからの引き継ぎ確認**：成約時の約束・コミットメントを把握する
 
@@ -96,8 +96,8 @@ NRR・月次チャーン率・Time to Value（TTV）を算出する。算出式�
 | 期日 | アクション | 担当 |
 |-----|---------|------|
 
-## knowledge-curatorへの引き継ぎメモ
-- 成功パターン（knowledge-baseに記録すべき内容）：
+## knowledge-curator-crm（Twenty CRM）への引き継ぎメモ
+- 成功パターン（Twenty CRM（PlaybookLearning等）に記録すべき内容）：
 - 失敗・チャーン要因（同上）：
 - アップセル仮説（hypothesis-logに記録）：
 ```
@@ -117,4 +117,4 @@ NRR・月次チャーン率・Time to Value（TTV）を算出する。算出式�
 - [ ] チャーンリスクシグナルの全項目をチェックしたか
 - [ ] アップセル・クロスセル仮説に根拠（ヘルススコア・利用状況）が伴っているか
 - [ ] 次のアクションに期日と担当が明記されているか
-- [ ] knowledge-curatorへの保存依頼を行ったか
+- [ ] knowledge-curator-crm（Twenty CRM）への保存依頼を行ったか
