@@ -130,9 +130,9 @@ STEP 3：掲出スケジュール設定指示の生成
 
 ---
 
-### 📱 SNS（X/Instagram/TikTok）
+### 📱 SNS（X/Instagram/TikTok/LinkedIn）
 
-**入稿先：** X Ads / Meta Ads Manager / TikTok Ads Manager
+**入稿先：** X Ads / Meta Ads Manager / TikTok Ads Manager / LinkedIn Campaign Manager
 
 ```
 STEP 1：素材仕様の確認
@@ -150,21 +150,36 @@ STEP 1：素材仕様の確認
   動画：1080×1920px（縦型必須）、最長60秒（広告）
   ファイルサイズ：最大500MB
 
+  【LinkedIn Ads】※toB（b2b-marketing）の主要チャネル
+  シングル画像広告：1200×627px、最大5MB
+  動画広告：横型1920×1080px推奨、最長30分（実用上15〜30秒推奨）、最大200MB
+  メッセージ広告（Sponsored InMail/Message Ads）：件名50文字以内・本文1500文字以内
+  ドキュメント広告：PDF/PPT/DOC、最大100MB（ホワイトペーパー・資料DL向け）
+
 STEP 2：入稿データパッケージの生成
   - 各プラットフォーム仕様に変換した素材（パターンA・B）
   - キャプションテキスト（文字数制限内）
   - ハッシュタグリスト（CEPに関連するもの）
   - サムネイル画像（動画の場合）
+  - （LinkedIn Adsの場合）ホワイトペーパー・資料PDF、メッセージ広告本文
 
 STEP 3：ターゲティング設定指示の生成
-  CEPに対応するターゲティングを設定する：
+
+  【X/Instagram/TikTok】
   - デモグラフィック：年齢・性別・地域
   - インタレスト：CEPと関連する興味・行動
   - カスタムオーディエンス：既存顧客・類似オーディエンス
 
+  【LinkedIn Ads】※toBではアカウントベースの精密ターゲティングが基本
+  - アカウントリストターゲティング：account-intelligence-analystが選定したターゲットアカウントリストをアップロード
+  - 職種・役職ターゲティング：stakeholder-mapperが特定したステークホルダー役職（EDM/TV/Influencer等）を指定
+  - 業種・企業規模：ICP定義に基づく絞り込み
+  - マッチドオーディエンス：既存リード・サイト訪問者のリターゲティング
+
 STEP 4：UTMパラメータ＋ピクセル設定
   各プラットフォームのピクセル/タグが設置されているか確認する
   コンバージョンイベントの設定を確認する
+  （LinkedIn Adsの場合）Insight Tagの設置とアカウントリストの反映を確認する
 
 STEP 5：ABテスト設定（広告セットレベル）
   パターンAとパターンBを同一条件で配信するよう設定する
