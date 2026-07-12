@@ -4,8 +4,10 @@
 > アカウントベースドマーケティング（ABM）・セールスイネーブルメント・カスタマーサクセス
 
 # 注記
-# 共有エージェント（market-scout / knowledge-curator / media-buyer）は
-# _shared/agents/ を参照してください。
+# 共有エージェント（market-scout / media-buyer）は _shared/agents/ を参照してください。
+# Knowledge CuratorのみtoB専用版（Twenty CRM連携）を使用します。
+# → b2b-marketing/agents/knowledge-curator-crm.md を参照してください。
+# （_shared/agents/knowledge-curator.md はファイルベースのため、toCグループ①〜④専用です）
 
 ---
 
@@ -48,6 +50,18 @@ toBマーケティングの成果は「契約の獲得」ではなく「顧客�
 | **コンテンツ** | 広告・LP・SNS | ホワイトペーパー・提案書・事例・ROI試算書 |
 | **主要チャネル** | TV・SNS・EC・店頭 | LinkedIn・展示会・ウェビナー・メール・インサイドセールス |
 | **KPI** | CVR・MPen・NPS・LTV | MQL→SQL転換率・成約率・ARR・NRR・チャーン率 |
+| **ナレッジの保存先** | `knowledge-base/`（ファイルベース） | **Twenty CRM**（Company/Person/Opportunity＋カスタムオブジェクト） |
+
+### ナレッジ保存基盤のハイブリッド構成
+
+toBグループは、アカウント・ステークホルダー・商談といった「企業と人」を中心とするデータ構造のため、
+ファイルベースの`knowledge-base/`ではなく**Twenty CRM（Twenty Cloud）をナレッジ保存基盤として使用する**。
+
+- toCグループ（①〜④）：引き続き `_shared/agents/knowledge-curator.md`（ファイルベース）を使用
+- toBグループ（⑤）：`b2b-marketing/agents/knowledge-curator-crm.md`（Twenty CRM連携版）を使用
+
+データモデル（Company/Person/Opportunity＋カスタムオブジェクトへのマッピング）は
+`b2b-marketing/agents/knowledge-curator-crm.md` を参照。
 
 ---
 
@@ -67,9 +81,9 @@ Chief Researcher（toBマーケティング統括）
 │                │               │ ★新設          │
 │ Account        │ Sales          │                │
 │ Intelligence   │ Enablement     │ Knowledge       │
-│ Analyst        │ Executor       │ Curator         │
-│ ★新設          │ ★新設          │ （_shared）     │
-│                │               │                │
+│ Analyst        │ Executor       │ Curator CRM     │
+│ ★新設          │ ★新設          │ ★b2b専用       │
+│                │               │ Twenty CRM連携  │
 │ Stakeholder    │ Media Buyer   │                │
 │ Mapper         │ （_shared）   │                │
 │ ★新設          │ toB設定       │                │
@@ -117,8 +131,11 @@ Chief Researcher（toBマーケティング統括）
 - チャーンリスクを早期検知し、アップセル・クロスセルの仮説を生成する
 - `_shared/skills/customer-success.md` を必ず参照する
 
-**Knowledge Curator（_shared）**
-- toBに特化したナレッジ（ICP・ステークホルダー・ABM施策・顧客成功パターン）を管理する
+**Knowledge Curator（★b2b専用・Twenty CRM連携版）**
+- toBに特化したナレッジ（ICP・ステークホルダー・ABM施策・顧客成功パターン）をTwenty CRM上で管理する
+- toCグループのファイルベース版（`_shared/agents/knowledge-curator.md`）とは別の専用エージェント
+- Company/Person/Opportunity標準オブジェクト＋AbmHypothesis/PlaybookLearning/HealthScoreHistoryカスタムオブジェクトにAPI経由で読み書きする
+- 詳細は `b2b-marketing/agents/knowledge-curator-crm.md` を参照
 
 ---
 
@@ -141,7 +158,7 @@ Chief Researcher（toBマーケティング統括）
 ### 基本フロー（toBのResearch-Action Loop）
 
 ```
-STEP 1：knowledge-curator へナレッジ照会（必須）
+STEP 1：knowledge-curator-crm（Twenty CRM）へナレッジ照会（必須）
    ↓
 STEP 2：market-scout が業界・競合・ターゲット企業の情報を収集
    ↓
@@ -159,7 +176,7 @@ STEP 8：（ユーザーが施策を実行・商談を進める）
    ↓
 STEP 9：customer-success-analyzer が結果（商談進行・成約・定着）を評価
    ↓
-STEP 10：knowledge-curator がナレッジを蓄積 → STEP 1へ
+STEP 10：knowledge-curator-crm がTwenty CRMへナレッジを蓄積 → STEP 1へ
 ```
 
 ### toBファネル別の意思決定ルール

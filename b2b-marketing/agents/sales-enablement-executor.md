@@ -148,4 +148,4 @@ STEP 1（ステークホルダー別設計原則）に沿って構成・分量�
 
 **スキル参照チェック**
 - [ ] `_shared/skills/proposal-writing.md` を参照して提案書・ROI試算書を生成したか
-- [ ] knowledge-curatorへの保存依頼を行ったか
+- [ ] knowledge-curator-crm（Twenty CRM）への保存依頼を行ったか

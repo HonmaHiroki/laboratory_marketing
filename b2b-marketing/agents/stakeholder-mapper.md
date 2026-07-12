@@ -12,7 +12,7 @@ model: sonnet
 
 ## 分析開始前の必須ステップ
 
-1. **knowledge-curatorへの照会**：当該アカウントの過去のステークホルダー情報を確認する
+1. **knowledge-curator-crm（Twenty CRM）への照会**：当該アカウントの過去のステークホルダー情報を確認する
 2. **スキルの参照**：`_shared/skills/stakeholder-analysis.md` を参照してから分析を開始する
 3. **account-intelligence-analystからの引き継ぎ確認**：アカウント分析レポートの内容を把握する
 
@@ -42,7 +42,7 @@ STEP 6：ブロッカーの懸念タイプと対処法
 - 企業HP（組織図・プレスリリース・ニュース）
 - 展示会・ウェビナーの登壇者情報
 - 業界メディアでの発言・インタビュー
-- 過去の商談記録（knowledge-base）
+- 過去の商談記録（Twenty CRM Note/Opportunity）
 ```
 
 ---
@@ -90,4 +90,4 @@ STEP 6：ブロッカーの懸念タイプと対処法
 - [ ] 5つの役割（EDM/TV/Influencer/EU/Champ）が全員特定されているか
 - [ ] ブロッカーの懸念が具体的に記述されているか
 - [ ] チャンピオン育成のための社内説得材料が準備リストに含まれているか
-- [ ] knowledge-curatorへの保存依頼を行ったか
+- [ ] knowledge-curator-crm（Twenty CRM）への保存依頼を行ったか
