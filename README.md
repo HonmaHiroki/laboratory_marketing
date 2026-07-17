@@ -52,9 +52,12 @@ toBグループはtoCの循環ループとは別に、法人アカウント単�
 
 **共有エージェント（agents/）**
 - `market-scout.md` — 8つのAPIとWEBアンケートからデータ収集（RESEARCH）。toB利用時は企業IR・LinkedIn・展示会等の企業単位ソースを追加使用
-- `knowledge-curator.md` — 全組織共通の知識管理（LEARNING）。ICP・ステークホルダー等のtoB固有ナレッジも既存4レイヤーに格納
+- `knowledge-curator.md` — toCグループ①〜④共通の知識管理（LEARNING）。**Notion連携版**：4つのNotionデータベース（Market Insights／Hypothesis Log／Campaign Results／Learnings）にMCP経由で読み書きする（GitHubファイルではない）
 - `performance-analyzer.md` — toCグループ共通の結果評価（LEARNING）。toBでは代わりに`b2b-marketing/agents/customer-success-analyzer.md`が評価を担う
 - `media-buyer.md` — 13チャネルへの入稿・配信設定・計測設定（ACTION）。LinkedIn AdsなどtoB向けチャネルにも対応
+
+**toB専用エージェント**
+- `b2b-marketing/agents/knowledge-curator-crm.md` — b2b-marketingグループ専用の知識管理。**Twenty CRM連携版**：Company/Person/Opportunity標準オブジェクト＋カスタムオブジェクトにAPI経由で読み書きする
 
 **共有スキル（skills/）**
 
@@ -75,8 +78,10 @@ toBグループはtoCの循環ループとは別に、法人アカウント単�
 | toB専用 | `proposal-writing.md` | 提案書・ROI試算書・RFP回答書設計 |
 | toB専用 | `customer-success.md` | ヘルススコア・NRR・チャーン評価・QBR設計 |
 
-**共有ナレッジ（knowledge-base/）**
-- 全グループが参照できる市場・競合・確定知識
+**ナレッジ保存基盤（ハイブリッド構成）**
+- toCグループ①〜④：Notion（`knowledge-curator.md`がMCP経由で読み書き。4データベース：Market Insights／Hypothesis Log／Campaign Results／Learnings）
+- toBグループ⑤：Twenty CRM（`knowledge-curator-crm.md`がAPI経由で読み書き。Company/Person/Opportunity＋カスタムオブジェクト）
+- リポジトリ内の`knowledge-base/`ディレクトリは廃止済み（過去データの参照が必要な場合はGit履歴を参照）
 
 ## 新グループの追加手順
 
@@ -84,7 +89,7 @@ toBグループはtoCの循環ループとは別に、法人アカウント単�
 2. 対応するグループフォルダを作成する
 3. `CLAUDE.md` の手法名・ミッション・KGIを書き換える
 4. `agents/` の4ファイルをグループ特化の内容に更新する
-5. `knowledge-base/` の初期構造を配置する
+5. Notion側に対応するデータベースのビュー・グループタグを追加する（新規ディレクトリ作成は不要）
 
 **toB型グループを追加する場合：**
 上記はtoC型グループ（4エージェント構成）向けの手順です。`b2b-marketing/`のようにtoB型グループを追加する場合は、対象の意思決定者が複数存在する分、エージェント構成も専門分化します（`b2b-marketing/`では6つの専用エージェント＋3つの共有エージェントの構成）。`b2b-marketing/CLAUDE.md`と`b2b-marketing/agents/`を参考テンプレートとして複製・改変してください。
