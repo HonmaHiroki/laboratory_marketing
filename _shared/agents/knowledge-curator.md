@@ -16,6 +16,22 @@ toBグループ（⑤ b2b-marketing）は別のエージェント（`knowledge-c
 
 ---
 
+## 接続済みNotionワークスペース（作成済み）
+
+以下は実際に作成済みのページ・データベースです。エージェントはこのIDをそのまま使用する。
+
+| 要素 | URL | Data Source ID |
+|-----|-----|----------------|
+| 親ページ「マーケティング研究組織 ナレッジベース」 | https://app.notion.com/p/3a0555500af181ff9f47f6073bd00489 | — |
+| Market Insights | https://app.notion.com/p/80b68103087a4d2b8a532ca7c42b48bf | `79fbf6b8-1d7a-47ab-962e-f42ecf7006ed` |
+| Hypothesis Log | https://app.notion.com/p/378d528ebeba4820991045ac73fa89e3 | `41898fe9-eb64-47b5-9ccc-f150687c49f4` |
+| Campaign Results | https://app.notion.com/p/6408c11461af40cba82d3b475b778989 | `ed38dacc-d90a-4c85-a2a3-91b95607e207` |
+| Learnings | https://app.notion.com/p/67d2e7cf597c4032aea9addad438bff7 | `547362c9-65d7-444c-975d-784d4a6a458e` |
+
+Learnings の「元となった仮説」プロパティは Hypothesis Log と双方向リレーション（Hypothesis Log側には自動的に「確定した知識」プロパティが追加されている）。
+
+---
+
 ## Notionワークスペースのデータモデル
 
 GitHub上の4レイヤー構造（market-insights / hypothesis-log / campaign-results / learnings）を、
@@ -78,14 +94,16 @@ CREATE TABLE (
   "カテゴリ" SELECT('job-insights':blue, 'cep-principles':green, 'habit-principles':yellow, 'communication':purple, 'brand-growth':red),
   "適用顧客タイプ" MULTI_SELECT('ロイヤル':blue, '競合顧客':orange, '未顧客':green, '全顧客':gray),
   "確定日" DATE,
-  "元となった仮説" RELATION('{hypothesis_log_data_source_id}', DUAL '確定した知識' 'confirmed_learnings')
+  "元となった仮説" RELATION('41898fe9-eb64-47b5-9ccc-f150687c49f4', DUAL '確定した知識' 'confirmed_learnings')
 )
 ```
 
-**初回セットアップ手順：**
+**初回セットアップ：完了済み（2026-07-18）**
+上記の「接続済みNotionワークスペース」の通り、①〜④のデータベースはすべて作成済み。
+以下は作成時に用いた手順の記録（再構築が必要な場合の参照用）：
 1. `notion-create-database` で①〜④を順に作成する（①③④に先立ち②Hypothesis Logを先に作成し、そのdata source IDを④のRELATION定義に使う）
-2. 4つのデータベースを1つの親ページ（例：「マーケティング研究組織 ナレッジベース」）の配下に作成する
-3. 各データベースに `notion-create-view` でステータス別・グループ別のビューを作成する（例：Hypothesis Logに「ステータス」でグループ化したボードビュー）
+2. 4つのデータベースを1つの親ページ（「マーケティング研究組織 ナレッジベース」）の配下に作成する
+3. 必要に応じ `notion-create-view` でステータス別・グループ別のビューを追加する（例：Hypothesis Logに「ステータス」でグループ化したボードビュー）
 
 ---
 
@@ -97,12 +115,12 @@ CREATE TABLE (
 
 ```sql
 -- 例：特定CEPに関連する確定知識を検索
-SELECT * FROM "collection://{learnings_data_source_id}"
+SELECT * FROM "collection://547362c9-65d7-444c-975d-784d4a6a458e"
 WHERE "適用顧客タイプ" LIKE '%未顧客%'
 ORDER BY "確定日" DESC
 
 -- 例：同テーマの過去仮説を検索（重複調査防止）
-SELECT * FROM "collection://{hypothesis_log_data_source_id}"
+SELECT * FROM "collection://41898fe9-eb64-47b5-9ccc-f150687c49f4"
 WHERE "CEP" LIKE '%{調査テーマ}%'
 ```
 
@@ -118,7 +136,7 @@ data_source_url: 省略可（全体検索）または特定DBに絞る場合は 
 
 ```
 notion-create-pages:
-  parent: { data_source_id: "{market_insights_data_source_id}" }
+  parent: { data_source_id: "79fbf6b8-1d7a-47ab-962e-f42ecf7006ed" }
   pages: [{
     properties: {
       "title": "[CEP名] インサイト調査結果",
@@ -190,7 +208,7 @@ Learnings DBに新規ページを作成し、「元となった仮説」リレ�
 
 ```sql
 -- 6ヶ月以上更新のないMarket Insightsを抽出
-SELECT * FROM "collection://{market_insights_data_source_id}"
+SELECT * FROM "collection://79fbf6b8-1d7a-47ab-962e-f42ecf7006ed"
 WHERE datetime("取得日") < datetime('now', '-6 months')
   AND "ステータス" != 'archived'
 ```
