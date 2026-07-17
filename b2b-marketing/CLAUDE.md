@@ -7,7 +7,7 @@
 # 共有エージェント（market-scout / media-buyer）は _shared/agents/ を参照してください。
 # Knowledge CuratorのみtoB専用版（Twenty CRM連携）を使用します。
 # → b2b-marketing/agents/knowledge-curator-crm.md を参照してください。
-# （_shared/agents/knowledge-curator.md はファイルベースのため、toCグループ①〜④専用です）
+# （_shared/agents/knowledge-curator.md はNotion連携版のため、toCグループ①〜④専用です）
 
 ---
 
@@ -36,7 +36,7 @@ toBマーケティングの成果は「契約の獲得」ではなく「顧客�
 | **Account Intelligence** | 企業・組織を個人として深く理解する | 調査前に必ずアカウント情報・ステークホルダー情報を照会する |
 | **Long-term Loop** | toBの成果は長期で生まれる | 単発施策ではなく、ファネル全体でのループ設計を優先する |
 | **Evidence First** | 感覚ではなくデータと根拠で動く | 主張には必ずソースと取得日時を付ける |
-| **Compound Learning** | 学びを蓄積し組織知として活用する | 成功・失敗両方の施策結果を必ずknowledge-baseに記録する |
+| **Compound Learning** | 学びを蓄積し組織知として活用する | 成功・失敗両方の施策結果を必ずナレッジ管理基盤（Notion/Twenty CRM）に記録する |
 
 ---
 
@@ -50,14 +50,14 @@ toBマーケティングの成果は「契約の獲得」ではなく「顧客�
 | **コンテンツ** | 広告・LP・SNS | ホワイトペーパー・提案書・事例・ROI試算書 |
 | **主要チャネル** | TV・SNS・EC・店頭 | LinkedIn・展示会・ウェビナー・メール・インサイドセールス |
 | **KPI** | CVR・MPen・NPS・LTV | MQL→SQL転換率・成約率・ARR・NRR・チャーン率 |
-| **ナレッジの保存先** | `knowledge-base/`（ファイルベース） | **Twenty CRM**（Company/Person/Opportunity＋カスタムオブジェクト） |
+| **ナレッジの保存先** | Notion（4データベース） | **Twenty CRM**（Company/Person/Opportunity＋カスタムオブジェクト） |
 
 ### ナレッジ保存基盤のハイブリッド構成
 
 toBグループは、アカウント・ステークホルダー・商談といった「企業と人」を中心とするデータ構造のため、
 ファイルベースの`knowledge-base/`ではなく**Twenty CRM（Twenty Cloud）をナレッジ保存基盤として使用する**。
 
-- toCグループ（①〜④）：引き続き `_shared/agents/knowledge-curator.md`（ファイルベース）を使用
+- toCグループ（①〜④）：`_shared/agents/knowledge-curator.md`（Notion連携版）を使用
 - toBグループ（⑤）：`b2b-marketing/agents/knowledge-curator-crm.md`（Twenty CRM連携版）を使用
 
 データモデル（Company/Person/Opportunity＋カスタムオブジェクトへのマッピング）は
@@ -133,7 +133,7 @@ Chief Researcher（toBマーケティング統括）
 
 **Knowledge Curator（★b2b専用・Twenty CRM連携版）**
 - toBに特化したナレッジ（ICP・ステークホルダー・ABM施策・顧客成功パターン）をTwenty CRM上で管理する
-- toCグループのファイルベース版（`_shared/agents/knowledge-curator.md`）とは別の専用エージェント
+- toCグループのNotion連携版（`_shared/agents/knowledge-curator.md`）とは別の専用エージェント
 - Company/Person/Opportunity標準オブジェクト＋AbmHypothesis/PlaybookLearning/HealthScoreHistoryカスタムオブジェクトにAPI経由で読み書きする
 - 詳細は `b2b-marketing/agents/knowledge-curator-crm.md` を参照
 
@@ -149,7 +149,7 @@ Chief Researcher（toBマーケティング統括）
 | ステークホルダー特定精度 | 特定したチャンピオン数と商談進行率の相関 |
 | 施策効果 | MQL→SQL転換率・商談進行率・成約率の改善 |
 | 顧客成功 | NRR・チャーン率・アップセル成功率 |
-| ナレッジ貢献 | knowledge-baseへの新規登録数/月 |
+| ナレッジ貢献 | ナレッジ管理基盤（Notion/Twenty CRM）への新規登録数/月 |
 
 ---
 
