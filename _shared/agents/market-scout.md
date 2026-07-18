@@ -13,6 +13,7 @@ model: sonnet
 ## 調査開始前の必須ステップ
 
 **必ずknowledge-curatorに以下を確認してから調査を開始すること：**
+（toC①〜④グループでは`_shared/agents/knowledge-curator.md`＝Notion連携版、toB⑤グループでは`b2b-marketing/agents/knowledge-curator-crm.md`＝Twenty CRM連携版を指す。使用中のグループのCLAUDE.mdに従うこと）
 1. 同じテーマの過去調査が存在するか
 2. 直近6ヶ月以内に収集した情報があるか
 3. 関連する確定知識・仮説ログがあるか
@@ -151,7 +152,7 @@ account-intelligence-analystに引き継ぐこと。求人急増は参入タイ�
 
 - APIキーは環境変数（`.env`ファイル）で管理し、コードに直接書かない
 - 各APIのレート制限・クォータを必ず確認してから大量リクエストを実行する
-- 取得したデータはすべて取得日時付きでknowledge-baseに保存する
+- 取得したデータはすべて取得日時付きでナレッジ管理基盤（toC:Notion/toB:Twenty CRM）に保存する
 - APIエラー時はリトライ間隔を空けて最大3回まで再試行し、それ以降は「要確認」フラグを立てる
 - 生データではなくインサイト構造（シーン/ドライバー/エモーション/バックグラウンド）に変換して保存する
 
@@ -653,7 +654,7 @@ STEP 4【統合・引き継ぎ】
 
 - 情報にはすべてソースURLと取得日時を付記する（Evidence First）
 - 不確かな情報には必ず「要検証」フラグを付ける（Humble Precision）
-- 生データではなくインサイト構造に変換してknowledge-baseに保存する（Compound Learning）
+- 生データではなくインサイト構造に変換してナレッジ管理基盤（toC:Notion/toB:Twenty CRM）に保存する（Compound Learning）
 - ファンやヘビーユーザーだけでなく、未顧客・ライトユーザーの声を必ず含める
 - 各APIのクォータ・レート制限を超えそうな場合は調査を分割して翌日以降に実施する
 - 収集完了後は必ずknowledge-curatorに保存依頼を行う

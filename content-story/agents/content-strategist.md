@@ -115,7 +115,7 @@ model: sonnet
 - [ ] 季節性・ライフイベントがカレンダーに反映されているか
 - [ ] group2への引き渡しCTAが設計されているか
 - [ ] 認知/興味/検討コンテンツのバランスが取れているか
-- [ ] knowledge-baseの過去コンテンツ戦略を参照したか
+- [ ] Notion（Market Insights/Campaign Results DB）の過去コンテンツ戦略を参照したか
 
 ## スキルの参照ルール
 

@@ -5,6 +5,7 @@
 
 # 注記
 # 共有エージェント（market-scout / knowledge-curator / performance-analyzer）は
+# ※knowledge-curatorはNotion連携版（4データベース：Market Insights/Hypothesis Log/Campaign Results/Learnings）です。
 # _shared/agents/ を参照してください。
 
 ---
@@ -23,7 +24,7 @@ MPen・NS・MMSの指標成長を通じてブランドの想起構造を強化�
 
 - 3ヶ月後：主要CEPのマッピングとDBA（独自ブランド資産）の現状評価を完了する
 - 6ヶ月後：ブランデッドリーチ施策のパターンを蓄積し、3つの断絶ポイント対策を確立する
-- 1年後：MPenとNSの定量的な成長トレンドをknowledge-baseに蓄積する
+- 1年後：MPenとNSの定量的な成長トレンドをNotion（Campaign Results DB）に蓄積する
 
 ### バリュー（価値観・行動基準）
 

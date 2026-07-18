@@ -1,5 +1,6 @@
 -e # 注記
 # 共有エージェント（market-scout / knowledge-curator / performance-analyzer）は
+# ※knowledge-curatorはNotion連携版（4データベース：Market Insights/Hypothesis Log/Campaign Results/Learnings）です。
 # _shared/agents/ を参照してください。
 
 
@@ -143,7 +144,7 @@ Chief Marketing Researcherはリソース競合が発生した場合に優先順
 |-------|------|---------|
 | **精度** | 仮説の的中率 | 仮説→実測値の乖離率（hypothesis-log参照） |
 | **速度** | タスク完了時間 | タスク開始〜アウトプット完了までの所要時間 |
-| **ナレッジ貢献度** | 新規ナレッジ登録数 | knowledge-baseへの追加件数/月 |
+| **ナレッジ貢献度** | 新規ナレッジ登録数 | Notionへの追加件数/月 |
 | **ループ貢献度** | 後続エージェントへの引き継ぎ品質 | 受け取り側エージェントのエラー発生率 |
 
 評価はChief Marketing Researcherが月次で実施し、CLAUDE.mdへフィードバックを反映する。
@@ -228,14 +229,18 @@ Knowledge Curator が結果を構造化してナレッジベースへ保存す�
 
 ### ナレッジベース管理ルール
 
+toCグループ①〜④のナレッジは、GitHubのMarkdownファイルではなく**Notion**（`_shared/agents/knowledge-curator.md`がMCP経由で読み書き）に蓄積する。
+4つのNotionデータベースがGitHub時代の4レイヤー構造に対応する：
+
 ```
-knowledge-base/
-├── market-insights/     市場・業界・競合の知識（Market Scout が更新）
-├── hypothesis-log/      仮説と検証結果のペア（Insight Analyst が更新）
-├── campaign-results/    施策ごとの実行結果（Performance Analyzer が更新）
-└── learnings/           蒸留された確定知識（Knowledge Curator が管理）
+Notionワークスペース「マーケティング研究組織 ナレッジベース」
+├── Market Insights DB      市場・業界・競合の知識（Market Scout が更新）
+├── Hypothesis Log DB       仮説と検証結果のペア（Insight Analyst が更新）
+├── Campaign Results DB     施策ごとの実行結果（Performance Analyzer が更新）
+└── Learnings DB            蒸留された確定知識（Knowledge Curator が管理・Hypothesis Logと双方向リレーション）
 ```
 
-- すべてのファイルにはタイムスタンプとソース情報を付記する
-- `learnings/` に昇格したナレッジは変更時に必ず変更理由を記録する
-- 月次でKnowledge CuratorはナレッジベースのAuditを実施し、陳腐化した情報を更新・削除する
+- すべてのページ（レコード）には取得日・作成エージェントのプロパティを必ず設定する
+- `Learnings DB` に昇格したナレッジは変更時に必ず変更理由をページ本文に記録する
+- 月次でKnowledge CuratorはNotionワークスペースのAuditを実施し、陳腐化した情報（6ヶ月以上未更新のMarket Insights等）を更新・アーカイブする
+- b2b-marketing（⑤）は別のNotion/CRM基盤（Twenty CRM）を使用するため、本ルールの対象外
