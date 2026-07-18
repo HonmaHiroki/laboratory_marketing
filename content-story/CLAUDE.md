@@ -5,6 +5,7 @@
 
 # 注記
 # 共有エージェント（market-scout / knowledge-curator / performance-analyzer）は
+# ※knowledge-curatorはNotion連携版（4データベース：Market Insights/Hypothesis Log/Campaign Results/Learnings）です。
 # _shared/agents/ を参照してください。
 
 ---
@@ -74,7 +75,7 @@ Chief Marketing Researcher（統括）
 | 評価軸 | 指標 |
 |-------|------|
 | コンテンツ効果 | 流入数・滞在時間・リード転換率 |
-| ナレッジ貢献度 | knowledge-baseへの新規登録数/月 |
+| ナレッジ貢献度 | Notionへの新規登録数/月 |
 | ループ貢献度 | 後続エージェントへの引き継ぎ品質 |
 
 ---

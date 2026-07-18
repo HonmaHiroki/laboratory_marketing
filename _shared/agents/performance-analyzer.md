@@ -155,7 +155,7 @@ UTMデータの命名規則は `_shared/skills/utm-naming.md` を参照して正
 | パターン | KPI | 優劣 | 採用理由 |
 |---------|-----|------|---------|
 
-## knowledge-curatorへの引き継ぎメモ
+## knowledge-curator（Notion）への引き継ぎメモ
 - campaign-results/に保存する内容：
 - hypothesis-logの更新内容：
 - learnings/への昇格候補（3回以上支持の場合）：

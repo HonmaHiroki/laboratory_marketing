@@ -76,4 +76,4 @@ model: sonnet
 
 - このグループで刷り込んだ「CEP×ブランドの記憶連合」をgroup2に共有する
 - 共有情報：どのCEPで想起率が上がったか・有効なDBA・メッセージパターン
-- group2からのフィードバック：CEP発動時の転換率をknowledge-baseに記録する
+- group2からのフィードバック：CEP発動時の転換率をNotion（Campaign Results DB）に記録する

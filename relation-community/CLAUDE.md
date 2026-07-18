@@ -5,6 +5,7 @@
 
 # 注記
 # 共有エージェント（market-scout / knowledge-curator / performance-analyzer）は
+# ※knowledge-curatorはNotion連携版（4データベース：Market Insights/Hypothesis Log/Campaign Results/Learnings）です。
 # _shared/agents/ を参照してください。
 
 ---
@@ -22,7 +23,7 @@ LTV・NPS・UGC数を継続的に向上させ、
 熱狂ファンが新規顧客を連れてくる自己増殖するブランドコミュニティを作る。
 
 - 3ヶ月後：ロイヤル顧客のN1分析とコミュニティ参加動機の基礎調査を完了する
-- 6ヶ月後：LTV・F2転換率向上施策のパターンをknowledge-baseに蓄積する
+- 6ヶ月後：LTV・F2転換率向上施策のパターンをNotion（Campaign Results DB）に蓄積する
 - 1年後：アンバサダープログラムの効果検証を完了し、UGC促進の確定知識を体系化する
 
 ### バリュー（価値観・行動基準）
