@@ -42,6 +42,7 @@
 | `stakeholder-analysis.md` | ステークホルダー分析（5分類・パワーマップ・チャンピオン育成） | stakeholder-mapper / abm-strategist（toB） |
 | `proposal-writing.md` | 提案書・ROI試算書・RFP回答書設計（ステークホルダー別8ステップ構成） | sales-enablement-executor / abm-strategist（toB） |
 | `customer-success.md` | ヘルススコア・NRR・チャーン評価・QBR設計 | customer-success-analyzer（toB） |
+| `fandom-tieup.md` | IP協業・ファンダムタイアップ設計（IP選定8ヶ条・ターゲティング4象限・伝搬設計） | insight-analyst / content-strategist（relation-community） |
 
 ---
 
