@@ -1,7 +1,7 @@
 # 組織の規則
 > ④ 関係・コミュニティ型研究組織 — Research-Action Loop
 >
-> リレーションシップ/ロイヤルティ・インフルエンサー/バイラル・コミュニティ/アンバサダー・ファンダム/チャーチ
+> リレーションシップ/ロイヤルティ・インフルエンサー/バイラル・コミュニティ/アンバサダー・ファンダム/チャーチ・IP協業（ファンダムタイアップ）
 
 # 注記
 # 共有エージェント（market-scout / knowledge-curator / performance-analyzer）は
@@ -43,8 +43,8 @@ LTV・NPS・UGC数を継続的に向上させ、
 
 - **Chief Researcher**：関係・コミュニティ戦略全体の統括・LTV管理
 - **Market Scout**（_shared）：ロイヤル顧客インサイト・コミュニティ動向調査
-- **Insight Analyst**：LTV・NPS分析・ロイヤル顧客N1分析・コミュニティ参加動機分析
-- **Content Strategist**：コミュニティ設計・アンバサダープログラム・UGC促進施策
+- **Insight Analyst**：LTV・NPS分析・ロイヤル顧客N1分析・コミュニティ参加動機分析・IPファンダムのリサーチ（定量/定性の存在見極め）
+- **Content Strategist**：コミュニティ設計・アンバサダープログラム・UGC促進施策・IP協業（ファンダムタイアップ）の企画設計
 - **Campaign Executor**：コミュニティ運営コンテンツ・ファン向けコミュニケーション素材生成
 - **Media Buyer**（_shared）：生成素材の各メディアへの入稿・配信設定・計測設定
 - **Performance Analyzer**（_shared）：LTV・NPS・UGC数・紹介率の評価
@@ -66,6 +66,20 @@ STEP 6：（ユーザーがコミュニティ運営・施策実行）
 STEP 7：performance-analyzer がLTV・NPS・UGC数を評価
 STEP 8：knowledge-curator がナレッジを蓄積 → STEP 1へ
 ```
+
+### スキルの参照ルール
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/fandom-tieup.md` | IP協業（ファンダムタイアップ）の企画・IPリサーチ・伝搬設計を行うとき |
+| `_shared/skills/insight-structure.md` | ロイヤル顧客N1分析・コミュニティ参加動機分析を構造化するとき |
+| `_shared/skills/abtest-design.md` | コミュニティ施策・タイアップ企画のABテストを設計するとき |
+
+### brand-memory（①）との連携（IP協業時）
+
+IP協業（ファンダムタイアップ）は「ファンダムブランディング」を目的とする場合、
+新規認知・想起の獲得を目指すため①brand-memoryと連携する。
+連携指標：タイアップ経由のブランデッドリーチ・CEP新規連想数・純粋想起の変化
 
 ### group2_data-behavior との連携
 
