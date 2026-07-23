@@ -1,7 +1,7 @@
 # 組織の規則
 > ④ 関係・コミュニティ型研究組織 — Research-Action Loop
 >
-> リレーションシップ/ロイヤルティ・インフルエンサー/バイラル・コミュニティ/アンバサダー・ファンダム/チャーチ・IP協業（ファンダムタイアップ）
+> リレーションシップ/ロイヤルティ・インフルエンサー/バイラル・コミュニティ/アンバサダー・ファンダム/チャーチ・IP協業（ファンダムタイアップ）・ロイヤリティ定量化調査／リテンションモデル設計（サービスサイエンス・SPC）
 
 # 注記
 # 共有エージェント（market-scout / knowledge-curator / performance-analyzer）は
@@ -43,8 +43,8 @@ LTV・NPS・UGC数を継続的に向上させ、
 
 - **Chief Researcher**：関係・コミュニティ戦略全体の統括・LTV管理
 - **Market Scout**（_shared）：ロイヤル顧客インサイト・コミュニティ動向調査
-- **Insight Analyst**：LTV・NPS分析・ロイヤル顧客N1分析・コミュニティ参加動機分析・IPファンダムのリサーチ（定量/定性の存在見極め）
-- **Content Strategist**：コミュニティ設計・アンバサダープログラム・UGC促進施策・IP協業（ファンダムタイアップ）の企画設計
+- **Insight Analyst**：LTV・NPS分析・ロイヤル顧客N1分析・コミュニティ参加動機分析・IPファンダムのリサーチ（定量/定性の存在見極め）・**ロイヤリティ定量化調査（ドライバー分析・ネガポジ体験分析）・事前期待の探索**
+- **Content Strategist**：コミュニティ設計・アンバサダープログラム・UGC促進施策・IP協業（ファンダムタイアップ）の企画設計・**リテンションモデル設計（サービスプロセスモデル化・SPC設計）**
 - **Campaign Executor**：コミュニティ運営コンテンツ・ファン向けコミュニケーション素材生成
 - **Media Buyer**（_shared）：生成素材の各メディアへの入稿・配信設定・計測設定
 - **Performance Analyzer**（_shared）：LTV・NPS・UGC数・紹介率の評価
@@ -67,13 +67,54 @@ STEP 7：performance-analyzer がLTV・NPS・UGC数を評価
 STEP 8：knowledge-curator がナレッジを蓄積 → STEP 1へ
 ```
 
+### リテンションモデルの設計・観測ループ（上記フローと並行して回す長期サイクル）
+
+個別施策のループ（上記）とは別に、**土台となるリテンションモデルを設計し、
+それがKGIを達成しているかを定点観測する長期サイクル**を回す。
+
+```
+【設計フェーズ】
+  A：insight-analyst がロイヤリティ調査を実施（loyalty-research.md）
+       → ドライバー分析・ネガポジ体験分析・収益貢献評価
+  B：insight-analyst が事前期待を探索（retention-model.md PART1）
+  C：content-strategist がリテンションモデルを設計（retention-model.md PART2〜4）
+       → 事前期待の的・SPC・サービスプロセス（勝負プロセス／作動スイッチ）
+
+【観測フェーズ】★設計して終わりにしない
+  D：performance-analyzer がKGIツリーとヘルススコアを設計（retention-healthscore.md STEP1〜5）
+  E：定点観測を実行（週次/月次/四半期/半期/年次の階層サイクル）
+  F：乖離・アラート発生時は原因診断（診断1〜4で連鎖の断絶箇所を特定）
+       → 診断結果に応じて C（またはB）へ戻りモデルを改修
+  G：改修履歴とスコア推移をセットで knowledge-curator へ蓄積 → Aへ
+```
+
+**このループの要点：** KGI（LTV・NRR）は遅行指標のため、それだけを見ていると手遅れになる。
+第1・第2階層の先行指標を厚く観測し、**どの階層間で連鎖が切れているかを早期に特定する**ことが目的。
+特に「体験・プロセス指標は良好なのにロイヤリティが動かない」場合は、
+施策の実行強度ではなく**事前期待の的という前提そのものを疑う**。
+
 ### スキルの参照ルール
 
 | スキル | 参照タイミング |
 |-------|------------|
+| `_shared/skills/loyalty-research.md` | ロイヤリティ調査を設計・分析するとき（ドライバー定義・顧客体験洗い出し・アンケート設計・6指標算出・収益貢献評価） |
+| `_shared/skills/retention-model.md` | 調査結果をもとに施策・仕組みを設計するとき（事前期待の的・サービスプロセスモデル化・SPC設計・改革推進） |
+| `_shared/skills/retention-healthscore.md` | 設計したモデルがKGIを達成しているかを定点観測するとき／KGI未達の原因を診断するとき |
 | `_shared/skills/fandom-tieup.md` | IP協業（ファンダムタイアップ）の企画・IPリサーチ・伝搬設計を行うとき |
 | `_shared/skills/insight-structure.md` | ロイヤル顧客N1分析・コミュニティ参加動機分析を構造化するとき |
 | `_shared/skills/abtest-design.md` | コミュニティ施策・タイアップ企画のABテストを設計するとき |
+
+**ロイヤリティ調査・施策設計・定点観測はセットで運用する：**
+```
+loyalty-research.md（測る）
+  → retention-model.md（設計する）
+  → campaign-executor（実行素材を作る）
+  → retention-healthscore.md（KGIに繋がっているか定点観測する）
+  → 乖離があれば retention-model.md へ戻る
+```
+調査で「どのドライバー・どの顧客体験に注力すべきか」を特定し、
+設計で「どの事前期待に応え、どのプロセスで勝負するか」を決めて施策に落とし、
+**観測で「その設計が本当にKGIを動かしているか」を検証してモデルを改修し続ける。**
 
 ### brand-memory（①）との連携（IP協業時）
 
