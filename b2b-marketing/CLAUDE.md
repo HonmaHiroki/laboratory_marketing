@@ -193,9 +193,10 @@ STEP 10：knowledge-curator-crm がTwenty CRMへナレッジを蓄積 → STEP 1
 
 | スキル | 参照タイミング |
 |-------|------------|
+| `_shared/skills/consulting-sales-process.md` | アカウント別のセールスプロセス全体（アカウントプラン〜クロージング）を設計するとき |
 | `_shared/skills/abm-account-selection.md` | ICPスコアリング・ターゲットアカウント選定のとき |
-| `_shared/skills/stakeholder-analysis.md` | ステークホルダーマップを作成するとき |
-| `_shared/skills/proposal-writing.md` | 提案書・ROI試算書・RFP回答書を生成するとき |
+| `_shared/skills/stakeholder-analysis.md` | ステークホルダーマップ（役割分類・DiSC・社内購買委員会の力学）を作成するとき |
+| `_shared/skills/proposal-writing.md` | 提案書・ROI試算書・RFP回答書を生成するとき（課題発見・要件定義すり合わせを含む） |
 | `_shared/skills/customer-success.md` | 顧客の定着・活用・更新・拡大を評価するとき |
 | `_shared/skills/sales-script.md` | セールストーク・商談スクリプトを生成するとき |
 | `_shared/skills/sales-letter.md` | メール・ウェビナー案内・コンテンツを生成するとき |

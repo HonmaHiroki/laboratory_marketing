@@ -77,6 +77,7 @@ toBグループはtoCの循環ループとは別に、法人アカウント単�
 | toB専用 | `stakeholder-analysis.md` | ステークホルダー分析（5分類・パワーマップ） |
 | toB専用 | `proposal-writing.md` | 提案書・ROI試算書・RFP回答書設計 |
 | toB専用 | `customer-success.md` | ヘルススコア・NRR・チャーン評価・QBR設計 |
+| toB専用 | `consulting-sales-process.md` | コンサルティングセールスプロセス（7工程・DiSC別対応の前提・スマートアウトバウンド） |
 | toC専用（④） | `fandom-tieup.md` | IP協業・ファンダムタイアップ設計（IP選定8ヶ条・ターゲティング4象限・伝搬設計） |
 | toC専用（④） | `loyalty-research.md` | ロイヤリティ定量化調査（サービスサイエンス・6指標・顧客体験洗い出し・収益貢献評価） |
 | toC専用（④） | `retention-model.md` | リテンションモデル設計（事前期待の的・SPC設計・サービスプロセスモデル化・改革推進） |
