@@ -157,7 +157,8 @@ model: sonnet
 - 生成が必要な素材一覧：
 - 各ステークホルダー向けのカスタマイズ指示：
 - 想定される競合・ブロッカーへの対処素材：
-- スキル参照指示：proposal-writing.md / sales-script.md / sales-letter.md
+- スキル参照指示：consulting-sales-process.md / proposal-writing.md / sales-script.md / sales-letter.md
+- 「3C+2C×マクロ環境」分析で見つけた勝ち筋（account-intelligence-analystより）：
 
 ## media-buyerへの引き継ぎメモ
 - 入稿チャネル：LinkedIn / メール / 展示会 / ウェビナー

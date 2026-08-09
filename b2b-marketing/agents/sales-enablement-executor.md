@@ -79,6 +79,10 @@ STEP 1（ステークホルダー別設計原則）に沿って構成・分量�
 `_shared/skills/sales-letter.md` のSTEP 1〜9を参照して生成する
 （ベネフィット整理 → アプローチ選択 → ヘッドライン〜P.S.）
 
+**アウトバウンド接触の大原則（スマート・アウトバウンド）：** `_shared/skills/consulting-sales-process.md`のSTEP0を参照し、
+**GIVE（耳寄りな情報・事例・業界トレンドの提供）を先に、ヒアリングは後**の順序を必ず守る。
+いきなり売り込む・いきなりヒアリングする構成は「ブロックされやすい」「アポに断られやすい」ため避ける。
+
 ### 導入事例（ケーススタディ）
 `_shared/skills/article-writing.md` を参照し、Before-After・課題・解決策・成果の数値を軸に構成する
 
@@ -124,6 +128,7 @@ STEP 1（ステークホルダー別設計原則）に沿って構成・分量�
 
 | スキル | 参照タイミング |
 |-------|------------|
+| `_shared/skills/consulting-sales-process.md` | アカウント全体のセールスプロセスを設計するとき／アウトバウンド接触の原則を確認するとき（必須） |
 | `_shared/skills/proposal-writing.md` | 提案書・ROI試算書・RFP回答書・エグゼクティブサマリー・社内提案テンプレートを生成するとき（必須） |
 | `_shared/skills/sales-script.md` | 商談スクリプト・デモシナリオ・オブジェクションハンドリングを生成するとき |
 | `_shared/skills/sales-letter.md` | コールドメール・フォローアップメール・LinkedIn DMを生成するとき |
