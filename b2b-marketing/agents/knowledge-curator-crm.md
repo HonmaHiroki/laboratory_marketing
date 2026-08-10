@@ -39,8 +39,8 @@ API種別:
 | 標準オブジェクト | 用途 | 追加するカスタムフィールド |
 |--------------|------|-------------------|
 | **Company** | ターゲットアカウント（account-intelligence-analystの分析対象） | `icpScoreTotal`（数値）／`icpScoreFit`／`icpScorePain`／`icpScoreBudget`／`icpScoreAccess`／`icpScoreCompetition`（各数値・重み付け前の素点）／`priority`（セレクト：★★★/★★/★/対象外）／`abmApproach`（セレクト：1to1/1toFew/1toMany）／`companyStage`（セレクト：スタートアップ/成長期/成熟期/上場企業）／`techStack`（テキスト）／`healthScore`（数値・0-100）／`healthStatus`（セレクト：Healthy/Neutral/AtRisk）／`nrr`（数値・%）：`churnRiskLevel`（セレクト：高/中/低）／`arr`（数値） |
-| **Person** | ステークホルダー（stakeholder-mapperの分析対象、Companyにリレーション） | `stakeholderRole`（セレクト：EDM/TV/Influencer/EU/Champion/Blocker）／`influenceLevel`（セレクト：★★★/★★/★）／`championLevel`（セレクト：高/中/低）／`relationshipStage`（セレクト：未接触/認知/興味/検討/推進）／`concerns`（テキスト）／`messagingAngle`（テキスト） |
-| **Opportunity** | ABM施策・商談（abm-strategist / sales-enablement-executorが更新） | `funnelStage`（セレクト：ターゲティング/認知/商談/提案/成約/定着/拡大）※パイプラインステージと兼用 |`abmApproach`（セレクト）／`hypothesis`（テキスト）／`targetKpi`（テキスト） |
+| **Person** | ステークホルダー（stakeholder-mapperの分析対象、Companyにリレーション） | `stakeholderRole`（セレクト：EDM/TV/Influencer/EU/Champion/Blocker）／`influenceLevel`（セレクト：★★★/★★/★）／`championLevel`（セレクト：高/中/低）／`relationshipStage`（セレクト：未接触/認知/興味/検討/推進）／`concerns`（テキスト）／`messagingAngle`（テキスト）／`discStyle`（セレクト：D/i/S/C。stakeholder-analysis.mdのDiSC分析結果） |
+| **Opportunity** | ABM施策・商談（abm-strategist / sales-enablement-executorが更新） | `funnelStage`（セレクト：ターゲティング/認知/商談/提案/成約/定着/拡大）※パイプラインステージと兼用 |`abmApproach`（セレクト）／`hypothesis`（テキスト）／`targetKpi`（テキスト）／`assignedRep`（SalesRepへのリレーション）／`repCustomerFitScore`（セレクト：◎/△。sales-rep-matching.mdの相性評価）／`scriptStyleUsed`（セレクト：D型/i型/S型/C型）／`dealResult`（セレクト：成約/失注/保留） |
 | **Note** | 提案書サマリー・QBR記録・調査メモ（Company/Person/Opportunityにリンク） | 標準フィールドのみで運用（本文に構造化Markdownを格納） |
 
 ### カスタムオブジェクト（初回セットアップ時にMetadata APIで作成）
@@ -50,6 +50,8 @@ API種別:
 | **AbmHypothesis**（ABM仮説） | 旧 `hypothesis-log/` 相当 | `hypothesisText`（テキスト）／`category`（セレクト：ICP/ステークホルダー/施策/CS）／`status`（セレクト：active/verified/confirmed/rejected）／`supportCount`（数値・支持回数）／`relatedCompany`（Companyへのリレーション）／`evidenceNote`（テキスト） |
 | **PlaybookLearning**（確定知識） | 旧 `learnings/` 相当 | `title`（テキスト）／`principle`（テキスト・確定した原則）／`applicableSegment`（セレクト：業種/規模/役職等の適用範囲）／`sourceHypothesis`（AbmHypothesisへのリレーション）／`confirmedDate`（日付） |
 | **HealthScoreHistory**（ヘルススコア推移） | 顧客成功の時系列トラッキング（新規・旧構造になし） | `company`（Companyへのリレーション）／`recordedDate`（日付）／`healthScore`（数値）／`nrr`（数値）／`note`（テキスト） |
+| **SalesRep**（営業担当者プロファイル） | `sales-rep-matching.md`の営業タイプ管理（新規） | `name`（テキスト）／`discStyle`（セレクト：D/i/S/C。複合の場合は主/副を別フィールドで管理）／`hunterFarmerType`（セレクト：ハンター/ファーマー）／`industryExperience`（テキスト）／`preferredDealType`（セレクト：即決型/提案型）／`preferredFunnelStage`（セレクト：TOFU/MOFU/BOFU/アフター） |
+| **DealOutcome**（商談結果ログ） | `sales-rep-matching.md` STEP5の勝率分析用（新規） | `opportunity`（Opportunityへのリレーション）／`repDiscStyle`（セレクト）／`customerDiscStyle`（セレクト）／`preAssessedFit`（セレクト：◎/△）／`scriptStyleUsed`（セレクト）／`dealType`（セレクト：即決型/提案型）／`result`（セレクト：成約/失注/保留）／`lossReason`（テキスト）／`cycleDays`（数値・商談サイクル長） |
 
 ---
 
@@ -189,3 +191,4 @@ curl -s -X GET "$TWENTY_API_BASE_URL/rest/companies?filter[updatedAt][lt]=2026-0
 |-------|------------|
 | `_shared/skills/abm-account-selection.md` | ICPスコアをCompanyレコードに反映するとき（フィールド定義の対応確認） |
 | `_shared/skills/customer-success.md` | ヘルススコアをCompany/HealthScoreHistoryに反映するとき |
+| `_shared/skills/sales-rep-matching.md` | SalesRep/DealOutcomeレコードを反映・PlaybookLearningへ勝率パターンを昇格させるとき |
