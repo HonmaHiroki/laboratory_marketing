@@ -43,6 +43,7 @@
 | `proposal-writing.md` | 提案書・ROI試算書・RFP回答書設計（ステークホルダー別8ステップ構成） | sales-enablement-executor / abm-strategist（toB） |
 | `customer-success.md` | ヘルススコア・NRR・チャーン評価・QBR設計 | customer-success-analyzer（toB） |
 | `consulting-sales-process.md` | コンサルティングセールスプロセス（7工程・DiSC別対応の前提・スマートアウトバウンド） | abm-strategist / sales-enablement-executor（toB） |
+| `sales-rep-matching.md` | 営業担当者タイプ分類・アサイン最適化・結果分析（DiSC相性マトリクス・勝率分析） | abm-strategist / sales-enablement-executor / customer-success-analyzer（toB） |
 | `fandom-tieup.md` | IP協業・ファンダムタイアップ設計（IP選定8ヶ条・ターゲティング4象限・伝搬設計） | insight-analyst / content-strategist（relation-community） |
 | `loyalty-research.md` | ロイヤリティ定量化調査（サービスサイエンス・6指標・顧客体験洗い出し・不満足調査設計・収益貢献評価） | insight-analyst / performance-analyzer（relation-community） |
 | `retention-model.md` | リテンションモデル設計（事前期待の的・SPC設計・サービスプロセスモデル化・改革推進4UP STEP） | content-strategist / insight-analyst（relation-community） |

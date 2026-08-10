@@ -116,11 +116,13 @@ Chief Researcher（toBマーケティング統括）
 - ターゲットアカウント・ステークホルダーに合わせたカスタマイズ施策を設計する
 - ABMのアプローチ（1to1・1toFew・1toMany）を使い分ける
 - `_shared/skills/abm-account-selection.md` の優先度評価をもとに施策を設計する
+- `_shared/skills/sales-rep-matching.md` に基づき、BOFU以降のアカウントに営業担当者をアサインする
 
 **Sales Enablement Executor（★新設）**
 - 商談を前進させる素材を生成する：提案書・ROI試算書・RFP回答書・事例・競合比較表・デモシナリオ
 - `_shared/skills/sales-script.md` と `_shared/skills/proposal-writing.md` を主力として活用する
 - `_shared/skills/sales-letter.md` はメール・ウェビナー案内等に活用する
+- `_shared/skills/sales-rep-matching.md` に基づき、担当営業のDiSCスタイルに応じてスクリプトの型を調整する
 
 **Media Buyer（_shared・toB設定）**
 - toBチャネルへの入稿：LinkedIn広告・展示会資材・ウェビナープラットフォーム・メール配信
@@ -130,6 +132,7 @@ Chief Researcher（toBマーケティング統括）
 - 成約後の顧客のオンボーディング・活用率・ヘルススコア・NRRを評価する
 - チャーンリスクを早期検知し、アップセル・クロスセルの仮説を生成する
 - `_shared/skills/customer-success.md` を必ず参照する
+- `_shared/skills/sales-rep-matching.md` に基づき、営業タイプ×顧客タイプ×スクリプトの勝率を分析する
 
 **Knowledge Curator（★b2b専用・Twenty CRM連携版）**
 - toBに特化したナレッジ（ICP・ステークホルダー・ABM施策・顧客成功パターン）をTwenty CRM上で管理する
@@ -194,6 +197,7 @@ STEP 10：knowledge-curator-crm がTwenty CRMへナレッジを蓄積 → STEP 1
 | スキル | 参照タイミング |
 |-------|------------|
 | `_shared/skills/consulting-sales-process.md` | アカウント別のセールスプロセス全体（アカウントプラン〜クロージング）を設計するとき |
+| `_shared/skills/sales-rep-matching.md` | 営業担当者のタイプ分類・アサイン・商談結果の分析を行うとき |
 | `_shared/skills/abm-account-selection.md` | ICPスコアリング・ターゲットアカウント選定のとき |
 | `_shared/skills/stakeholder-analysis.md` | ステークホルダーマップ（役割分類・DiSC・社内購買委員会の力学）を作成するとき |
 | `_shared/skills/proposal-writing.md` | 提案書・ROI試算書・RFP回答書を生成するとき（課題発見・要件定義すり合わせを含む） |

@@ -153,12 +153,27 @@ model: sonnet
 - 成功基準（KPI）：MQL数 / SQL転換率 / 商談獲得数
 - 測定期間：
 
+### 営業担当者アサイン
+
+`_shared/skills/sales-rep-matching.md` のSTEP1〜4に従い、商談を担当する営業担当者を決定する。
+BOFU（提案・成約フェーズ）に入るアカウントは特に、ステークホルダーマップ（stakeholder-mapperのDiSC分析）と
+営業担当者のDiSCスタイルの相性を踏まえてアサインする。
+
+```
+STEP A：商談相手（決裁者・推進者）のDiSCスタイルを確認（stakeholder-mapperの成果物を参照）
+STEP B：相性マトリクスで◎評価の営業担当者を優先候補とする
+STEP C：商材タイプ・ファネル段階（ハンター型/ファーマー型）で絞り込む
+STEP D：業界経験・過去の勝率実績で最終判断
+STEP E：完全な◎候補がいない場合は△評価＋スクリプト調整方針を条件にアサイン
+```
+
 ## sales-enablement-executorへの引き継ぎメモ
 - 生成が必要な素材一覧：
 - 各ステークホルダー向けのカスタマイズ指示：
 - 想定される競合・ブロッカーへの対処素材：
-- スキル参照指示：consulting-sales-process.md / proposal-writing.md / sales-script.md / sales-letter.md
+- スキル参照指示：consulting-sales-process.md / proposal-writing.md / sales-script.md / sales-letter.md / sales-rep-matching.md
 - 「3C+2C×マクロ環境」分析で見つけた勝ち筋（account-intelligence-analystより）：
+- アサインした営業担当者とDiSCスタイル・スクリプト調整方針：
 
 ## media-buyerへの引き継ぎメモ
 - 入稿チャネル：LinkedIn / メール / 展示会 / ウェビナー
@@ -166,10 +181,18 @@ model: sonnet
 - 配信予算・期間：
 ```
 
+## スキルの参照ルール
+
+| スキル | 参照タイミング |
+|-------|------------|
+| `_shared/skills/sales-rep-matching.md` | 営業担当者をアカウントにアサインするとき（BOFU以降は必須） |
+| `_shared/skills/consulting-sales-process.md` | アカウント全体のセールスプロセスを設計するとき |
+
 ## 品質チェックリスト
 
 - [ ] ABMアプローチ（1to1/1toFew/1toMany）の選択根拠が明記されているか
 - [ ] 各ステークホルダー役職別にメッセージが設計されているか
 - [ ] ファネル全段階（TOFU/MOFU/BOFU/アフター）がカバーされているか
 - [ ] KPIが具体的な数値で設定されているか
+- [ ] BOFU以降のアカウントで、`sales-rep-matching.md`に基づく営業担当者アサインを検討したか
 - [ ] Twenty CRM上の過去施策（Opportunityレコード）を参照したか
