@@ -35,6 +35,7 @@
 | `report-format.md` | 最終レポートの共通フォーマット | chief-researcher |
 | `utm-naming.md` | UTMパラメータの命名規則 | media-buyer / performance-analyzer |
 | `sales-letter.md` | セールスレター設計（ベネフィット〜P.S.の全構造） | campaign-executor（全グループ） |
+| `ad-lp-design.md` | 広告訴求LP設計（sales-letter.mdの訴求文をLPに実装・メッセージマッチ・instruction.md作成） | campaign-executor / content-strategist（全グループ） |
 | `sales-script.md` | セールススクリプト設計（商談の脳科学・4つの物語・障害対処） | campaign-executor（全グループ） |
 | `article-writing.md` | 記事作成（SEO・LLMO対応・ニーズ調査〜校閲23項目） | campaign-executor / content-strategist（全グループ） |
 | `site-design.md` | WEBサイト構築設計（戦略〜要件〜構造〜骨格〜システム設計） | campaign-executor / content-strategist（全グループ） |

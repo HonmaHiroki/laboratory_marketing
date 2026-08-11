@@ -125,6 +125,7 @@ model: sonnet
 | `_shared/skills/cep-scoring.md` | CEPポテンシャルスコアを算出するとき |
 | `_shared/skills/abtest-design.md` | ABテストを設計するとき |
 | `_shared/skills/sales-letter.md` | セールスレター・LPコピーの方針を設計するとき |
+| `_shared/skills/ad-lp-design.md` | 広告流入用LPの構成・実装方針を設計するとき |
 | `_shared/skills/sales-script.md` | セールススクリプト・商談の方針を設計するとき |
 | `_shared/skills/article-writing.md` | SEO記事・コンテンツ記事の戦略を設計するとき |
 | `_shared/skills/site-design.md` | WEBサイト・LPの構築戦略を設計するとき |
