@@ -50,6 +50,7 @@ model: sonnet
 | **コールドメール** | 初回アプローチメール・件名〜P.S.まで | `sales-letter.md` |
 | **フォローアップメール** | 商談後・提案書送付後・無回答時の追いメール | `sales-letter.md` |
 | **LinkedIn DM** | ファーストコンタクト・つながり申請メッセージ | `sales-letter.md` |
+| **広告訴求LP** | ウェビナー申込・資料DL・LinkedIn広告等の受け皿ページ | `ad-lp-design.md` |
 | **オブジェクションハンドリングシート** | 想定反論と返答スクリプト | `sales-script.md` |
 
 ### 🎯 チャンピオン育成関連
@@ -139,6 +140,7 @@ STEP 1（ステークホルダー別設計原則）に沿って構成・分量�
 | `_shared/skills/sales-script.md` | 商談スクリプト・デモシナリオ・オブジェクションハンドリングを生成するとき |
 | `_shared/skills/sales-rep-matching.md` | 商談スクリプトを担当営業のタイプに合わせて調整するとき（必須） |
 | `_shared/skills/sales-letter.md` | コールドメール・フォローアップメール・LinkedIn DMを生成するとき |
+| `_shared/skills/ad-lp-design.md` | ウェビナー申込・資料DL等の広告受け皿LPを生成するとき |
 | `_shared/skills/article-writing.md` | 導入事例・ホワイトペーパー・ブログ記事を生成するとき |
 | `_shared/skills/abtest-design.md` | メール件名・CTA・提案書バリエーションのABテストを設計するとき |
 

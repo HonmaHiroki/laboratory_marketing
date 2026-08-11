@@ -771,6 +771,7 @@ STEP 5：ABパターンの生成
 | `_shared/skills/abtest-design.md` | ABテスト設計を行うとき |
 | `_shared/skills/utm-naming.md` | media-buyerへのUTM情報を整理するとき |
 | `_shared/skills/sales-letter.md` | セールスレター・LPコピー・メール本文を生成するとき |
+| `_shared/skills/ad-lp-design.md` | 広告流入用LPをsales-letter.mdの訴求文から実装するとき |
 | `_shared/skills/sales-script.md` | セールススクリプト・商談トーク・プレゼン台本を生成するとき |
 | `_shared/skills/article-writing.md` | SEO記事・コンテンツ記事を生成するとき |
 | `_shared/skills/site-design.md` | WEBサイト・LPの構築設計を行うとき |

@@ -70,6 +70,7 @@ toBグループはtoCの循環ループとは別に、法人アカウント単�
 | 全体共通 | `abtest-design.md` | ABテスト16項目の設計テンプレート |
 | 全体共通 | `utm-naming.md` | 13チャネル対応のUTMパラメータ命名規則 |
 | 全体共通 | `sales-letter.md` | セールスレター設計（ベネフィット〜P.S.の全構造） |
+| 全体共通 | `ad-lp-design.md` | 広告訴求LP設計（sales-letter.mdの訴求文をLPに実装・メッセージマッチ） |
 | 全体共通 | `sales-script.md` | セールススクリプト設計（商談の脳科学・4つの物語） |
 | 全体共通 | `article-writing.md` | 記事作成（SEO・LLMO対応・校閲23項目） |
 | 全体共通 | `site-design.md` | WEBサイト構築設計（戦略〜システム設計） |

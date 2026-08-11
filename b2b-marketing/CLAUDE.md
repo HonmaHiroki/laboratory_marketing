@@ -204,6 +204,7 @@ STEP 10：knowledge-curator-crm がTwenty CRMへナレッジを蓄積 → STEP 1
 | `_shared/skills/customer-success.md` | 顧客の定着・活用・更新・拡大を評価するとき |
 | `_shared/skills/sales-script.md` | セールストーク・商談スクリプトを生成するとき |
 | `_shared/skills/sales-letter.md` | メール・ウェビナー案内・コンテンツを生成するとき |
+| `_shared/skills/ad-lp-design.md` | 広告流入用LP（ウェビナー申込・資料DL等）を設計するとき |
 | `_shared/skills/article-writing.md` | ホワイトペーパー・ブログ記事を生成するとき |
 | `_shared/skills/abtest-design.md` | ABテストを設計するとき |
 | `_shared/skills/utm-naming.md` | アカウント別UTMパラメータを設定するとき |
