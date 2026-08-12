@@ -52,7 +52,7 @@ toBグループはtoCの循環ループとは別に、法人アカウント単�
 
 **共有エージェント（agents/）**
 - `market-scout.md` — 8つのAPIとWEBアンケートからデータ収集（RESEARCH）。toB利用時は企業IR・LinkedIn・展示会等の企業単位ソースを追加使用
-- `knowledge-curator.md` — toCグループ①〜④共通の知識管理（LEARNING）。**Notion連携版**：4つのNotionデータベース（Market Insights／Hypothesis Log／Campaign Results／Learnings）にMCP経由で読み書きする（GitHubファイルではない）
+- `knowledge-curator.md` — toCグループ①〜④共通の知識管理（LEARNING）。**Notion連携版**：成果物レポート（子ページ）と構造化レポート（4データベース：Market Insights／Hypothesis Log／Campaign Results／Learnings）に分けてMCP経由で読み書きする（GitHubファイルではない）
 - `performance-analyzer.md` — toCグループ共通の結果評価（LEARNING）。toBでは代わりに`b2b-marketing/agents/customer-success-analyzer.md`が評価を担う
 - `media-buyer.md` — 13チャネルへの入稿・配信設定・計測設定（ACTION）。LinkedIn AdsなどtoB向けチャネルにも対応
 
@@ -86,7 +86,7 @@ toBグループはtoCの循環ループとは別に、法人アカウント単�
 | toC専用（④） | `retention-healthscore.md` | リテンションヘルススコア設計・定点観測（KGIツリー・連鎖断絶の原因診断） |
 
 **ナレッジ保存基盤（ハイブリッド構成）**
-- toCグループ①〜④：Notion（`knowledge-curator.md`がMCP経由で読み書き。4データベース：Market Insights／Hypothesis Log／Campaign Results／Learnings）
+- toCグループ①〜④：Notion（`knowledge-curator.md`がMCP経由で読み書き。成果物レポート＝ページ、構造化レポート＝4データベース：Market Insights／Hypothesis Log／Campaign Results／Learnings）
 - toBグループ⑤：Twenty CRM（`knowledge-curator-crm.md`がAPI経由で読み書き。Company/Person/Opportunity＋カスタムオブジェクト）
 - リポジトリ内の`knowledge-base/`ディレクトリは廃止済み（過去データの参照が必要な場合はGit履歴を参照）
 

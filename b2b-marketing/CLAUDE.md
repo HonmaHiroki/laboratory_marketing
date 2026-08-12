@@ -51,7 +51,7 @@ toBマーケティングの成果は「契約の獲得」ではなく「顧客�
 | **コンテンツ** | 広告・LP・SNS | ホワイトペーパー・提案書・事例・ROI試算書 |
 | **主要チャネル** | TV・SNS・EC・店頭 | LinkedIn・展示会・ウェビナー・メール・インサイドセールス |
 | **KPI** | CVR・MPen・NPS・LTV | MQL→SQL転換率・成約率・ARR・NRR・チャーン率 |
-| **ナレッジの保存先** | Notion（4データベース） | **Twenty CRM**（Company/Person/Opportunity＋カスタムオブジェクト） |
+| **ナレッジの保存先** | Notion（成果物レポート＋4構造化データベース） | 成果物レポート＝**Notion**／構造化データ＝**Twenty CRM**（Company/Person/Opportunity＋カスタムオブジェクト） |
 
 ### ナレッジ保存基盤のハイブリッド構成
 
