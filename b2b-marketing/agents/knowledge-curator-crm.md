@@ -60,6 +60,28 @@ REST APIのエンドポイント名もTwenty標準の複数形キャメルケー
 
 ---
 
+## 運用状況：本稼働中
+
+Twenty CRM連携は本稼働フェーズに移行済み。b2b-marketingグループの全エージェントは、
+このエージェント（knowledge-curator-crm）を経由して分析結果をTwenty CRMへ実際に読み書きする運用を開始する。
+
+```markdown
+## 本稼働移行チェックリスト
+- [x] Phase 1〜8：全オブジェクト・フィールドの作成完了
+- [x] APIエンドポイント名の確定（上表参照）
+- [x] Company/Person/Opportunity/DealOutcomeの疎通確認
+- [x] 接続設定（ワークスペースURL・APIベースURL・APIキー）の確定
+```
+
+**運用開始後の注意事項：**
+- これ以降にTwenty CRMへ保存されるデータは**実データ**として扱う。テスト目的での作成・削除は避ける
+  （標準オブジェクトは削除不可・カスタムフィールドも完全削除不可のため、テストデータは残り続ける点に留意する）
+- 各エージェント（account-intelligence-analyst／stakeholder-mapper／abm-strategist／sales-enablement-executor／customer-success-analyzer）は、
+  タスク完了時に必ず本エージェントへ保存依頼を行う運用を徹底する
+- 月次ナレッジAudit（後述）を実際に実行し、陳腐化データの棚卸しを開始する
+
+---
+
 ## Twenty CRMデータモデル設計
 
 ### 標準オブジェクトへのマッピング
