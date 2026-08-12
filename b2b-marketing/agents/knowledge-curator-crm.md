@@ -19,16 +19,24 @@ toBグループ（⑤ b2b-marketing）のみ本エージェントを使用する
 ## 接続設定
 
 ```
-TWENTY_API_BASE_URL=https://api.twenty.com          # Twenty Cloud（ワークスペースごとに発行）
-TWENTY_API_KEY=${TWENTY_API_KEY}                     # Settings → API & Webhooks で発行
+TWENTY_WORKSPACE_URL=https://laboratory-marketing.twenty.com   # ワークスペース（ブラウザUI・管理画面用）
+TWENTY_API_BASE_URL=https://api.twenty.com                     # API呼び出し用（Twenty Cloud共通。テナントはAPIキーで判定される）
+TWENTY_API_KEY=${TWENTY_API_KEY}                                # 発行済み。Settings → API & Webhooks で管理
 認証方式: Bearer Token（Authorization: Bearer $TWENTY_API_KEY）
 API種別:
   - Core API      /rest/...           レコードのCRUD（Company/Person/Opportunity/Note/カスタムオブジェクト）
   - Metadata API   /rest/metadata/... オブジェクト・フィールドのスキーマ管理（初回セットアップ時のみ使用）
 ```
 
+**注意：** ワークスペースURL（`laboratory-marketing.twenty.com`）とAPIベースURL（`api.twenty.com`）は異なる。
+ブラウザでの操作・管理画面確認は前者、API呼び出し（本エージェントの全操作）は後者を使用する。
+Twenty Cloudでは全ワークスペース共通のAPIエンドポイントにAPIキーでアクセスし、キー自体がテナント（ワークスペース）を識別する仕組みのため。
+
 **初回セットアップ時のみ**：Metadata APIでカスタムオブジェクト・カスタムフィールドを作成する（下記データモデル参照）。
 運用開始後は基本的にCore APIのみを使用する。
+
+**セットアップ手順：** `b2b-marketing/TWENTY_CRM_SETUP.md` に、Phase1〜8の作成順序（リレーションの依存関係を考慮）と
+チェックリストをまとめている。初回構築時は同ファイルに従って進める。
 
 ---
 
