@@ -1,5 +1,11 @@
 # Twenty CRM 手動セットアップ手順書（b2b-marketing用）
 
+> **✅ ステータス：セットアップ完了・本稼働中**
+> Phase 1〜8の作成・疎通確認はすべて完了し、b2b-marketingグループは本稼働フェーズに移行済み。
+> 本ドキュメントは今後、環境再構築時・新規メンバーのオンボーディング時の**参照用手順書**として保持する。
+> 実際のAPI接続情報・エンドポイント名は `b2b-marketing/agents/knowledge-curator-crm.md` の
+> 「セットアップ完了済み：実際のAPIエンドポイント名」「運用状況：本稼働中」を正とする。
+
 `b2b-marketing/agents/knowledge-curator-crm.md` で設計したデータモデルを、実際のTwenty CRMワークスペースに反映するための作業手順。
 **Twenty CRMの管理画面（Settings → Data model）から手動で作成する前提**の手順書です。
 

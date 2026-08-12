@@ -1,5 +1,5 @@
 # 組織の規則
-> ⑤ toBマーケティング研究組織 — Research-Action Loop
+> ⑤ toBマーケティング研究組織 — Research-Action Loop ★稼働中（Twenty CRM連携済み）
 >
 > アカウントベースドマーケティング（ABM）・セールスイネーブルメント・カスタマーサクセス
 
