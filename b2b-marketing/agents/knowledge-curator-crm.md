@@ -82,6 +82,48 @@ Twenty CRM連携は本稼働フェーズに移行済み。b2b-marketingグルー
 
 ---
 
+## 重要な仕様：カスタムフィールドのAPI名は小文字化される
+
+実際の疎通テスト（2026年8月実施）で判明した仕様。**Twenty CRMは、UI上でキャメルケース（例：`icpScoreTotal`）で
+入力したカスタムフィールド名を、REST API上では小文字化した名前（例：`icpscoretotal`）として返す。**
+これはCompanyに限らず、Person・Opportunity・全カスタムオブジェクトに共通する仕様と考えられる。
+
+**実際に確認できた例（Company）：**
+
+| UI上での入力名（設計時の想定） | 実際のAPIレスポンス上のキー |
+|---------------------------|----------------------|
+| `icpScoreTotal` | `icpscoretotal` |
+| `icpScoreFit` | `icpscorefit` |
+| `icpScorePain` | `icpscorepain` |
+| `icpScoreBudget` | `icpscorebudget` |
+| `icpScoreAccess` | `icpscoreaccess` |
+| `icpScoreCompetition` | `icpscorecompetition` |
+| `abmApproach` | `abmapproach` |
+| `companyStage` | `companystage` |
+| `techStack` | `techstack` |
+| `healthScore` | `healthscore` |
+| `healthStatus` | `healthstatus` |
+| `churnRiskLevel` | `churnrisklevel` |
+
+**本エージェントがAPI呼び出し（GET/POST/PATCH等）を行う際は、本ドキュメント内の他のセクションで
+キャメルケース表記になっているカスタムフィールド名を、すべて小文字化した名前に読み替えて使用すること。**
+（`priority`・`nrr`・`arr`のようにもともと単一の小文字単語だったフィールドは表記に変化がない）
+
+**未確認の注意点：** Person・Opportunity・SalesRep・AbmHypothesis・PlaybookLearning・HealthScoreHistory・DealOutcomeの
+カスタムフィールドについては、Companyと同様の小文字化がされていると推定されるが、個別の疎通確認はまだ行っていない。
+初回のAPI呼び出し時に想定通りのキー名か必ず実レスポンスで確認し、想定と異なれば本ドキュメントを都度修正すること。
+
+**標準フィールド名（`name`・`id`・`createdAt`等）は小文字化の影響を受けず、通常のキャメルケースのまま。**
+
+**未解決の観察事項（動作に支障なし）：** Companyレコードの実レスポンスに、設計時に定義していない
+`relatedcompanyId`・`companyId`という2つのフィールドが`null`で含まれることを確認した（2026年8月）。
+AbmHypothesis作成時に設定した`relatedCompany`リレーション（Company参照）に関連して、Twenty CRMが
+自動生成した逆参照フィールドの可能性が高い。現時点でAPI呼び出し自体は正常に機能しており実害はないため、
+運用を妨げるものではないが、他のリレーション作成時にも同様の想定外フィールドが増える可能性がある点は
+念頭に置いておく。
+
+---
+
 ## Twenty CRMデータモデル設計
 
 ### 標準オブジェクトへのマッピング
@@ -131,13 +173,15 @@ curl -s -X GET "$TWENTY_API_BASE_URL/rest/abmHypotheses?filter[relatedCompanyId]
 
 ```bash
 # 例：account-intelligence-analystのICPスコアをCompanyに反映（PATCH）
+# ※カスタムフィールド名は小文字化されるため、priority・abmApproachではなくabmapproach等を使用する
+#   （priorityはもともと小文字のみのため変化なし）
 curl -s -X PATCH "$TWENTY_API_BASE_URL/rest/companies/{company_id}" \
   -H "Authorization: Bearer $TWENTY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "icpScoreTotal": 8.2,
+    "icpscoretotal": 8.2,
     "priority": "★★★",
-    "abmApproach": "1to1"
+    "abmapproach": "1to1"
   }'
 
 # 例：stakeholder-mapperが特定した人物をPersonとして新規作成
@@ -148,8 +192,8 @@ curl -s -X POST "$TWENTY_API_BASE_URL/rest/people" \
     "name": {"firstName": "太郎", "lastName": "山田"},
     "jobTitle": "IT部長",
     "companyId": "{company_id}",
-    "stakeholderRole": "TV",
-    "influenceLevel": "★★★"
+    "stakeholderrole": "TV",
+    "influencelevel": "★★★"
   }'
 
 # 例：customer-success-analyzerのヘルススコアをHealthScoreHistoryに追記
@@ -158,11 +202,15 @@ curl -s -X POST "$TWENTY_API_BASE_URL/rest/healthScoreHistories" \
   -H "Content-Type: application/json" \
   -d '{
     "company": "{company_id}",
-    "recordedDate": "2026-07-13",
-    "healthScore": 78,
+    "recordeddate": "2026-07-13",
+    "healthscore": 78,
     "nrr": 105
   }'
 ```
+
+**注意：** 上記の`stakeholderrole`・`influencelevel`・`recordeddate`・`healthscore`は、Company以外のオブジェクトで
+未確認のまま小文字化ルールを類推適用した表記。**実際にAPI呼び出しを行う直前に、必ず該当オブジェクトへGETリクエストを送り、
+実レスポンスのキー名を確認してから使用すること。**
 
 ---
 
