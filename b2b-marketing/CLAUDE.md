@@ -7,6 +7,7 @@
 # 共有エージェント（market-scout / media-buyer）は _shared/agents/ を参照してください。
 # Knowledge CuratorのみtoB専用版（Twenty CRM連携）を使用します。
 # → b2b-marketing/agents/knowledge-curator-crm.md を参照してください。
+# Twenty CRMの初回セットアップ手順（Phase1〜8）は b2b-marketing/TWENTY_CRM_SETUP.md を参照してください。
 # （_shared/agents/knowledge-curator.md はNotion連携版のため、toCグループ①〜④専用です）
 
 ---
