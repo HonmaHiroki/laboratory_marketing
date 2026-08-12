@@ -88,19 +88,20 @@ toBグループはtoCの循環ループとは別に、法人アカウント単�
 **ナレッジ保存基盤（ハイブリッド構成）**
 - toCグループ①〜④：Notion（`knowledge-curator.md`がMCP経由で読み書き。4データベース：Market Insights／Hypothesis Log／Campaign Results／Learnings）
 - toBグループ⑤：**構造化データ**はTwenty CRM（`knowledge-curator-crm.md`がAPI経由で読み書き。Company/Person/Opportunity＋カスタムオブジェクト）、**成果物レポート**はNotion（`マーケティング研究`配下の「⑤ toBマーケティング 成果物レポート」ページに子ページとして格納）
-- リポジトリ内の`knowledge-base/`ディレクトリは廃止済み（過去データの参照が必要な場合はGit履歴を参照）
 
-**成果物レポートの取り扱い（toBグループ⑤）**
+## 役割分担（このリポジトリは「ルール」だけを持つ）
 
-アカウント分析レポート・ステークホルダーマップ・提案書などの「読み物」は、以下の3箇所に置く。
+| 置き場所 | role | 中身 |
+|---------|------|------|
+| **GitHub（本リポジトリ）** | **ルールの管理** | 組織規則（CLAUDE.md）・エージェント定義・スキル・セットアップ手順 |
+| **Notion** | **成果物（レポート）** | アカウント分析レポート・ステークホルダーマップ・提案書などの「読み物」 |
+| **Twenty CRM** | **構造化データ** | Company／Person／Opportunity／AbmHypothesis等のレコード（toBのみ） |
 
-| 置き場所 | 役割 |
-|---------|------|
-| `b2b-marketing/accounts/*.md` | 原本（Git管理・差分追跡） |
-| Notion「⑤ toBマーケティング 成果物レポート」 | 共有・閲覧用（GitHubのMarkdownテーブルはNotion独自のテーブルXML形式に変換して転記する） |
-| Twenty CRM | 構造化データのみ（Company/Person/AbmHypothesis等のレコード） |
+**リポジトリに成果物を置かない。** 調査結果・分析レポート・生成コンテンツはGitHubにコミットせず、
+Notionへ直接作成する。リポジトリが持つのは「どう作るか」のルールだけであり、「作ったもの」は持たない。
 
-レポート末尾には必ず「Twenty CRM への登録内容」セクションを設け、レコードIDを記載して相互参照できるようにする。
+- 過去に存在した`knowledge-base/`ディレクトリ、および`b2b-marketing/accounts/`ディレクトリは廃止済み
+  （過去データの参照が必要な場合はGit履歴を参照）
 
 ## 新グループの追加手順
 
