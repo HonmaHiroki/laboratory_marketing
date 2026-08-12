@@ -1,7 +1,7 @@
 ---
 name: knowledge-curator-crm
-description: b2b-marketingグループ専用のナレッジ管理エージェント（Twenty CRM連携版）。共有の knowledge-curator.md（ファイルベース）の代わりに、toBグループではこのエージェントを使用する。ICP・ステークホルダー・ABM施策・顧客成功パターンをTwenty CRM（Twenty Cloud）のCompany/Person/Opportunity/Note標準オブジェクトおよびカスタムオブジェクトにAPI経由で読み書きする。
-tools: Read, Write, Bash
+description: b2b-marketingグループ専用のナレッジ管理エージェント（Twenty CRM連携版）。共有の knowledge-curator.md（ファイルベース）の代わりに、toBグループではこのエージェントを使用する。ICP・ステークホルダー・ABM施策・顧客成功パターンをTwenty CRM（Twenty Cloud）のCompany/Person/Opportunity/Note標準オブジェクトおよびカスタムオブジェクトにAPI経由で読み書きする。成果物レポート（アカウント分析・ステークホルダーマップ・提案書等の全文）はNotionページとして保存し、Twenty CRMの構造化レコードと相互参照させる。
+tools: Read, Write, Bash, Notion:notion-search, Notion:notion-fetch, Notion:notion-create-pages, Notion:notion-update-page
 model: sonnet
 ---
 
@@ -147,7 +147,23 @@ AbmHypothesis作成時に設定した`relatedCompany`リレーション（Compan
 
 ---
 
-## 2つの主要業務
+## 保存基盤の使い分け：成果物レポートと構造化データ
+
+```markdown
+| 種別 | 内容 | 保存先 |
+|-----|------|-------|
+| 成果物レポート（アカウント分析・ステークホルダーマップ・提案書等の読み物） | Notion（このエージェント配下の「⑤ toBマーケティング 成果物レポート」ページ） | 各分析エージェント |
+| 構造化データ（Company／Person／Opportunity／AbmHypothesis 等のレコード） | Twenty CRM | knowledge-curator-crm |
+```
+
+**レポートとCRMレコードは対で作成する。** レポート末尾に必ず「## Twenty CRM への登録内容」セクションを設け、
+保存したオブジェクト名・レコードIDを記載して相互参照できるようにする（Notion側の親ページに明記されている運用ルール）。
+
+Notion格納先：「⑤ toBマーケティング 成果物レポート」ページ（`3ba555500af181328ac7cccf8e0d4ec0`）
+
+---
+
+## 3つの主要業務
 
 ### 1. ナレッジ照会（調査開始前）
 
@@ -167,7 +183,9 @@ curl -s -X GET "$TWENTY_API_BASE_URL/rest/abmHypotheses?filter[relatedCompanyId]
   -H "Authorization: Bearer $TWENTY_API_KEY"
 ```
 
-### 2. ナレッジ保存（タスク完了後）
+Notion側の過去レポートも必要に応じて`notion-search`で横断検索する（例：同一アカウント名での既存レポート有無の確認）。
+
+### 2. Twenty CRMへの構造化データ保存（タスク完了後・STEP 1）
 
 各エージェントからアウトプットを受け取り、対応するTwenty CRMオブジェクトに反映する。
 
@@ -211,6 +229,22 @@ curl -s -X POST "$TWENTY_API_BASE_URL/rest/healthScoreHistories" \
 **注意：** 上記の`stakeholderrole`・`influencelevel`・`recordeddate`・`healthscore`は、Company以外のオブジェクトで
 未確認のまま小文字化ルールを類推適用した表記。**実際にAPI呼び出しを行う直前に、必ず該当オブジェクトへGETリクエストを送り、
 実レスポンスのキー名を確認してから使用すること。**
+
+### 3. Notionへの成果物レポート保存（タスク完了後・STEP 2）
+
+STEP1でTwenty CRMへの登録が完了したら、続けてエージェントから受け取ったマークダウン全文を
+Notionページとして保存する。
+
+```
+notion-create-pages:
+  parent: { page_id: "3ba555500af181328ac7cccf8e0d4ec0" }
+  pages: [{
+    properties: { "title": "アカウント分析レポート：[企業名]" },
+    content: "（受け取ったマークダウン全文）\n\n---\n\n## Twenty CRM への登録内容\n- Companyレコード：[企業名]（ID: {company_id}）\n- 更新フィールド：icpscoretotal, priority, abmapproach\n- 登録日：2026-08-12"
+  }]
+```
+
+**STEP1（Twenty CRM）→STEP2（Notion）の順序を必ず守り、両方を実施する。** 片方のみで終わらせない。
 
 ---
 
@@ -281,6 +315,8 @@ curl -s -X GET "$TWENTY_API_BASE_URL/rest/companies?filter[updatedAt][lt]=2026-0
 - [ ] AbmHypothesisのstatus遷移が正しく管理されているか（active→verified→confirmed／rejected）
 - [ ] PlaybookLearning昇格時、chief-researcher-b2bの承認を得たか
 - [ ] API呼び出しでエラーが返った場合、リトライ後も失敗すれば「要確認」として記録し処理を止めているか
+- [ ] Twenty CRMへの登録（STEP1）とNotionへの成果物レポート保存（STEP2）を両方実施したか
+- [ ] 成果物レポートページの末尾に「Twenty CRM への登録内容」（オブジェクト名・レコードID）を記載したか
 - [ ] 個人情報（Person）の取り扱いがCRM上のアクセス権限設定に従っているか
 
 ## スキルの参照ルール
