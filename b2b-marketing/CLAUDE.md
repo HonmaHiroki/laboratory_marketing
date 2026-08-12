@@ -64,6 +64,26 @@ toBグループは、アカウント・ステークホルダー・商談とい�
 データモデル（Company/Person/Opportunity＋カスタムオブジェクトへのマッピング）は
 `b2b-marketing/agents/knowledge-curator-crm.md` を参照。
 
+### 成果物レポートの格納先はNotion
+
+Twenty CRMはレコード（構造化データ）の保存基盤であり、**レポートという「読み物」の保存先ではない**。
+アカウント分析レポート・ステークホルダーマップ・提案書などの成果物は、以下の3箇所に置く。
+
+| 置き場所 | 役割 | 備考 |
+|---------|------|------|
+| `b2b-marketing/accounts/*.md` | 原本（Git管理・差分追跡） | ファイル名は英数字のケバブケース |
+| Notion「⑤ toBマーケティング 成果物レポート」 | 共有・閲覧用 | `マーケティング研究`ページ配下。子ページとして1レポート1ページ |
+| Twenty CRM | 構造化データのみ | Company／Person／AbmHypothesis等のレコード |
+
+**Notionへ転記するときの注意：**
+- NotionはGFMのパイプテーブルを解釈しない。`<table fit-page-width="true" header-row="true">`＋`<tr>`／`<td>`のXML形式へ変換する
+- 複数行の引用（`>`が連続する行）は1つの引用ブロックにまとめ、改行は`<br>`にする
+- 重要な注意書きは`<callout icon="⚠️" color="yellow_bg">`に置き換えると視認性が上がる
+- コードブロックの言語は明示する（省略すると無関係な言語が自動推定される）
+- 完全なNotion記法は、Notion MCPの`notion://docs/enhanced-markdown-spec`をfetchして確認する
+
+レポート末尾には必ず「Twenty CRM への登録内容」セクションを設け、レコードIDを記載して相互参照できるようにする。
+
 ---
 
 ## 組織構造
