@@ -40,6 +40,26 @@ Twenty Cloudでは全ワークスペース共通のAPIエンドポイントにAP
 
 ---
 
+## セットアップ完了済み：実際のAPIエンドポイント名（2026年時点）
+
+Phase1〜8のセットアップが完了済み。カスタムオブジェクトのPlural nameは通常通り複数形（末尾に`s`）で登録されており、
+REST APIのエンドポイント名もTwenty標準の複数形キャメルケースになる。
+
+| カスタムオブジェクト | Plural name（登録値） | 実際のAPIエンドポイント |
+|-----------------|-------------------|------------------|
+| SalesRep | SalesReps | `/rest/salesReps` |
+| AbmHypothesis | AbmHypotheses | `/rest/abmHypotheses` |
+| PlaybookLearning | PlaybookLearnings | `/rest/playbookLearnings` |
+| HealthScoreHistory | HealthScoreHistories | `/rest/healthScoreHistories` |
+| DealOutcome | DealOutcomes | `/rest/dealOutcomes` |
+
+標準オブジェクト（Company/Person/Opportunity/Note）は変更なく、Twenty標準の複数形エンドポイント
+（`/rest/companies`・`/rest/people`・`/rest/opportunities`・`/rest/notes`）をそのまま使用する。
+
+**本エージェントがAPI呼び出しを行う際は、上記の表の実エンドポイント名を必ず使用すること。**
+
+---
+
 ## Twenty CRMデータモデル設計
 
 ### 標準オブジェクトへのマッピング

@@ -234,8 +234,8 @@ export TWENTY_API_KEY="（発行済みのAPIキー）"
 curl -s -X GET "$TWENTY_API_BASE_URL/rest/companies?limit=1" \
   -H "Authorization: Bearer $TWENTY_API_KEY"
 
-# 新規作成したカスタムオブジェクト（例：SalesRep）の一覧取得テスト
-# ※エンドポイント名はオブジェクト名の複数形・キャメルケースが基本（例：salesReps）
+# カスタムオブジェクト（例：SalesRep）の一覧取得テスト
+# ※標準的な複数形（salesReps）で登録済み
 curl -s -X GET "$TWENTY_API_BASE_URL/rest/salesReps?limit=1" \
   -H "Authorization: Bearer $TWENTY_API_KEY"
 ```
@@ -244,11 +244,18 @@ curl -s -X GET "$TWENTY_API_BASE_URL/rest/salesReps?limit=1" \
 
 ---
 
-## 完了後にお願いしたいこと
+## セットアップ完了（実施済み）
 
-全Phaseが完了したら、以下の情報を教えてください。`knowledge-curator-crm.md`に「接続済みTwenty CRMワークスペース」セクションを追加し、
-プレースホルダー（`{company_id}`等）を実際の運用に即した記載に更新します（Notionのときと同様の対応）。
+Phase 1〜8はすべて問題なく完了。実際のAPIエンドポイント名は`knowledge-curator-crm.md`の
+「セットアップ完了済み：実際のAPIエンドポイント名」セクションに確定情報として反映済み。
 
-1. 実際のワークスペースURL（`TWENTY_API_BASE_URL`）
-2. 各カスタムオブジェクトの実際のAPIエンドポイント名（例：`salesReps`、`abmHypotheses`等。Twenty CRMが自動生成する名前がこちらの想定と異なる場合があるため）
-3. Phase 1〜8ですべて完了したか、途中で仕様上作れなかったフィールド・オブジェクトがあれば教えてください（Twenty CRMのプラン・バージョンによって機能差がある可能性があるため）
+| カスタムオブジェクト | 実際のAPIエンドポイント |
+|-----------------|------------------|
+| SalesRep | `/rest/salesReps` |
+| AbmHypothesis | `/rest/abmHypotheses` |
+| PlaybookLearning | `/rest/playbookLearnings` |
+| HealthScoreHistory | `/rest/healthScoreHistories` |
+| DealOutcome | `/rest/dealOutcomes` |
+
+**次のステップ：** 初回の疎通テスト（Company作成→Person紐付け→Opportunity作成→DealOutcome記録の一連の流れ）を
+実データで1回通し、リレーションが正しく機能するか確認したのち、本稼働を開始する。
