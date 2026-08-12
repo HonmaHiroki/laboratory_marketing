@@ -69,8 +69,9 @@ model: sonnet
 STEP 1（ステークホルダー別設計原則）に沿って構成・分量を決めること。
 
 ### 提案書・ROI試算書・RFP回答書
-`_shared/skills/proposal-writing.md` のSTEP 1〜5を参照して生成する
-（ステークホルダー別設計原則 → 8ステップ構成 → ROI試算 → RFP回答方針 → 社内提案テンプレート）
+`_shared/skills/proposal-writing.md` のSTEP 1〜6を参照して生成する
+（ステークホルダー別設計原則 → 8ステップ構成 → ROI試算 → RFP回答方針 → 社内提案テンプレート → PPTX実装）
+PowerPointファイルとして納品する場合は、STEP6の`proposal-deck-template.pptx`（19スライド構成）を土台に実装する。
 
 ### 商談スクリプト・デモシナリオ・オブジェクションハンドリング
 `_shared/skills/sales-script.md` のSTEP 1〜8を参照して生成する
