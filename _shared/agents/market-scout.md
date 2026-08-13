@@ -220,6 +220,8 @@ account-intelligence-analystに引き継ぐこと。求人急増は参入タイ�
 | ⑨ | 手動 | WEBアンケートデータ | 定量的な消費者意識・行動調査 | ツール依存 | ユーザーから受け取る |
 | ⑩ | API | 求人ボックス 求人検索API | 求人ボックス保有求人の検索・取得（要審査） | 無料 | 審査通過後、契約内容による |
 | ⑪ | API | ハローワーク求人情報API | 全国のハローワーク求人情報の検索・取得 | 完全無料 | 制限あり（後述） |
+| ⑫ | API | DataForSEO | 検索ボリューム・SERP・被リンク・オンページ診断（API専業・低コスト） | 従量課金（要事前入金） | プランに応じて変動 |
+| ⑬ | API | Otterly.ai（Standard以上） | LLMO計測：ChatGPT/Google AI Overviews/Perplexity/Copilot等でのブランド言及・引用URL・センチメント | 有料（$189/月〜） | プロンプト数・プランに応じて変動 |
 
 ---
 
@@ -240,6 +242,8 @@ account-intelligence-analystに引き継ぐこと。求人急増は参入タイ�
 | 定量的な消費者意識・行動調査 | ⑨ WEBアンケートデータ | ① Google Ads API |
 | 仮説の定量的な検証 | ⑨ WEBアンケートデータ | ⑤ X API |
 | 【toB】企業の採用状況・組織課題を調査 | ⑪ ハローワーク求人情報API＋企業公式サイトのスクレイピング | ⑩ 求人ボックス 求人検索API（審査通過時） |
+| SEOサイト設計・改善のための検索ボリューム/SERP/被リンク調査 | ⑫ DataForSEO | ① Google Ads API（費用を抑えたい場合） |
+| LLMO（AI検索での言及・引用）の計測 | ⑬ Otterly.ai（Standard以上） | — |
 
 ---
 
@@ -663,6 +667,79 @@ results = reddit.subreddit('japan').search('調査キーワード', sort='top', 
 **注意事項：**
 - 大手・IT系企業のカバー率は低いため、これ単独に頼らず他の手段（スクレイピング・求人ボックスAPI）と併用する
 - 求人内容は「募集」時点の情報であり、リアルタイムの充足状況とは限らないため掲載日・受理日を必ず確認する
+
+---
+
+### API⑫：DataForSEO（検索ボリューム・SERP・被リンク・オンページ診断）
+
+**目的：** SEMrush・AhrefsのUI中心ツールと異なり、**API利用のみで完結する開発者向けSEOデータプロバイダ**。
+Google Ads API単体で必要なMCC/開発者トークン審査を経由せずに検索ボリュームを取得でき、
+被リンク・SERP・オンページ診断まで単一のAPI群でカバーする。SEMrush/Ahrefs APIと比較して
+1,000リクエストあたりの単価が3〜5分の1程度と低コストな点が最大の利点。
+
+| 項目 | 内容 |
+|------|------|
+| 認証方式 | APIキー（Basic認証：login/password） |
+| 必要なもの | DataForSEOアカウント登録・事前入金（プリペイド従量課金） |
+| 費用 | 従量課金（要事前入金。最低入金額はプランにより変動するため登録時に確認） |
+| 登録URL | https://app.dataforseo.com |
+| 主要エンドポイント | Keyword Data API／SERP API／Backlinks API／On-Page API |
+
+**取得できるデータ：**
+
+| API | 取得内容 |
+|-----|---------|
+| Keyword Data API | 検索ボリューム・CPC・競合スコア・関連キーワード |
+| SERP API | 検索結果の詳細（リッチスニペット・広告枠・ニュース枠等のSERP機能） |
+| Backlinks API | 被リンクプロファイル・アンカーテキスト・ドメインオーソリティ |
+| On-Page API | 技術的SEO課題・ページ構造・モバイル対応・Core Web Vitals |
+
+**収集ルール：**
+1. DataForSEOへアカウント登録し、必要額を事前入金する
+2. 用途に応じてKeyword Data API（検索ボリューム調査）／SERP API（競合順位調査）／Backlinks API（被リンク調査）／On-Page API（技術的SEO診断）を使い分ける
+3. `_shared/skills/site-design.md`のSEO設計・改善提案の裏付けデータとして、施策前後の検索ボリューム・SERP順位の変化を定点観測する
+4. MCP対応が確認されているため、Claude Code等のエージェント環境から直接クエリする構成も検討可能
+
+**注意事項：**
+- 従量課金のため、大量データ取得前に想定コストを見積もる
+- Google Ads APIやGoogle Search Console API（無料・既存API①③）で代替できる範囲は無料APIを優先し、
+  DataForSEOは「被リンク調査」「大規模なSERP機能分析」等、無料APIでカバーできない領域を補う位置づけとする
+
+---
+
+### API⑬：Otterly.ai（LLMO：AI検索でのブランド言及・引用計測）
+
+**目的：** ChatGPT・Google AI Overviews・Perplexity・Microsoft Copilot等の生成AIが回答する際に、
+自社ブランド・サイトがどのように引用・言及されているかを定点観測する。従来のSEO順位計測（検索結果ページの順位）
+とは異なり、「AIの回答の中に自社が登場するか」という**LLMO（Large Language Model Optimization）**の観点を計測する。
+
+| 項目 | 内容 |
+|------|------|
+| 認証方式 | APIキー（管理画面から発行） |
+| 必要なもの | Otterly.ai **Standardプラン以上**の契約（月額$189〜） |
+| 費用 | Standard $189/月（100プロンプト・API/MCP込み）／Premium $489/月（400プロンプト） |
+| **重要な注意** | **入門のLiteプラン（$29/月）にはAPI/MCPが含まれない。** API連携が目的の場合は必ずStandard以上を契約する |
+| 登録URL | https://otterly.ai |
+| 対応エンジン（標準） | ChatGPT・Google AI Overviews・Perplexity・Microsoft Copilot |
+| 対応エンジン（追加課金） | Google AI Mode・Gemini・Claude（各$9〜$149/月・プランにより変動） |
+
+**取得できるデータ：** 設定したプロンプトへのAI回答内容・ブランド言及の有無・引用URL・センチメント・競合比較・
+GEO監査（AIクローラーがサイトを正しく読み取れているかのスコア）
+
+**収集ルール：**
+1. 自社ブランド・商品に関連する重要プロンプト（顧客が生成AIに投げかけそうな質問）を設計する。
+   `_shared/skills/insight-structure.md`のCEP（カテゴリーエントリーポイント）と対応させて設計すると精度が上がる
+2. 毎日自動実行される標準4エンジンでの結果を取得し、自社ブランドの言及有無・引用URL・センチメントを記録する
+3. Google AI Mode・Gemini・Claudeを追加で計測する場合はプラン・予算に応じてアドオンを検討する
+4. `_shared/skills/site-design.md`のLLMO設計（構造化データ・FAQPage等）の効果測定に用いる：
+   施策前後でのAI回答内の引用率・言及率の変化を追う
+
+**注意事項：**
+- プロンプト数に応じた従量的な価格設計のため、監視したいプロンプト数を事前に精査してからプランを選定する
+  （Standard=100プロンプトを超える場合は追加100プロンプトあたり$99/月、またはPremiumへの切り替えを検討）
+- 「$29から使える」という訴求を見かけてもAPI連携目的では実質的な最低ラインは$189/月である点を混同しない
+- 生成AIの回答は再現性が完全ではない（同じプロンプトでも日によって回答が変動する）ため、単発の結果で判断せず、
+  複数回・複数日の傾向で評価する
 
 ---
 
