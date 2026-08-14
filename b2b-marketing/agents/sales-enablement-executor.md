@@ -26,6 +26,7 @@ model: sonnet
 
 | 素材 | 内容 | スキル参照 |
 |-----|------|---------|
+| **仮説ヒアリングシート** | ファクトファインディング用の軽量資料（1〜2ページ）。事業理解・現状・理想・問題の仮説確認 | `fact-finding.md` |
 | **提案書** | 課題→解決策→ROI→導入計画の構成 | `proposal-writing.md` |
 | **エグゼクティブサマリー** | 経営層向け1〜2ページ。結論→根拠の順 | `proposal-writing.md` |
 | **ROI試算書** | 導入コスト・削減効果・回収期間の数値化 | `proposal-writing.md` |
@@ -67,6 +68,12 @@ model: sonnet
 
 生成前に必ず対象ステークホルダーの役職を確認し、`_shared/skills/proposal-writing.md` の
 STEP 1（ステークホルダー別設計原則）に沿って構成・分量を決めること。
+
+### 仮説ヒアリングシート（ファクトファインディング用）
+`_shared/skills/fact-finding.md` のSTEP 1〜5を参照して生成する
+（仮説の事前設計 → 軽量シート構成 → 合意/共感の質問設計 → 議事メモ → オーダーコントロールへの橋渡し）
+**この段階では解決策・ROI試算・PPTX実装は行わない。** `proposal-writing.md`との違いを混同しないこと
+（詳細は`fact-finding.md`冒頭の「このスキルの位置づけ」を参照）。
 
 ### 提案書・ROI試算書・RFP回答書
 `_shared/skills/proposal-writing.md` のSTEP 1〜6を参照して生成する
@@ -137,6 +144,7 @@ PowerPointファイルとして納品する場合は、STEP6の`proposal-deck-te
 | スキル | 参照タイミング |
 |-------|------------|
 | `_shared/skills/consulting-sales-process.md` | アカウント全体のセールスプロセスを設計するとき／アウトバウンド接触の原則を確認するとき（必須） |
+| `_shared/skills/fact-finding.md` | ファクトファインディング（③工程）の仮説ヒアリングシートを生成するとき（必須） |
 | `_shared/skills/proposal-writing.md` | 提案書・ROI試算書・RFP回答書・エグゼクティブサマリー・社内提案テンプレートを生成するとき（必須） |
 | `_shared/skills/sales-script.md` | 商談スクリプト・デモシナリオ・オブジェクションハンドリングを生成するとき |
 | `_shared/skills/sales-rep-matching.md` | 商談スクリプトを担当営業のタイプに合わせて調整するとき（必須） |
@@ -152,6 +160,10 @@ PowerPointファイルとして納品する場合は、STEP6の`proposal-deck-te
 - [ ] 顧客固有の課題・数値が入っているか（テンプレートのままでないか）
 - [ ] 同業他社の事例が記載されているか
 
+**工程の混同防止チェック**
+- [ ] ファクトファインディング段階（③）で、解決策・ROI試算・PPTX実装を先取りしていないか
+- [ ] 仮説ヒアリングシートが1〜2ページの軽量構成を超えて肥大化していないか
+
 **ステークホルダー適合チェック**
 - [ ] 対象ステークホルダーの役職に適した言語・詳細度になっているか
 - [ ] 経営層向けは1〜2ページ以内に収まっているか
@@ -162,5 +174,6 @@ PowerPointファイルとして納品する場合は、STEP6の`proposal-deck-te
 - [ ] 回収期間が明記されているか
 
 **スキル参照チェック**
+- [ ] `_shared/skills/fact-finding.md` を参照して仮説ヒアリングシートを生成したか
 - [ ] `_shared/skills/proposal-writing.md` を参照して提案書・ROI試算書を生成したか
 - [ ] knowledge-curator-crm（Twenty CRM）への保存依頼を行ったか
