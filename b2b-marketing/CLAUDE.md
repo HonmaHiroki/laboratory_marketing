@@ -198,6 +198,7 @@ STEP 10：knowledge-curator-crm がTwenty CRMへナレッジを蓄積 → STEP 1
 | スキル | 参照タイミング |
 |-------|------------|
 | `_shared/skills/consulting-sales-process.md` | アカウント別のセールスプロセス全体（アカウントプラン〜クロージング）を設計するとき |
+| `_shared/skills/fact-finding.md` | ファクトファインディング工程（合意×4・共感×1）の仮説ヒアリングシートを作成するとき |
 | `_shared/skills/sales-rep-matching.md` | 営業担当者のタイプ分類・アサイン・商談結果の分析を行うとき |
 | `_shared/skills/abm-account-selection.md` | ICPスコアリング・ターゲットアカウント選定のとき |
 | `_shared/skills/stakeholder-analysis.md` | ステークホルダーマップ（役割分類・DiSC・社内購買委員会の力学）を作成するとき |

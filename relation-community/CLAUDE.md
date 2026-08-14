@@ -8,11 +8,6 @@
 # ※knowledge-curatorはNotion連携版（4データベース：Market Insights/Hypothesis Log/Campaign Results/Learnings）です。
 # _shared/agents/ を参照してください。
 
-# ★重要ルール：成果物をGitHubにコミットしない
-# このリポジトリ（GitHub）は組織のルール（CLAUDE.md・agents・skills）のみを管理する。
-# 調査レポート・分析結果・施策提案書などの個別成果物は、reports/等のディレクトリを作らず
-# 必ずNotion（①〜④ toCマーケティング 成果物レポート配下のページ／4データベース）へ格納すること。
-
 ---
 
 ## 組織目的

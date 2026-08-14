@@ -79,6 +79,7 @@ toBグループはtoCの循環ループとは別に、法人アカウント単�
 | toB専用 | `proposal-writing.md` | 提案書・ROI試算書・RFP回答書設計 |
 | toB専用 | `customer-success.md` | ヘルススコア・NRR・チャーン評価・QBR設計 |
 | toB専用 | `consulting-sales-process.md` | コンサルティングセールスプロセス（7工程・DiSC別対応の前提・スマートアウトバウンド） |
+| toB専用 | `fact-finding.md` | ファクトファインディング（仮説確認・軽量ヒアリングシート・4合意/1共感の質問設計） |
 | toB専用 | `sales-rep-matching.md` | 営業担当者タイプ分類・アサイン最適化・結果分析（DiSC相性マトリクス・勝率分析） |
 | toC専用（④） | `fandom-tieup.md` | IP協業・ファンダムタイアップ設計（IP選定8ヶ条・ターゲティング4象限・伝搬設計） |
 | toC専用（④） | `loyalty-research.md` | ロイヤリティ定量化調査（サービスサイエンス・6指標・顧客体験洗い出し・収益貢献評価） |
@@ -89,13 +90,6 @@ toBグループはtoCの循環ループとは別に、法人アカウント単�
 - toCグループ①〜④：Notion（`knowledge-curator.md`がMCP経由で読み書き。成果物レポート＝ページ、構造化レポート＝4データベース：Market Insights／Hypothesis Log／Campaign Results／Learnings）
 - toBグループ⑤：Twenty CRM（`knowledge-curator-crm.md`がAPI経由で読み書き。Company/Person/Opportunity＋カスタムオブジェクト）
 - リポジトリ内の`knowledge-base/`ディレクトリは廃止済み（過去データの参照が必要な場合はGit履歴を参照）
-
-**★GitHubリポジトリに含めてよいものの原則**
-このリポジトリ（GitHub）は組織のルール（`CLAUDE.md`・`agents/`・`_shared/skills/`等のテンプレート／手順書）のみを管理する場所であり、**個別の調査結果・分析レポート・施策提案書などの成果物（アウトプット）は一切コミットしない**。
-- ✅ コミットしてよいもの：`CLAUDE.md`、`agents/*.md`、`_shared/skills/*.md`など、恒久的に使い回すルール・テンプレート・手順
-- ❌ コミットしないもの：特定企業・案件を調査したレポート、分析結果、施策設計書、訪問先向け資料などの成果物本文
-- 成果物は必ずNotion（`①〜④ toCマーケティング 成果物レポート`配下のページ、および4データベース）へ格納する。GitHub上に`reports/`等のディレクトリを作らない
-- 誤って成果物をコミットした場合は同じPR/コミットで取り消し、Notionへの格納のみを正とする
 
 ## 新グループの追加手順
 
