@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Bタイプ広告LP デザイン｜比較検討・不安解消型（社内レビュー用モックアップ）</title>
+<title>Bランク向け広告LP デザイン｜利用実態起点・実質負担最適化（社内レビュー用モックアップ）</title>
 <style>
 /* =========================================================
    BタイプLP／デザイントークン
@@ -98,6 +98,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   transition:transform .12s ease, box-shadow .12s ease;
 }
 .btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--red-dark),0 5px 14px rgba(230,0,39,.3)}
+@media(max-width:420px){.btn{font-size:15.5px;padding:14px 16px;gap:7px}}
 .btn__arrow{
   flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.22);
   display:grid;place-items:center;font-size:10px;line-height:1;
@@ -168,210 +169,256 @@ button{font:inherit;color:inherit;cursor:pointer}
 .rev__log li{padding:1px 0}
 @media print{.rev,.rev-toggle,.sticky,.mock-banner{display:none!important}}
 
+
 /* =========================================================
-   キャンペーンLP（Bタイプ）固有スタイル
+   Bランク キャンペーンLP 固有スタイル
+   設計根拠：テレマN1分析（成約者52人）／Bランク提案コンセプト
+   「使っているものを起点に、実質負担で納得させる提案」
+   KV参考：ドコモMAX「人生にもっとエンタメを！」ゴールドKV
    ========================================================= */
 
-/* ---------- ① ファーストビュー ---------- */
+/* ---------- ① ファーストビュー（KVのトーンに合わせたゴールド） ---------- */
 #section-b-fv{
   background:
-    radial-gradient(900px 420px at 82% -12%, rgba(230,0,39,.30), transparent 62%),
-    radial-gradient(700px 340px at 8% 108%, rgba(255,217,0,.10), transparent 60%),
-    #000;
-  padding:26px 0 34px;border-top:none;
+    radial-gradient(760px 420px at 50% -14%, rgba(255,206,90,.55), transparent 62%),
+    radial-gradient(520px 300px at 12% 24%, rgba(255,132,40,.22), transparent 62%),
+    radial-gradient(520px 300px at 90% 34%, rgba(255,90,140,.18), transparent 62%),
+    linear-gradient(180deg,#2A1B06 0%, #17100A 48%, #000 100%);
+  padding:24px 0 34px;border-top:none;position:relative;overflow:hidden;
 }
-.fv__tag{
-  display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;letter-spacing:.05em;
-  color:var(--gold);background:rgba(255,217,0,.08);border:1px solid var(--gold-2);
-  border-radius:999px;padding:5px 13px;margin-bottom:14px;
+/* 紙吹雪の質感（KVの雰囲気をCSSで代替。実写KVに差し替え可） */
+#section-b-fv::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    radial-gradient(2px 5px at 12% 18%, rgba(255,214,120,.9), transparent 60%),
+    radial-gradient(2px 4px at 76% 12%, rgba(255,175,90,.8), transparent 60%),
+    radial-gradient(3px 6px at 34% 42%, rgba(255,235,180,.55), transparent 60%),
+    radial-gradient(2px 5px at 88% 56%, rgba(255,200,110,.6), transparent 60%),
+    radial-gradient(2px 4px at 22% 68%, rgba(255,220,150,.45), transparent 60%),
+    radial-gradient(3px 5px at 62% 78%, rgba(255,190,100,.4), transparent 60%);
 }
-.fv__h1{font-size:27px;line-height:1.42;font-weight:900;letter-spacing:-.01em}
-.fv__h1 .hl{
-  color:var(--gold);
-  background:linear-gradient(transparent 80%, rgba(255,217,0,.30) 0);
-  padding-inline:2px;
-}
-.fv__sub{margin-top:14px;font-size:14.5px;line-height:1.85;color:var(--ink-2)}
+#section-b-fv > .wrap{position:relative;z-index:1}
 
-/* 3,000pt バッジ：黒カード＋赤枠＋ゴールド数字（参考FVの価格カード相当） */
-.fv__badge{
-  display:flex;align-items:center;gap:14px;margin-top:20px;padding:15px 16px;
-  background:linear-gradient(160deg,#1A0208,#0A0A0A);
-  border:2px solid var(--red);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);
+/* KVロックアップ：プランロゴ＋オファー帯 */
+.kv{margin:0 auto 20px;max-width:520px;text-align:center}
+.kv__eyebrow{
+  display:inline-block;font-size:11.5px;font-weight:900;letter-spacing:.10em;color:#FFE9B0;
+  text-shadow:0 1px 3px rgba(0,0,0,.7);margin-bottom:7px;
 }
-.fv__badge-mark{
-  flex:0 0 auto;width:66px;height:66px;border-radius:50%;
-  background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;
-  display:grid;place-content:center;text-align:center;line-height:1.05;font-weight:900;
-  box-shadow:0 0 0 3px rgba(230,0,39,.22);
+.kv__plans{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
+.kv__plan{
+  display:inline-flex;align-items:center;gap:5px;font-size:19px;font-weight:900;color:#fff;
+  letter-spacing:-.01em;text-shadow:0 2px 6px rgba(0,0,0,.6);
 }
-.fv__badge-mark b{display:block;font-size:21px;letter-spacing:-.02em}
-.fv__badge-mark small{font-size:9px;letter-spacing:.04em}
-.fv__badge-txt{font-size:13px;line-height:1.65;color:var(--ink-2)}
-.fv__badge-txt strong{display:inline-block;color:var(--gold);font-size:15.5px;font-weight:900}
+.kv__plan b{
+  font-size:14px;font-weight:900;color:#fff;border-radius:6px;padding:3px 8px;letter-spacing:.01em;
+  box-shadow:0 2px 8px rgba(0,0,0,.35);
+}
+.kv__plan--max b{background:#E4007F}
+.kv__plan--poi b{background:linear-gradient(135deg,#FFD34D,#E0A400);color:#2A1B06}
+.kv__band{
+  margin-top:14px;background:rgba(0,0,0,.55);border:1px solid rgba(255,217,0,.45);
+  border-radius:12px;padding:11px 13px;backdrop-filter:blur(3px);
+}
+.kv__band p{font-size:13px;font-weight:900;line-height:1.6;color:#fff}
+.kv__band .em{color:var(--gold);font-size:15px}
+.kv__chips{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:8px}
+.kv__chips span{
+  font-size:10.5px;font-weight:800;color:#fff;background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.28);border-radius:5px;padding:3px 8px;
+}
+.kv__note{margin-top:8px;font-size:9.5px;line-height:1.6;color:rgba(255,255,255,.62)}
+
+.fv__tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;letter-spacing:.05em;color:#2A1B06;background:linear-gradient(135deg,#FFD34D,#E0A400);border-radius:999px;padding:5px 13px;margin-bottom:14px}
+/* KV準拠：白の袋文字（縁取り＋影） */
+.fv__h1{
+  font-size:28px;line-height:1.4;font-weight:900;letter-spacing:-.015em;color:#fff;
+  paint-order:stroke fill;-webkit-text-stroke:5px rgba(42,20,4,.55);
+  text-shadow:0 3px 12px rgba(0,0,0,.55);
+}
+.fv__h1 .hl{color:var(--gold)}
+.fv__sub{margin-top:14px;font-size:14.5px;line-height:1.85;color:#E6DFD2;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.fv__sub strong{color:#fff}
 .fv__reassure{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-.fv__reassure li{font-size:11.5px;font-weight:700;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:5px 10px}
-.fv__visual{margin-top:26px}
+.fv__reassure li{font-size:11.5px;font-weight:700;color:#FFF0CC;background:rgba(0,0,0,.42);border:1px solid rgba(255,217,0,.35);border-radius:6px;padding:5px 10px}
+.fv__visual{margin-top:24px}
 
-/* FVビジュアル：スマホモック（画面内も黒基調に統一） */
-.phone{position:relative;width:214px;margin:0 auto;padding:10px;background:linear-gradient(160deg,#3A3A3A,#151515);border-radius:30px;box-shadow:var(--shadow-lg)}
-.phone::before{content:"";position:absolute;top:16px;left:50%;transform:translateX(-50%);width:56px;height:5px;border-radius:99px;background:rgba(255,255,255,.28)}
-.phone__screen{background:#0A0A0A;border-radius:22px;padding:26px 12px 14px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
-.mini-card{border:1px solid var(--line);border-radius:10px;padding:9px 10px;margin-bottom:8px;background:#151515}
-.mini-card--now{opacity:.62}
-.mini-card--new{border-color:var(--gold-2);background:linear-gradient(160deg,rgba(255,217,0,.10),#151515)}
-.mini-card__label{font-size:9px;font-weight:800;color:var(--ink-3);letter-spacing:.04em}
-.mini-card--new .mini-card__label{color:var(--gold)}
-.mini-card__row{display:flex;align-items:baseline;justify-content:space-between;margin-top:3px}
-.mini-card__val{font-size:15px;font-weight:900;color:var(--ink)}
-.mini-card__unit{font-size:9px;color:var(--ink-3)}
-.mini-bar{height:6px;border-radius:99px;background:rgba(255,255,255,.12);margin-top:6px;overflow:hidden}
-.mini-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),#F0B400)}
-.mini-chips{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
-.mini-chips span{font-size:8.5px;font-weight:700;color:var(--gold);background:rgba(255,217,0,.10);border:1px solid var(--gold-2);border-radius:4px;padding:3px 5px}
-.mini-pt{margin-top:9px;background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;border-radius:8px;padding:7px;text-align:center;font-size:10px;font-weight:900;line-height:1.35}
+/* 損失のコストの式（テレマ「問題の物語」の数値化） */
+.formula{background:rgba(0,0,0,.62);border:1px solid rgba(255,217,0,.35);border-radius:var(--radius-lg);padding:18px 16px;box-shadow:var(--shadow-lg);backdrop-filter:blur(3px)}
+.formula__t{font-size:11.5px;font-weight:900;color:var(--gold);letter-spacing:.06em;text-align:center;margin-bottom:14px}
+.formula__rows{display:grid;gap:7px}
+.formula__row{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:9px;padding:9px 11px}
+.formula__op{flex:0 0 auto;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-size:13px;font-weight:900}
+.formula__op--plus{background:rgba(255,255,255,.16);color:#E6DFD2}
+.formula__op--minus{background:rgba(62,213,152,.22);color:#5FE3AE}
+.formula__lb{font-size:12.5px;font-weight:700;line-height:1.5;color:#E6DFD2}
+.formula__eq{margin-top:11px;padding-top:11px;border-top:1px dashed rgba(255,255,255,.2);text-align:center}
+.formula__eq b{display:block;font-size:15px;font-weight:900;color:var(--gold)}
+.formula__eq span{font-size:11.5px;color:rgba(255,255,255,.55)}
 
 @media(min-width:900px){
-  #section-b-fv{padding:52px 0 56px}
-  .fv__grid{display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:center}
-  .fv__h1{font-size:40px}
+  #section-b-fv{padding:44px 0 56px}
+  .kv{max-width:none;margin-bottom:26px}
+  .kv__plan{font-size:23px}
+  .kv__plan b{font-size:16px}
+  .fv__grid{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center}
+  .fv__h1{font-size:42px;-webkit-text-stroke-width:6px}
   .fv__sub{font-size:16px}
   .fv__visual{margin-top:0}
-  .phone{width:290px}
   .fv .cta-block{max-width:470px}
 }
 
-/* ---------- ② 共感導入 ---------- */
-.worry{display:grid;gap:10px}
-.worry li{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
-.worry__box{flex:0 0 auto;width:23px;height:23px;border:2px solid var(--gold);border-radius:5px;display:grid;place-items:center;color:var(--gold);font-size:13px;font-weight:900;margin-top:2px}
-.worry__t{font-weight:800;font-size:15px;line-height:1.6}
-.worry__d{font-size:13px;color:var(--ink-2);margin-top:2px}
-@media(min-width:768px){.worry{grid-template-columns:1fr 1fr}}
-
-/* ---------- ③ 問題の深刻化 ---------- */
-.vs{display:grid;gap:12px}
-.vs__col{border-radius:var(--radius-lg);padding:18px;border:1px solid var(--line);background:var(--surface)}
-.vs__col--now{opacity:.75}
-.vs__col--new{border:2px solid var(--gold-2);background:linear-gradient(180deg,rgba(255,217,0,.06),var(--surface))}
-.vs__head{display:flex;align-items:center;gap:8px;font-weight:900;font-size:14px;margin-bottom:12px}
-.vs__col--now .vs__head{color:var(--ink-3)}
-.vs__col--new .vs__head{color:var(--gold)}
-.vs__pill{font-size:10px;font-weight:900;padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.10);color:var(--ink-2)}
-.vs__col--new .vs__pill{background:var(--gold);color:#241E00}
-.vs__list li{display:flex;gap:9px;font-size:14px;line-height:1.7;padding:7px 0;border-bottom:1px dashed var(--line)}
-.vs__list li:last-child{border-bottom:none}
-.vs__mark{flex:0 0 auto;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:900;margin-top:3px}
-.vs__mark--x{background:rgba(255,255,255,.10);color:#9AA1A8}
-.vs__mark--o{background:rgba(62,213,152,.16);color:var(--ok)}
-@media(min-width:768px){.vs{grid-template-columns:1fr 1fr;gap:18px}}
-
-/* ---------- ④ 解決策：赤い丸数字ステップ（参考サイト「お申込み手続き」相当） ---------- */
-.steps{counter-reset:st;display:grid;gap:12px}
-.steps li{
-  counter-increment:st;position:relative;background:var(--surface);border:1px solid var(--line);
-  border-radius:var(--radius);padding:16px 16px 16px 62px;
+/* ---------- ② エンタメ問診（サービス選択） ---------- */
+.survey{background:linear-gradient(180deg,rgba(255,217,0,.07),rgba(255,217,0,.015));border:1.5px solid var(--gold-2);border-radius:var(--radius-lg);padding:20px 16px;box-shadow:var(--shadow-lg)}
+.survey__h{font-size:17px;font-weight:900;color:var(--gold);text-align:center}
+.survey__d{font-size:12.5px;color:var(--ink-2);margin-top:8px;text-align:center}
+.survey__grp{margin-top:20px}
+.survey__grp > p{font-size:13px;font-weight:900;margin-bottom:4px}
+.survey__grp > .survey__note{font-size:11.5px;font-weight:400;color:var(--ink-3);margin-bottom:9px;line-height:1.6}
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+.svc button{
+  display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-height:56px;padding:9px 11px;
+  background:var(--surface-2);border:1.5px solid var(--line);border-radius:10px;
+  font-size:13px;font-weight:800;color:var(--ink);text-align:left;transition:all .14s ease;
 }
-.steps li::before{
-  content:counter(st);position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:50%;
-  background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;
-  display:grid;place-items:center;font-weight:900;font-size:14px;
-}
-.steps__t{font-weight:900;font-size:15px}
-.steps__d{font-size:13.5px;color:var(--ink-2);margin-top:3px}
-@media(min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
+.svc button small{font-size:10.5px;font-weight:600;color:var(--ink-3)}
+.svc button[aria-pressed="true"]{border-color:var(--gold);background:rgba(255,217,0,.14);color:var(--gold)}
+.svc button[aria-pressed="true"] small{color:var(--gold-2)}
+.svc--reward button[aria-pressed="true"]{border-color:var(--red-2);background:rgba(255,61,110,.16);color:#FF8FAC}
+.svc--out button[aria-pressed="true"]{border-color:var(--ink-3);background:rgba(255,255,255,.09);color:var(--ink)}
+@media(min-width:768px){.svc{grid-template-columns:repeat(4,1fr)}}
 
-/* ---------- 対象者チェック：ゴールド枠ボックス ---------- */
-.check{
-  background:linear-gradient(180deg,rgba(255,217,0,.07),rgba(255,217,0,.015));
-  border:1.5px solid var(--gold-2);border-radius:var(--radius-lg);padding:20px 16px;box-shadow:var(--shadow-lg);
-}
-.check__h{font-size:17px;font-weight:900;color:var(--gold);display:flex;gap:8px;align-items:center;justify-content:center;text-align:center}
-.check__d{font-size:12.5px;color:var(--ink-2);margin-top:8px;text-align:center}
-.check__q{margin-top:18px}
-.check__q > p{font-size:14px;font-weight:800;margin-bottom:8px}
-.opts{display:flex;flex-wrap:wrap;gap:8px}
-.opts button{
-  flex:1 1 auto;min-width:98px;min-height:48px;padding:8px 14px;background:var(--surface-2);
-  border:1.5px solid var(--line);border-radius:10px;font-size:13.5px;font-weight:700;color:var(--ink-2);
-  transition:all .15s ease;
-}
-.opts button[aria-pressed="true"]{border-color:var(--red);background:linear-gradient(135deg,rgba(230,0,39,.9),rgba(255,61,110,.85));color:#fff}
-.check__result{margin-top:18px;padding:16px;border-radius:var(--radius);font-size:14px;line-height:1.7;display:none}
-.check__result.is-on{display:block}
-.check__result--ok{background:rgba(62,213,152,.10);border:1px solid rgba(62,213,152,.45)}
-.check__result--maybe{background:var(--gold-soft);border:1px solid var(--gold-2)}
-.check__result--ng{background:var(--surface);border:1px solid var(--line)}
-.check__result b{display:block;font-size:15px;margin-bottom:4px}
-.check__result--ok b{color:var(--ok)}
-.check__result--maybe b{color:var(--gold)}
-.check__progress{height:4px;background:rgba(255,255,255,.12);border-radius:99px;margin-top:16px;overflow:hidden}
-.check__progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--red-2));border-radius:99px;transition:width .3s ease}
+.survey__ctx{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}
+.survey__ctx button{min-height:52px;padding:8px;background:var(--surface-2);border:1.5px solid var(--line);border-radius:10px;font-size:12.5px;font-weight:800;color:var(--ink-2);transition:all .14s ease}
+.survey__ctx button[aria-pressed="true"]{border-color:var(--gold);background:rgba(255,217,0,.12);color:var(--gold)}
 
-/* ---------- ⑤ ベネフィット ---------- */
-.benefits{display:grid;gap:12px}
-.bcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:18px;position:relative;overflow:hidden}
-.bcard::after{content:"";position:absolute;inset:auto -24px -34px auto;width:96px;height:96px;border-radius:50%;background:rgba(255,217,0,.05)}
-.bcard__ico{position:relative;z-index:1;width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;display:grid;place-items:center;margin-bottom:11px}
-.bcard__ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.bcard__t{position:relative;z-index:1;font-size:16px;font-weight:900;line-height:1.5}
-.bcard__d{position:relative;z-index:1;font-size:13.5px;color:var(--ink-2);margin-top:6px}
-.bcard__link{position:relative;z-index:1;display:inline-block;margin-top:10px;font-size:12.5px;font-weight:800;color:var(--gold)}
-@media(min-width:768px){.benefits{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.benefits{grid-template-columns:repeat(4,1fr)}}
+/* ---------- ③ 損失のコスト・見落とし ---------- */
+.miss{display:grid;gap:10px}
+.miss li{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.miss__n{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.10);color:var(--ink-3);display:grid;place-items:center;font-size:11px;font-weight:900;margin-top:2px}
+.miss__t{font-weight:800;font-size:14.5px;line-height:1.6}
+.miss__d{font-size:13px;color:var(--ink-2);margin-top:3px}
+@media(min-width:768px){.miss{grid-template-columns:1fr 1fr}}
 
-/* ---------- ⑥ フロー ---------- */
-.flow{display:grid;gap:8px}
-.flow li{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:10px;padding:14px 16px}
-.flow__n{flex:0 0 auto;font-size:11px;font-weight:900;color:#fff;background:var(--red);border-radius:6px;padding:3px 9px;margin-top:3px}
-.flow__t{font-weight:900;font-size:14.5px}
-.flow__d{font-size:13px;color:var(--ink-2);margin-top:2px}
-@media(min-width:900px){.flow{grid-template-columns:repeat(4,1fr);gap:12px}.flow li{flex-direction:column;border-left:1px solid var(--line);border-top:4px solid var(--red)}}
+/* ---------- ④ 実質負担シミュレーション ---------- */
+.sim{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:20px 16px}
+.sim__step{margin-bottom:20px}
+.sim__lb{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:900;margin-bottom:9px}
+.sim__lb i{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;display:grid;place-items:center;font-size:11px;font-style:normal;font-weight:900}
+.sim__hint{font-size:11.5px;color:var(--ink-3);margin-bottom:9px;line-height:1.6}
+.sim__field{display:flex;align-items:center;gap:10px;background:var(--surface-2);border:1.5px solid var(--line);border-radius:10px;padding:10px 13px}
+.sim__field:focus-within{border-color:var(--gold)}
+.sim__field input{flex:1;min-width:0;background:none;border:none;color:var(--ink);font-size:19px;font-weight:900;text-align:right;font-variant-numeric:tabular-nums}
+.sim__field input:focus{outline:none}
+.sim__field span{flex:0 0 auto;font-size:12.5px;color:var(--ink-3);font-weight:700}
+.disc{display:grid;gap:7px}
+.disc label{display:flex;align-items:center;gap:10px;background:var(--surface-2);border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;cursor:pointer;transition:all .14s ease}
+.disc label:has(input:checked){border-color:var(--gold);background:rgba(255,217,0,.10)}
+.disc input{width:18px;height:18px;accent-color:var(--gold);flex:0 0 auto}
+.disc .n{flex:1;font-size:13px;font-weight:700;line-height:1.45}
+.disc .v{flex:0 0 auto;font-size:12.5px;font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums}
+@media(min-width:768px){.disc{grid-template-columns:1fr 1fr}}
 
-/* ---------- ⑦ 社会的証明 ---------- */
-.proof{display:grid;gap:12px}
-.pcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
-.pcard__h{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:900;color:var(--ink);margin-bottom:8px}
-.pcard__h svg{width:18px;height:18px;fill:none;stroke:var(--gold);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.pcard ul li{font-size:13.5px;line-height:1.75;padding-left:16px;position:relative;color:var(--ink-2)}
-.pcard ul li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
-.pcard--warn{background:var(--gold-soft);border-color:var(--gold-2)}
-.pcard--warn .pcard__h{color:var(--gold)}
-@media(min-width:900px){.proof{grid-template-columns:repeat(3,1fr)}}
+/* 結果パネル：白の島 */
+.res{margin-top:22px;background:var(--panel);color:var(--panel-ink);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+.res__head{padding:12px 16px;background:linear-gradient(135deg,var(--red),var(--red-2));color:#fff;font-size:14px;font-weight:900;text-align:center}
+.res__body{padding:16px}
+.res__row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px dashed var(--panel-line);font-size:13.5px}
+.res__row .k{color:#5A6169;font-weight:700;flex:1}
+.res__row .k small{display:block;font-size:11px;font-weight:400;color:#8C939A;line-height:1.5;margin-top:2px}
+.res__row .v{flex:0 0 auto;font-size:16px;font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
+.res__row .v.minus{color:#0B7B5A}
+.res__total{margin-top:14px;padding:16px;border-radius:12px;border:2px solid var(--panel-line);background:#F4F7F9;text-align:center}
+.res__total.is-good{background:#E9F7F1;border-color:#7CCFAE}
+.res__total.is-mid{background:#FFF8E4;border-color:#E8C468}
+.res__total.is-up{background:#F4F7F9;border-color:#B9C4CD}
+.res__total .lb{font-size:12px;font-weight:900;color:#5A6169;letter-spacing:.04em}
+.res__total .num{display:block;font-size:38px;font-weight:900;letter-spacing:-.03em;line-height:1.15;margin:4px 0;font-variant-numeric:tabular-nums}
+.res__total.is-good .num{color:#0B7B5A}
+.res__total.is-mid .num{color:#9A6B00}
+.res__total.is-up .num{color:var(--panel-ink)}
+.res__total .num small{font-size:16px;font-weight:900}
+.res__total .msg{font-size:13px;line-height:1.75;color:#3C444C;text-align:left;margin-top:10px}
+.res__total .msg b{color:var(--red)}
+.res__note{margin-top:12px;font-size:11px;line-height:1.7;color:#7C848C}
+.res .verify{border-bottom-color:#B98900;background:rgba(255,196,0,.22)}
+.res__empty{padding:26px 16px;text-align:center;color:#7C848C;font-size:13.5px;line-height:1.8}
 
-/* ---------- ⑧ プラン詳細：白パネル（参考サイトの料金プランブロック相当） ---------- */
+/* ---------- ⑤ 3つの価値の違い ---------- */
+.three{display:grid;gap:12px}
+.tcard{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--line-strong);border-radius:var(--radius-lg);padding:18px}
+.tcard--perk{border-top-color:var(--gold)}
+.tcard--reward{border-top-color:var(--red-2)}
+.tcard--out{border-top-color:var(--ink-3)}
+.tcard__lb{display:inline-block;font-size:10.5px;font-weight:900;border-radius:999px;padding:3px 11px;margin-bottom:10px}
+.tcard--perk .tcard__lb{background:var(--gold);color:#241E00}
+.tcard--reward .tcard__lb{background:var(--red-2);color:#fff}
+.tcard--out .tcard__lb{background:rgba(255,255,255,.14);color:var(--ink-2)}
+.tcard__t{font-size:16.5px;font-weight:900;line-height:1.5}
+.tcard__svc{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.tcard__svc span{font-size:11px;font-weight:700;color:var(--ink-2);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:5px;padding:3px 7px}
+.tcard__d{font-size:13.5px;color:var(--ink-2);margin-top:11px;line-height:1.8}
+.tcard__key{margin-top:12px;padding:11px 13px;border-radius:9px;background:rgba(255,255,255,.05);border-left:3px solid var(--gold);font-size:13px;font-weight:800;line-height:1.7}
+.tcard--reward .tcard__key{border-left-color:var(--red-2)}
+.tcard--out .tcard__key{border-left-color:var(--ink-3)}
+@media(min-width:900px){.three{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- ⑥ One to One オプション ---------- */
+.opt{display:grid;gap:12px}
+.ocard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:18px;transition:border-color .2s ease,box-shadow .2s ease}
+.ocard.is-hit{border-color:var(--gold-2);box-shadow:0 0 0 1px var(--gold-2),var(--shadow);background:linear-gradient(180deg,rgba(255,217,0,.06),var(--surface))}
+.ocard__flag{display:none;font-size:10.5px;font-weight:900;color:#241E00;background:var(--gold);border-radius:999px;padding:3px 11px;margin-bottom:9px}
+.ocard.is-hit .ocard__flag{display:inline-block}
+.ocard__ico{width:42px;height:42px;border-radius:11px;background:rgba(255,217,0,.10);border:1px solid var(--gold-2);color:var(--gold);display:grid;place-items:center;margin-bottom:11px}
+.ocard__ico svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ocard__t{font-size:16px;font-weight:900;line-height:1.5}
+.ocard__d{font-size:13.5px;color:var(--ink-2);margin-top:7px}
+.ocard__pts{margin-top:11px;display:grid;gap:5px}
+.ocard__pts li{font-size:12.5px;color:var(--ink-2);padding-left:16px;position:relative;line-height:1.65}
+.ocard__pts li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+@media(min-width:900px){.opt{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- ⑦ 料金・割引 ---------- */
 .plans{display:grid;gap:14px}
 .plan{background:var(--panel);color:var(--panel-ink);border:1px solid var(--panel-line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
 .plan--reco{border:3px solid var(--red)}
-.plan__head{padding:13px 16px;background:linear-gradient(135deg,#0B2E52,#17558F);border-bottom:none;display:flex;align-items:center;justify-content:space-between;gap:8px}
-.plan--reco .plan__head{background:linear-gradient(135deg,var(--red),var(--red-2))}
+.plan__head{padding:13px 16px;background:linear-gradient(135deg,#0B2E52,#17558F);display:flex;align-items:center;justify-content:space-between;gap:8px}
+.plan--reco .plan__head{background:linear-gradient(135deg,#E4007F,#FF3D6E)}
 .plan__name{font-size:17px;font-weight:900;color:#fff}
-.plan__reco{font-size:10.5px;font-weight:900;color:var(--red);background:#fff;border-radius:999px;padding:3px 11px;white-space:nowrap}
+.plan__reco{font-size:10.5px;font-weight:900;color:#E4007F;background:#fff;border-radius:999px;padding:3px 11px;white-space:nowrap}
 .plan__price{padding:14px 16px;border-bottom:1px dashed var(--panel-line)}
 .plan__price .big{font-size:30px;font-weight:900;color:var(--red);letter-spacing:-.02em}
 .plan__price .small{font-size:12px;color:#6B7278}
-.plan__price .after{margin-top:6px;font-size:13px;color:var(--panel-ink);font-weight:800}
+.plan__price .after{margin-top:6px;font-size:13px;font-weight:800}
 .plan__rows{padding:6px 16px 16px}
 .plan__row{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--panel-line);font-size:13.5px}
 .plan__row:last-child{border-bottom:none}
 .plan__row dt{flex:0 0 92px;color:#6B7278;font-weight:800}
-.plan__row dd{margin:0;flex:1;color:var(--panel-ink)}
+.plan__row dd{margin:0;flex:1}
 .plan .verify{border-bottom-color:#B98900;background:rgba(255,196,0,.20)}
 @media(min-width:900px){.plans{grid-template-columns:1fr 1fr}}
 
-/* ---------- ⑨ オファー ---------- */
-.offer{
-  background:radial-gradient(600px 240px at 80% -20%, rgba(230,0,39,.28), transparent 65%), linear-gradient(160deg,#160106,#0A0A0A);
-  border:2px solid var(--red);border-radius:20px;padding:22px 18px;box-shadow:var(--shadow-lg);text-align:center;
-}
-.offer__lab{display:inline-block;font-size:11px;font-weight:900;color:#fff;background:var(--red);border-radius:999px;padding:4px 14px;letter-spacing:.06em}
-.offer__h{font-size:20px;font-weight:900;line-height:1.55;margin-top:12px}
-.offer__h .pt{color:var(--gold);font-size:40px;letter-spacing:-.02em;text-shadow:0 0 24px rgba(255,217,0,.35)}
-.offer__meta{display:grid;gap:8px;margin-top:18px;text-align:left}
-.offer__meta div{display:flex;gap:10px;font-size:13px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:9px;padding:10px 12px}
-.offer__meta dt{flex:0 0 76px;font-weight:900;color:var(--gold)}
-.offer__meta dd{margin:0;color:var(--ink-2)}
-@media(min-width:768px){.offer{padding:32px}.offer__meta{grid-template-columns:1fr 1fr}}
+/* ---------- ⑧ 安心材料＋正直な但し書き ---------- */
+.safe{display:grid;gap:12px}
+.scard{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(180deg,rgba(62,213,152,.08),var(--surface));border:1.5px solid rgba(62,213,152,.45);border-radius:var(--radius-lg);padding:18px}
+.scard__ico{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:rgba(62,213,152,.16);color:var(--ok);display:grid;place-items:center}
+.scard__ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.scard__t{font-size:16px;font-weight:900;line-height:1.5;color:var(--ok)}
+.scard__d{font-size:13.5px;color:var(--ink-2);margin-top:6px;line-height:1.8}
+.honest{background:var(--surface);border:1.5px dashed var(--ink-3);border-radius:var(--radius-lg);padding:18px}
+.honest__lb{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.06em;color:var(--ink);background:rgba(255,255,255,.14);border-radius:999px;padding:4px 12px}
+.honest__t{font-size:16px;font-weight:900;line-height:1.55;margin-top:11px}
+.honest__d{font-size:13.5px;color:var(--ink-2);margin-top:8px;line-height:1.85}
+@media(min-width:900px){.safe{grid-template-columns:1fr 1fr}}
+
+/* ---------- ⑨ 実例 ---------- */
+.cases{display:grid;gap:10px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:15px 16px}
+.case__meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}
+.case__meta span{font-size:10.5px;font-weight:800;color:var(--ink-2);background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:5px;padding:3px 8px}
+.case__t{font-size:14px;font-weight:800;line-height:1.65}
+.case__t em{font-style:normal;color:var(--gold)}
+@media(min-width:768px){.cases{grid-template-columns:repeat(3,1fr)}}
 
 /* ---------- ⑩ FAQ ---------- */
 .faq{display:grid;gap:8px}
@@ -390,10 +437,13 @@ button{font:inherit;color:inherit;cursor:pointer}
 .faq__hidden.is-open{display:grid;gap:8px;margin-top:8px}
 
 /* ---------- ⑪ 最終CTA ---------- */
-#section-b-final-cta{background:radial-gradient(700px 300px at 50% 0%, rgba(230,0,39,.20), transparent 70%),#000}
+#section-b-final-cta{background:radial-gradient(700px 300px at 50% 0%, rgba(255,180,60,.20), transparent 70%),#000}
 .final{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px 18px;box-shadow:var(--shadow-lg);text-align:center}
+.final__pat{display:none}
+.final__pat.is-on{display:block}
+.final__lb{display:inline-block;font-size:11px;font-weight:900;color:#241E00;background:var(--gold);border-radius:999px;padding:4px 13px;margin-bottom:12px}
 .final__h{font-size:20px;font-weight:900;line-height:1.55}
-.final__d{font-size:14px;color:var(--ink-2);margin-top:10px;text-align:left}
+.final__d{font-size:14px;color:var(--ink-2);margin-top:12px;text-align:left;line-height:1.85}
 @media(min-width:768px){.final{padding:34px}.final__d{text-align:center}.final .cta-block{max-width:470px;margin-inline:auto}}
 
 /* ---------- ⑫ P.S. ---------- */
@@ -406,15 +456,12 @@ button{font:inherit;color:inherit;cursor:pointer}
 </head>
 <body>
 
-<!-- ===== モックアップ表示（実装時に削除） ===== -->
-<div class="mock-banner">
-  <span>社内デザインレビュー用モックアップ／非公式・未公開ページです</span>
-</div>
+<div class="mock-banner"><span>社内デザインレビュー用モックアップ／非公式・未公開ページです</span></div>
 
 <header class="head">
   <div class="wrap head__in">
-    <div class="head__brand"><span class="head__logo">B</span>プラン見直し 相談ガイド</div>
-    <a class="head__cta" href="#section-b-final-cta" data-event="lp_campaign_header_cta_click">対象条件を確認する</a>
+    <div class="head__brand"><span class="head__logo">B</span>実質負担 まるわかりガイド</div>
+    <a class="head__cta" href="#section-b-simulator" data-event="lp_campaign_header_cta_click">実質負担を確認する</a>
   </div>
 </header>
 
@@ -422,296 +469,293 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 <!-- ============ ① ファーストビュー ============ -->
 <section id="section-b-fv" class="fv">
+  <div class="wrap">
+    <!-- KVロックアップ（実写KVに差し替え予定の位置） -->
+    <div class="kv">
+      <span class="kv__eyebrow">ギガ無制限エンタメプラン</span>
+      <div class="kv__plans">
+        <span class="kv__plan kv__plan--max"><b>ドコモ</b>MAX</span>
+        <span class="kv__plan kv__plan--poi"><b>ドコモポイ活</b>MAX</span>
+      </div>
+      <div class="kv__band">
+        <p>毎月好きなサービスを<span class="em">追加料金0円で2つ選べる！</span></p>
+        <div class="kv__chips"><span>Lemino</span><span>dアニメストア</span><span>DAZN for docomo</span><span>NBA docomo</span></div>
+      </div>
+      <p class="kv__note">※1 大量通信時などに通信制限がかかる場合あり　※2 追加有料コンテンツの取扱いなし　※3 視聴可能コンテンツはサービスサイトへ</p>
+    </div>
+  </div>
+
   <div class="wrap fv__grid">
     <div>
-      <span class="fv__tag">◆ プラン変更を検討中の方へ</span>
-      <h1 class="fv__h1" data-ab="fv-headline">
-        <span data-ab-a>プラン変更で迷っている方へ。<br><span class="hl">料金・特典・手続きの不安</span>を<br>まとめて整理します。</span>
-        <span data-ab-b hidden>高くならない？手続きは面倒？<br><span class="hl">よくある不安から先に</span><br>確認できます。</span>
+      <span class="fv__tag">◆ すでに動画・音楽サービスをお使いの方へ</span>
+      <h1 class="fv__h1">
+        月額だけで判断すると、<br>
+        <span class="hl">損をしている</span>かもしれません。
       </h1>
       <p class="fv__sub">
-        「高くならないか」「手続きが面倒ではないか」「自分に本当に必要か」。<br>
-        その疑問を解消するために、キャンペーン条件、料金の見方、Web手続きの流れを順番にまとめました。
+        いま別で払っているサブスク代、ポイント還元、追加料金なしで使える特典。<br>
+        これを全部足し引きした「<strong>実質負担</strong>」で見ると、答えが変わります。
       </p>
 
-      <div class="fv__badge">
-        <div class="fv__badge-mark"><b>3,000</b><small>ポイント</small></div>
-        <p class="fv__badge-txt">
-          対象条件を満たすと、Web申込で<br>
-          <strong>dポイント（期間・用途限定）3,000pt</strong>の<br>
-          対象になる<span class="verify">可能性</span>があります。
-        </p>
-      </div>
-
       <div class="cta-block">
-        <a class="btn" href="#section-b-eligibility" data-event="lp_campaign_fv_cta_click" data-ab="fv-cta">
-          <span data-ab-a>不安を確認してからエントリーする</span>
-          <span data-ab-b hidden>料金と手続きを先に確認する</span>
-          <span class="btn__arrow">▶</span>
+        <a class="btn" href="#section-b-survey" data-event="lp_campaign_fv_cta_click">
+          いま使っているサービスから確認する<span class="btn__arrow">▶</span>
         </a>
-        <p class="cta-block__note">エントリーしても自動でプラン変更されることはありません</p>
+        <p class="cta-block__note">入力は3ステップ・約1分／個人情報の入力はありません</p>
       </div>
 
       <ul class="fv__reassure">
-        <li>✓ 所要 約3分</li>
-        <li>✓ 入力不要でチェック</li>
-        <li>✓ 対象外の場合も案内あり</li>
+        <li>✓ 合わなければ違約金なしで変更可</li>
+        <li>✓ その場で金額が出る</li>
+        <li>✓ 上がる場合も正直に表示</li>
       </ul>
     </div>
 
-    <!-- FVビジュアル：画像内に文字を描画せずHTML/CSSで実装 -->
-    <div class="fv__visual" aria-hidden="true">
-      <div class="phone">
-        <div class="phone__screen">
-          <div class="mini-card mini-card--now">
-            <span class="mini-card__label">いまのプラン</span>
-            <div class="mini-card__row"><span class="mini-card__val">￥○,○○○</span><span class="mini-card__unit">/月</span></div>
-            <div class="mini-bar"><i style="width:38%"></i></div>
-          </div>
-          <div class="mini-card mini-card--new">
-            <span class="mini-card__label">見直し後</span>
-            <div class="mini-card__row"><span class="mini-card__val">ギガ無制限</span><span class="mini-card__unit">＋特典</span></div>
-            <div class="mini-bar"><i style="width:100%"></i></div>
-            <div class="mini-chips"><span>選べる特典</span><span>Web手続き</span><span>ポイント</span></div>
-          </div>
-          <div class="mini-pt">対象なら 3,000pt<br>対象条件をチェック</div>
+    <div class="fv__visual">
+      <div class="formula">
+        <p class="formula__t">実質負担の計算式</p>
+        <div class="formula__rows">
+          <div class="formula__row"><span class="formula__op formula__op--plus">＋</span><span class="formula__lb">プラン料金の差額</span></div>
+          <div class="formula__row"><span class="formula__op formula__op--minus">－</span><span class="formula__lb">特典で置き換えられるサブスク代</span></div>
+          <div class="formula__row"><span class="formula__op formula__op--minus">－</span><span class="formula__lb">対象サービスのポイント還元</span></div>
         </div>
+        <p class="formula__eq"><b>＝ 毎月の実質負担</b><span>この式で計算します</span></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ ② 共感導入 ============ -->
-<section id="section-b-empathy" class="sec">
+<!-- ============ ② エンタメ問診（見込み客の物語） ============ -->
+<section id="section-b-survey" class="sec sec--pale">
+  <div class="wrap" style="max-width:820px">
+    <div class="survey" id="survey">
+      <p class="survey__h">◆ STEP 1／いま使っているサービスを選んでください</p>
+      <p class="survey__d">当てはまるものをすべて。ここでの選択が、このあとの計算と表示内容に反映されます。</p>
+
+      <div class="survey__grp">
+        <p>ドコモMAXの「選べる特典」で置き換えられるサービス</p>
+        <p class="survey__note">対象4つのうち<strong>最大2つ</strong>まで、追加料金なしで使えます。いま払っているなら、その分の支払いが不要になります。</p>
+        <div class="svc svc--perk" role="group" aria-label="選べる特典の対象サービス">
+          <button type="button" data-perk="dazn" data-fee="4200" data-name="DAZN for docomo">DAZN for docomo<small>月額 4,200円</small></button>
+          <button type="button" data-perk="nba" data-fee="2728" data-name="NBA docomo">NBA docomo<small>月額 2,728円</small></button>
+          <button type="button" data-perk="lemino" data-fee="1540" data-name="Leminoプレミアム">Leminoプレミアム<small>月額 1,540円</small></button>
+          <button type="button" data-perk="danime" data-fee="660" data-name="dアニメストア">dアニメストア<small>月額 660円</small></button>
+        </div>
+      </div>
+
+      <div class="survey__grp">
+        <p>「爆アゲ セレクション」でポイント還元の対象になるサービス</p>
+        <p class="survey__note">こちらは<strong>無料になるのではなく、いまの支払いにdポイントが還元される</strong>仕組みです。契約は今のまま続きます。</p>
+        <div class="svc svc--reward" role="group" aria-label="爆アゲセレクションの対象サービス">
+          <button type="button" data-reward="netflix">Netflix</button>
+          <button type="button" data-reward="disney">Disney+</button>
+          <button type="button" data-reward="youtube">YouTube Premium</button>
+          <button type="button" data-reward="spotify">Spotify Premium</button>
+          <button type="button" data-reward="googleone">Google One</button>
+          <button type="button" data-reward="appleone">Apple One</button>
+          <button type="button" data-reward="switch">Nintendo Switch Online</button>
+          <button type="button" data-reward="jump">週刊少年ジャンプ</button>
+        </div>
+      </div>
+
+      <div class="survey__grp">
+        <p>対象外のサービス</p>
+        <p class="survey__note">これらは<strong>割引・還元の対象ではありません</strong>。いまのまま使い続けたうえで、通信量と追加特典で補う形になります。</p>
+        <div class="svc svc--out" role="group" aria-label="対象外のサービス">
+          <button type="button" data-out="unext">U-NEXT</button>
+          <button type="button" data-out="abema">ABEMA</button>
+          <button type="button" data-out="hulu">Hulu</button>
+        </div>
+      </div>
+
+      <div class="survey__grp">
+        <p>当てはまるものがあれば</p>
+        <div class="survey__ctx" role="group" aria-label="そのほかの利用状況">
+          <button type="button" data-ctx="family">家族でも使う</button>
+          <button type="button" data-ctx="giga">ギガが足りない</button>
+          <button type="button" data-ctx="support">手続きが不安</button>
+        </div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:12px">※ 選択内容はこの画面の中だけで処理され、送信・保存は行いません。</p>
+  </div>
+</section>
+
+<!-- ============ ③ 問題の物語 ============ -->
+<section id="section-b-problem" class="sec sec--alt">
   <div class="wrap">
-    <span class="sec__eyebrow">STEP 01｜よくある不安</span>
-    <h2 class="sec__h">こんな不安、<span class="em">ありませんか？</span></h2>
-    <p class="sec__lead">ひとつでも当てはまる方は、このページで順番に確認できます。</p>
-    <ul class="worry">
-      <li><span class="worry__box">?</span><div><p class="worry__t">料金が高くならない？</p><p class="worry__d">月額だけでなく、割引・ポイント・特典を含めた見方を整理します。</p></div></li>
-      <li><span class="worry__box">?</span><div><p class="worry__t">特典を使いこなせる？</p><p class="worry__d">どの特典が自分の見方に合うか、選び方の目安を示します。</p></div></li>
-      <li><span class="worry__box">?</span><div><p class="worry__t">Web手続きは難しくない？</p><p class="worry__d">エントリーから申込までを3ステップに分解して説明します。</p></div></li>
-      <li><span class="worry__box">?</span><div><p class="worry__t">そもそも自分は対象？</p><p class="worry__d">入力不要の対象者チェックで、進む前に確認できます。</p></div></li>
+    <span class="sec__eyebrow">STEP 02｜判断を誤る4つの理由</span>
+    <h2 class="sec__h">「高くなる」と感じる人ほど、<br><span class="em">この4つを見落として</span>います。</h2>
+    <p class="sec__lead">実際に見送った方の理由を整理すると、ほとんどがこの4つに集約されます。</p>
+    <ul class="miss">
+      <li><span class="miss__n">1</span><div><p class="miss__t">通信費とサブスク代を別々に見ている</p><p class="miss__d">スマホ料金の明細と動画サービスの引き落としが別なので、合計でいくら払っているかを把握していない。</p></div></li>
+      <li><span class="miss__n">2</span><div><p class="miss__t">「特典」と「ポイント還元」を混同している</p><p class="miss__d">追加料金なしで使えるサービスと、いまの支払いに還元が入るサービスは、まったく別の仕組みです。</p></div></li>
+      <li><span class="miss__n">3</span><div><p class="miss__t">自分に関係のある特典か判断できていない</p><p class="miss__d">対象サービスが多く一覧で示されるため、自分が使うものがどれなのか分からないまま検討を終えてしまう。</p></div></li>
+      <li><span class="miss__n">4</span><div><p class="miss__t">月額料金だけを比べている</p><p class="miss__d">差額だけを見ると高く見えても、置き換えられる支払いと還元を引くと結論が変わることがあります。</p></div></li>
     </ul>
   </div>
 </section>
 
-<!-- ============ ③ 問題の深刻化 ============ -->
-<section id="section-b-problem" class="sec sec--alt">
-  <div class="wrap">
-    <span class="sec__eyebrow">STEP 02｜判断のポイント</span>
-    <h2 class="sec__h">月額だけで判断すると、<br><span class="em">見落としが起きます。</span></h2>
-    <p class="sec__lead">月額料金の差だけで比べると、ポイント・特典・ギガ安心の価値が計算に入りません。</p>
-    <div class="vs">
-      <div class="vs__col vs__col--now">
-        <p class="vs__head"><span class="vs__pill">現状維持</span>そのまま使い続ける場合</p>
-        <ul class="vs__list">
-          <li><span class="vs__mark vs__mark--x">×</span><span>キャンペーンの対象期間が終了している可能性がある</span></li>
-          <li><span class="vs__mark vs__mark--x">×</span><span>動画サブスクを別契約したまま、固定費が積み上がる</span></li>
-          <li><span class="vs__mark vs__mark--x">×</span><span>ギガ不足のたびに追加購入や速度制限を気にする</span></li>
-          <li><span class="vs__mark vs__mark--x">×</span><span>結局どちらが得か分からないまま先送りになる</span></li>
-        </ul>
-      </div>
-      <div class="vs__col vs__col--new">
-        <p class="vs__head"><span class="vs__pill">見直し後</span>条件を確認してから決める場合</p>
-        <ul class="vs__list">
-          <li><span class="vs__mark vs__mark--o">◯</span><span>対象条件・期限を先に確認できるので手戻りが起きにくい</span></li>
-          <li><span class="vs__mark vs__mark--o">◯</span><span>選べる特典を含めた「実際の負担」で比較できる</span></li>
-          <li><span class="vs__mark vs__mark--o">◯</span><span>ギガ無制限で使いすぎを気にしなくてよくなる</span></li>
-          <li><span class="vs__mark vs__mark--o">◯</span><span>納得したうえで、進むか見送るかを判断できる</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="note note--box">※ 実際の負担額はご契約状況・割引の適用有無によって異なります。金額・条件は公式ページの最新情報をご確認ください。</p>
-  </div>
-</section>
+<!-- ============ ④ 実質負担シミュレーション ============ -->
+<section id="section-b-simulator" class="sec">
+  <div class="wrap" style="max-width:820px">
+    <span class="sec__eyebrow">STEP 03｜実質負担の計算</span>
+    <h2 class="sec__h">あなたの数字で、<span class="em">実質負担</span>を出します。</h2>
+    <p class="sec__lead">残り3つ入力するだけで、STEP 1の選択と合わせて計算します。</p>
 
-<!-- ============ ④ 解決策提示 ============ -->
-<section id="section-b-solution" class="sec">
-  <div class="wrap">
-    <span class="sec__eyebrow">STEP 03｜このページでできること</span>
-    <h2 class="sec__h">キャンペーン条件、料金の見方、<br>Web手続きの流れを<span class="em">1ページで整理</span>します。</h2>
-    <p class="sec__lead">読み進めるだけで、判断に必要な材料が順番に揃います。</p>
-    <ol class="steps" data-view-event="procedure_step_view">
-      <li><p class="steps__t">対象条件を確認</p><p class="steps__d">入力不要のチェックで、自分が対象かどうかの目安を先に把握します。</p></li>
-      <li><p class="steps__t">料金・特典を比較</p><p class="steps__d">月額差だけでなく、ポイントと特典を含めた見方で比較します。</p></li>
-      <li><p class="steps__t">エントリー／申込へ</p><p class="steps__d">納得できた場合のみ、手続きに進みます。見送る判断もできます。</p></li>
-    </ol>
-    <div class="cta-block" style="max-width:460px;margin-inline:auto">
-      <a class="btn" href="#section-b-eligibility" data-event="lp_campaign_mid_cta_click">まず対象条件を確認する<span class="btn__arrow">▼</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 対象者チェック（入力不要のセルフ判定） ============ -->
-<section id="section-b-eligibility" class="sec sec--pale">
-  <div class="wrap" style="max-width:720px">
-    <div class="check" id="eligibility">
-      <p class="check__h">◆ 対象者チェック（入力不要・約30秒）</p>
-      <p class="check__d">3つの質問に答えると、対象になる可能性の目安と次に進む導線を表示します。個人情報の入力・送信は行いません。</p>
-
-      <div class="check__q" data-q="0">
-        <p>Q1. 現在ご利用中のプランは？</p>
-        <div class="opts">
-          <button type="button" data-val="target">ギガライト / irumo / ドコモ mini</button>
-          <button type="button" data-val="already">すでに ドコモ MAX 系</button>
-          <button type="button" data-val="unknown">わからない</button>
+    <div class="sim">
+      <div class="sim__step">
+        <p class="sim__lb"><i>1</i>いまのスマホ月額</p>
+        <p class="sim__hint">請求額のうち、通信プランの月額をご入力ください（端末代・オプションは除く）。</p>
+        <div class="sim__field">
+          <input type="number" id="sim-current" inputmode="numeric" placeholder="0" min="0" max="99999" step="1" aria-label="いまのスマホ月額（円）">
+          <span>円 / 月</span>
         </div>
       </div>
 
-      <div class="check__q" data-q="1">
-        <p>Q2. dアカウントはお持ちですか？</p>
-        <div class="opts">
-          <button type="button" data-val="yes">持っている</button>
-          <button type="button" data-val="no">持っていない</button>
-          <button type="button" data-val="unknown">わからない</button>
+      <div class="sim__step">
+        <p class="sim__lb"><i>2</i>いま払っている「爆アゲ対象」サービスの合計月額</p>
+        <p class="sim__hint">STEP 1で選んだ Netflix・Disney+ などの合計金額です。分からない場合は空欄のままで構いません。</p>
+        <div class="sim__field">
+          <input type="number" id="sim-reward" inputmode="numeric" placeholder="0" min="0" max="99999" step="1" aria-label="爆アゲ対象サービスの合計月額（円）">
+          <span>円 / 月</span>
         </div>
       </div>
 
-      <div class="check__q" data-q="2">
-        <p>Q3. キャンペーンのエントリーは済んでいますか？</p>
-        <div class="opts">
-          <button type="button" data-val="done">エントリー済み</button>
-          <button type="button" data-val="not">まだ</button>
-          <button type="button" data-val="unknown">わからない</button>
+      <div class="sim__step">
+        <p class="sim__lb"><i>3</i>適用できる割引</p>
+        <p class="sim__hint">当てはまるものにチェックを入れてください。</p>
+        <div class="disc">
+          <label><input type="checkbox" data-disc="1210" checked><span class="n">みんなドコモ割（3回線以上）</span><span class="v">−1,210円</span></label>
+          <label><input type="checkbox" data-disc="1210"><span class="n">ドコモ光・home 5G セット割</span><span class="v">−1,210円</span></label>
+          <label><input type="checkbox" data-disc="550"><span class="n">dカードお支払い割（GOLD）</span><span class="v">−550円</span></label>
+          <label><input type="checkbox" data-disc="110"><span class="n">ドコモでんきセット割</span><span class="v">−110円</span></label>
         </div>
       </div>
 
-      <div class="check__progress"><i id="check-bar"></i></div>
-      <div class="check__result" id="check-result" role="status" aria-live="polite"></div>
-    </div>
-    <p class="note" style="margin-top:12px">※ 本チェックは目安の案内です。対象可否の確定判定ではありません。最終的な対象条件は公式キャンペーンページの記載をご確認ください。</p>
-  </div>
-</section>
-
-<!-- ============ ⑤ ベネフィット ============ -->
-<section id="section-b-benefits" class="sec">
-  <div class="wrap">
-    <span class="sec__eyebrow">STEP 04｜確認できること</span>
-    <h2 class="sec__h">確認できるのは、この<span class="em">4つ</span>です。</h2>
-    <p class="sec__lead">月額差だけではなく、ポイント・ギガ・特典・手続きをまとめて確認できます。</p>
-    <div class="benefits" data-view-event="benefit_card_view">
-      <article class="bcard">
-        <div class="bcard__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h5M9.5 14.5h5"/></svg></div>
-        <h3 class="bcard__t">3,000pt の対象条件</h3>
-        <p class="bcard__d">dポイント（期間・用途限定）3,000ptの対象になる条件と、進呈時期の考え方を確認できます。</p>
-        <a class="bcard__link" href="#section-b-offer">→ 条件を見る</a>
-      </article>
-      <article class="bcard">
-        <div class="bcard__ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12v3a2 2 0 0 0 2 2h1v-5H6a2 2 0 0 0-2 2z"/><path d="M20 12v3a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2z"/></svg></div>
-        <h3 class="bcard__t">ギガ無制限の安心</h3>
-        <p class="bcard__d">残量を気にせず使える状態が、いまの使い方に必要かどうかを判断できます。</p>
-        <a class="bcard__link" href="#section-b-plan">→ プランを見る</a>
-      </article>
-      <article class="bcard">
-        <div class="bcard__ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5l5 2.5-5 2.5z"/></svg></div>
-        <h3 class="bcard__t">選べる特典</h3>
-        <p class="bcard__d">スポーツ・アニメ・映画/ドラマ/音楽など、よく見るジャンルから選ぶ目安を示します。</p>
-        <a class="bcard__link" href="#section-b-plan">→ 特典を見る</a>
-      </article>
-      <article class="bcard">
-        <div class="bcard__ico"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-        <h3 class="bcard__t">Web手続きの簡単さ</h3>
-        <p class="bcard__d">エントリーから申込までの流れを3ステップで確認でき、手戻りを防げます。</p>
-        <a class="bcard__link" href="#section-b-flow">→ 流れを見る</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ⑥ 仕組み・特長（フロー） ============ -->
-<section id="section-b-flow" class="sec sec--alt">
-  <div class="wrap">
-    <span class="sec__eyebrow">STEP 05｜手続きの流れ</span>
-    <h2 class="sec__h">手続きは、<span class="em">この順番</span>で進みます。</h2>
-    <p class="sec__lead">エントリーと申込は<strong>同じdアカウント</strong>で行う必要があります。順番を先に把握しておくと、あとからの対象外を防ぎやすくなります。</p>
-    <ol class="flow">
-      <li><span class="flow__n">STEP 1</span><div><p class="flow__t">対象条件の確認</p><p class="flow__d">対象プラン・期限・重複可否を確認します。</p></div></li>
-      <li><span class="flow__n">STEP 2</span><div><p class="flow__t">エントリー</p><p class="flow__d">dアカウントでエントリーします。この時点では申込は確定しません。</p></div></li>
-      <li><span class="flow__n">STEP 3</span><div><p class="flow__t">Web申込</p><p class="flow__d">対象プランへの変更手続きを行います。</p></div></li>
-      <li><span class="flow__n">STEP 4</span><div><p class="flow__t">ポイント進呈（予定）</p><p class="flow__d">進呈時期は公式の記載に従います。</p></div></li>
-    </ol>
-    <div class="note note--box">
-      <strong style="color:var(--navy)">手続き前の注意</strong><br>
-      ・エントリーと申込は同一dアカウントで行う必要があります<br>
-      ・エントリーには<span class="verify">期限</span>があります<br>
-      ・他キャンペーンとの<span class="verify">重複適用不可</span>となる場合があります
-    </div>
-    <div class="cta-block" style="max-width:460px;margin-inline:auto">
-      <a class="btn" href="#section-b-final-cta" data-event="lp_campaign_flow_cta_click">対象条件を確認して進む<span class="btn__arrow">▶</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ⑦ 社会的証明・根拠 ============ -->
-<section id="section-b-proof" class="sec">
-  <div class="wrap">
-    <span class="sec__eyebrow">STEP 06｜判断の根拠</span>
-    <h2 class="sec__h">判断の根拠は、<span class="em">公式情報</span>に沿って確認できます。</h2>
-    <p class="sec__lead">このページの内容は、公式キャンペーンページ・プランページの記載を前提に整理しています。</p>
-    <div class="proof">
-      <div class="pcard">
-        <p class="pcard__h"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 7.9-8 9-4.8-1.1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>対象条件</p>
-        <ul>
-          <li>対象プランからの変更であること</li>
-          <li>同一dアカウントでのエントリーと申込</li>
-          <li>Web（オンライン）での手続き</li>
-          <li>キャンペーン期間内の申込</li>
-        </ul>
-      </div>
-      <div class="pcard">
-        <p class="pcard__h"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>公式情報の参照先</p>
-        <ul>
-          <li>キャンペーン特設ページ（対象条件・期限）</li>
-          <li>ドコモ MAX プランページ（料金・特典）</li>
-          <li>ドコモ ポイ活 MAX プランページ</li>
-          <li>各特典サービスの注意事項ページ</li>
-        </ul>
-      </div>
-      <div class="pcard pcard--warn">
-        <p class="pcard__h"><svg viewBox="0 0 24 24"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg>主な注意事項</p>
-        <ul>
-          <li>エントリーのみでは申込は完了しません</li>
-          <li>ポイントは期間・用途限定です</li>
-          <li>進呈時期は公式記載に従います</li>
-          <li>特典対象サービスは入替の予定があります</li>
-        </ul>
+      <div class="res" id="res" aria-live="polite">
+        <div class="res__head">計算結果</div>
+        <div class="res__empty" id="res-empty">
+          STEP 1でサービスを選び、上の「いまのスマホ月額」を入力すると<br>ここに実質負担が表示されます。
+        </div>
+        <div class="res__body" id="res-body" hidden>
+          <div id="res-rows"></div>
+          <div class="res__total" id="res-total"></div>
+          <p class="res__note">
+            ※ 本シミュレーションは<span class="verify">概算</span>です。ドコモMAXの月額は<span class="verify">8,448円（税込）</span>を基準に、選択された割引を差し引いて計算しています。<br>
+            ※ 爆アゲ セレクションの還元率は<span class="verify">サービス・契約プランにより異なります</span>。ここでは説明用の仮の還元率で計算しています。<br>
+            ※ 選べる特典は対象4サービスのうち<span class="verify">最大2つ</span>まで。3つ以上を選択された場合は、月額の高い2つを置き換え対象として計算しています。<br>
+            ※ ポイントは期間・用途限定です。用途および有効期限に制限があります。
+          </p>
+        </div>
       </div>
     </div>
-    <div class="cta-block" style="max-width:460px;margin-inline:auto">
-      <a class="btn" href="#section-b-final-cta" data-event="lp_campaign_proof_cta_click">条件を確認してエントリーへ進む<span class="btn__arrow">▶</span></a>
+  </div>
+</section>
+
+<!-- ============ ⑤ 3つの価値の違い ============ -->
+<section id="section-b-three" class="sec sec--alt" data-view-event="compare_module_view">
+  <div class="wrap">
+    <span class="sec__eyebrow">STEP 04｜仕組みの違い</span>
+    <h2 class="sec__h">似ているようで、<span class="em">まったく別の3つ</span>です。</h2>
+    <p class="sec__lead">ここを取り違えると、期待外れになります。順に説明します。</p>
+    <div class="three">
+      <article class="tcard tcard--perk">
+        <span class="tcard__lb">仕組み ①</span>
+        <h3 class="tcard__t">選べる特典<br>＝ 支払いそのものが不要に</h3>
+        <div class="tcard__svc"><span>Lemino</span><span>dアニメストア</span><span>DAZN for docomo</span><span>NBA docomo</span></div>
+        <p class="tcard__d">対象4サービスのうち<strong>最大2つ</strong>を追加料金なしで利用できます。いま単体で契約しているなら、その支払いが不要になります。月ごとの切り替えも可能です。</p>
+        <p class="tcard__key">いま払っている分が、まるごと浮く。</p>
+      </article>
+
+      <article class="tcard tcard--reward">
+        <span class="tcard__lb">仕組み ②</span>
+        <h3 class="tcard__t">爆アゲ セレクション<br>＝ 支払いにポイントが戻る</h3>
+        <div class="tcard__svc"><span>Netflix</span><span>Disney+</span><span>YouTube Premium</span><span>Spotify Premium</span><span>Google One</span><span>Apple One</span><span>Nintendo Switch Online</span><span>週刊少年ジャンプ</span></div>
+        <p class="tcard__d">契約はいまのまま。毎月の支払いに対して<strong>dポイントが還元</strong>されます。<strong>無料になるわけではありません。</strong>還元率はサービス・契約プランにより異なります。</p>
+        <p class="tcard__key">払い続けるが、一部が戻ってくる。</p>
+      </article>
+
+      <article class="tcard tcard--out">
+        <span class="tcard__lb">仕組み ③</span>
+        <h3 class="tcard__t">対象外のサービス<br>＝ 割引も還元もありません</h3>
+        <div class="tcard__svc"><span>U-NEXT</span><span>ABEMA</span><span>Hulu</span></div>
+        <p class="tcard__d">これらは<strong>安くなりません</strong>。やめる必要もありません。いまのサービスはそのまま使いながら、ギガを気にせず見られること、別の動画サービスを追加料金なしで選べることが価値になります。</p>
+        <p class="tcard__key">そのまま使い、別の軸で上乗せする。</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ============ ⑧ 商品・サービス詳細 ============ -->
-<section id="section-b-plan" class="sec sec--alt" data-view-event="compare_module_view">
+<!-- ============ ⑥ One to One オプション ============ -->
+<section id="section-b-options" class="sec" data-view-event="option_module_view">
   <div class="wrap">
-    <span class="sec__eyebrow">STEP 07｜プラン詳細</span>
-    <h2 class="sec__h">2つのプランを、<span class="em">同じ物差し</span>で比べます。</h2>
+    <span class="sec__eyebrow">STEP 05｜料金以外の価値</span>
+    <h2 class="sec__h">当てはまる方には、<span class="em">もう1つ</span>理由が増えます。</h2>
+    <p class="sec__lead">STEP 1で選んだ内容に当てはまる項目には、目印が付きます。</p>
+    <div class="opt">
+      <article class="ocard" data-opt="family">
+        <span class="ocard__flag">あなたに当てはまります</span>
+        <div class="ocard__ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9.5" r="2.4"/><path d="M3 19c0-2.8 2.2-5 5-5s5 2.2 5 5M14 19c0-2.2 1.6-4 3.5-4S21 16.8 21 19"/></svg></div>
+        <h3 class="ocard__t">家族で使う</h3>
+        <p class="ocard__d">本人が見なくても、家族が使えば特典の利用機会は増えます。</p>
+        <ul class="ocard__pts">
+          <li>子ども・孫がアニメを見るなら、dアニメストアが活きる</li>
+          <li>家族で映画やスポーツを見るなら、利用頻度が上がる</li>
+          <li>家族回線・家族割とあわせると、世帯単位でメリットが出やすい</li>
+        </ul>
+      </article>
+
+      <article class="ocard" data-opt="giga">
+        <span class="ocard__flag">あなたに当てはまります</span>
+        <div class="ocard__ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12v3a2 2 0 0 0 2 2h1v-5H6a2 2 0 0 0-2 2z"/><path d="M20 12v3a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2z"/></svg></div>
+        <h3 class="ocard__t">ギガを気にせず使いたい</h3>
+        <p class="ocard__d">動画サービスが増えるほどデータ使用量も増えます。特典とギガはセットで見るのが実態に合います。</p>
+        <ul class="ocard__pts">
+          <li>速度制限や容量超過を気にしなくてよくなる</li>
+          <li>外出先での視聴・テザリングが使いやすい</li>
+          <li>いまの使用量が多いほど、無制限が利用実態に合う</li>
+        </ul>
+      </article>
+
+      <article class="ocard" data-opt="support">
+        <span class="ocard__flag">あなたに当てはまります</span>
+        <div class="ocard__ico"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3 class="ocard__t">手続きが不安</h3>
+        <p class="ocard__d">全部を自分だけで進める必要はありません。</p>
+        <ul class="ocard__pts">
+          <li>手続きはオンラインで完結できる</li>
+          <li>設定やアプリの使い方は、あとからショップでも確認できる</li>
+          <li>合わなければ見直せる（次のセクション参照）</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑦ 料金・割引の整理 ============ -->
+<section id="section-b-plan" class="sec sec--alt">
+  <div class="wrap">
+    <span class="sec__eyebrow">STEP 06｜プランと割引</span>
+    <h2 class="sec__h">プランは<span class="em">2つ</span>。割引は重ねられます。</h2>
     <p class="sec__lead">SPでは表を横スクロールさせず、縦カードで比較できるようにしています。</p>
     <div class="plans">
       <article class="plan plan--reco">
-        <div class="plan__head">
-          <h3 class="plan__name">ドコモ MAX</h3>
-          <span class="plan__reco">迷ったらこちら</span>
-        </div>
+        <div class="plan__head"><h3 class="plan__name">ドコモ MAX</h3><span class="plan__reco">迷ったらこちら</span></div>
         <div class="plan__price">
           <span class="big verify">8,448</span><span class="small">円/月（税込・データ無制限時）</span>
           <p class="after">各種割引の適用で <span class="verify">5,148円/月</span> から</p>
         </div>
         <dl class="plan__rows">
           <div class="plan__row"><dt>データ量</dt><dd>無制限（<span class="verify">〜1GB・1〜3GB</span>は段階的に割引）</dd></div>
-          <div class="plan__row"><dt>選べる特典</dt><dd><span class="verify">対象4サービスから最大2つ</span>を追加料金なしで利用（月ごとに変更可）</dd></div>
-          <div class="plan__row"><dt>主な割引</dt><dd>家族割引／光・home 5Gセット割／dカードお支払い割／でんきセット割 ほか</dd></div>
+          <div class="plan__row"><dt>選べる特典</dt><dd>対象4サービスから<span class="verify">最大2つ</span>を追加料金なしで利用（月ごとに変更可）</dd></div>
+          <div class="plan__row"><dt>主な割引</dt><dd>みんなドコモ割／ドコモ光・home 5Gセット割／dカードお支払い割／でんきセット割／長期利用割</dd></div>
           <div class="plan__row"><dt>向いている方</dt><dd>動画・スポーツをよく見る方、ギガ残量を気にしたくない方</dd></div>
         </dl>
       </article>
 
       <article class="plan">
-        <div class="plan__head">
-          <h3 class="plan__name">ドコモ ポイ活 MAX</h3>
-        </div>
+        <div class="plan__head"><h3 class="plan__name">ドコモ ポイ活 MAX</h3></div>
         <div class="plan__price">
           <span class="big verify">11,748</span><span class="small">円/月（税込・指定ISP料金を含む）</span>
           <p class="after">還元と割引を最大活用した場合 <span class="verify">2,948円/月</span> 相当</p>
@@ -726,91 +770,138 @@ button{font:inherit;color:inherit;cursor:pointer}
     </div>
     <p class="note note--box">
       <strong style="color:var(--warn)">※ 網掛け部分は公開前に公式ページ・法務での確認が必要な数値です。</strong><br>
-      表示金額はすべて税込。割引の適用可否・還元上限・特典の対象サービスはご契約状況により異なります。還元は使い切れない場合、実質負担は表示より高くなります。
+      表示金額はすべて税込。割引の適用可否・還元上限・特典の対象サービスはご契約状況により異なります。ポイ活MAXの還元は使い切れない場合、実質負担は表示より高くなります。
     </p>
-    <div class="cta-subrow">
-      <a class="btn-sub" href="#" data-event="ent_to_campaign_click">◆ 選べる特典の詳細を見る</a>
-    </div>
   </div>
 </section>
 
-<!-- ============ ⑨ オファー ============ -->
-<section id="section-b-offer" class="sec">
-  <div class="wrap" style="max-width:760px">
-    <div class="offer">
-      <span class="offer__lab">キャンペーン</span>
-      <h2 class="offer__h">
-        対象条件を満たすと、Web申込で<br>
-        dポイント（期間・用途限定）<span class="pt verify">3,000</span>pt の<br>対象になる可能性があります。
-      </h2>
-      <dl class="offer__meta">
-        <div><dt>対象</dt><dd>対象プランから ドコモ MAX / ドコモ ポイ活 MAX へのWeb申込</dd></div>
-        <div><dt>条件</dt><dd>同一dアカウントでのエントリーと申込</dd></div>
-        <div><dt>期限</dt><dd><span class="verify">キャンペーン期間内</span>の手続き</dd></div>
-        <div><dt>進呈</dt><dd>進呈時期は<span class="verify">公式記載</span>に従います</dd></div>
-      </dl>
-      <div class="cta-block">
-        <a class="btn" href="#section-b-final-cta" data-event="application_click">対象条件を確認してエントリーする<span class="btn__arrow">▶</span></a>
-        <p class="cta-block__note">エントリーしても自動でプラン変更されることはありません</p>
+<!-- ============ ⑧ 安心材料と正直な但し書き ============ -->
+<section id="section-b-safety" class="sec">
+  <div class="wrap">
+    <span class="sec__eyebrow">STEP 07｜決める前に</span>
+    <h2 class="sec__h">合わなかったときのことも、<br><span class="em">先にお伝え</span>します。</h2>
+    <div class="safe">
+      <div class="scard">
+        <span class="scard__ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 7.9-8 9-4.8-1.1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <div>
+          <h3 class="scard__t">合わなければ、違約金なしで変更できます</h3>
+          <p class="scard__d">使ってみてメリットを感じられなかった場合、<span class="verify">違約金なし</span>で他のプランへ変更できます。契約後に取り返しがつかなくなる、ということはありません。</p>
+        </div>
+      </div>
+      <div class="honest">
+        <span class="honest__lb">正直にお伝えします</span>
+        <h3 class="honest__t">全員が安くなるプランではありません。</h3>
+        <p class="honest__d">いま使っているサービスが対象に含まれていない場合や、データ使用量が少ない場合は、月額が上がるだけになることがあります。<br>だからこそ、一覧の説明ではなく<strong>あなたの数字で計算する</strong>形にしています。上がる結果になったときも、そのまま表示します。</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ ⑨ 実例 ============ -->
+<section id="section-b-cases" class="sec sec--alt">
+  <div class="wrap">
+    <span class="sec__eyebrow">STEP 08｜実際の判断例</span>
+    <h2 class="sec__h">同じように迷った方が、<br><span class="em">何で納得したか</span>。</h2>
+    <p class="sec__lead">いずれも「月額は上がるが、実質負担で見ると納得できた」という判断です。</p>
+    <div class="cases">
+      <article class="case">
+        <div class="case__meta"><span>Netflix利用</span><span>家族回線あり</span></div>
+        <p class="case__t">月額は<em>約660円アップ</em>。ただし還元を含めると<em>約1,880円分</em>のメリットがあり、差し引きで納得。</p>
+      </article>
+      <article class="case">
+        <div class="case__meta"><span>dアニメストア利用</span></div>
+        <p class="case__t">差額<em>660円</em>に対し、いま払っている<em>アニメ視聴の費用が不要</em>になる点で判断。</p>
+      </article>
+      <article class="case">
+        <div class="case__meta"><span>単身</span><span>動画をよく見る</span></div>
+        <p class="case__t">月額<em>1,100円アップ</em>に対し、追加料金なしで使える特典が<em>2,200円相当</em>で上回ると判断。</p>
+      </article>
+    </div>
+    <p class="note note--box">※ 実際の応対記録に基づく事例です。金額はご契約状況により異なり、同じ結果を保証するものではありません。</p>
+  </div>
+</section>
+
 <!-- ============ ⑩ FAQ ============ -->
-<section id="section-b-faq" class="sec sec--alt">
+<section id="section-b-faq" class="sec">
   <div class="wrap" style="max-width:820px">
-    <span class="sec__eyebrow">STEP 08｜よくある質問</span>
-    <h2 class="sec__h">よくある不安を、<span class="em">確認してから</span>進めます。</h2>
+    <span class="sec__eyebrow">STEP 09｜よくある質問</span>
+    <h2 class="sec__h">迷いやすい点を、<span class="em">先に</span>解消します。</h2>
     <div class="faq" id="faq-top">
       <details data-event="faq_open">
-        <summary><span class="faq__q">Q</span>このページでエントリーすると自動でプラン変更されますか？</summary>
-        <p class="faq__a"><b>A</b>いいえ。エントリーしても自動でプラン変更されるわけではありません。対象条件を確認したうえで、別途Web手続きまたは対象となる申込手続きが必要です。</p>
+        <summary><span class="faq__q">Q</span>Netflixが無料になるということですか？</summary>
+        <p class="faq__a"><b>A</b>いいえ。Netflixなど「爆アゲ セレクション」の対象サービスは、契約はそのままで、毎月の支払いに対してdポイントが還元される仕組みです。無料にはなりません。追加料金なしで使えるのは、Lemino・dアニメストア・DAZN for docomo・NBA docomo の4つのうち最大2つです。</p>
       </details>
       <details data-event="faq_open">
-        <summary><span class="faq__q">Q</span>どのプランがキャンペーン対象ですか？</summary>
-        <p class="faq__a"><b>A</b>「ギガライト」「irumo」「ドコモ mini」から「ドコモ MAX」または「ドコモ ポイ活 MAX」へお申込みいただく場合など、公式ページに記載の条件があります。必ず最新の対象条件をご確認ください。</p>
+        <summary><span class="faq__q">Q</span>まだ本当に合うか判断できません。</summary>
+        <p class="faq__a"><b>A</b>その状態で決める必要はありません。まずは、いま実際に使っているサービスと料金だけをもとに、関係のある部分に絞って計算してみてください。関係のない特典の説明は読み飛ばしていただいて構いません。</p>
       </details>
       <details data-event="faq_open">
-        <summary><span class="faq__q">Q</span>エントリーと申込みの順番は決まっていますか？</summary>
-        <p class="faq__a"><b>A</b>キャンペーン条件により、エントリーと対象プラン申込みのタイミングや有効期限があります。同一dアカウントでの手続きが必要です。</p>
+        <summary><span class="faq__q">Q</span>いますぐ変えないと困りますか？</summary>
+        <p class="faq__a"><b>A</b>いいえ。いますぐ変更しないと困る、というものではありません。ただ、いまの支払いをそのままにしていると、還元や特典で見直せる部分を見落とし続けることになります。実質負担の確認だけでも、次に見直すときの判断材料になります。</p>
       </details>
     </div>
 
     <div class="faq faq__hidden" id="faq-more">
       <details data-event="faq_open">
-        <summary><span class="faq__q">Q</span>ポイントはいつもらえますか？</summary>
-        <p class="faq__a"><b>A</b>進呈時期は公式キャンペーンページの記載に従います。進呈が遅れる場合もあるため、詳細は公式の注意事項をご確認ください。</p>
+        <summary><span class="faq__q">Q</span>プランを変更したら、元に戻せませんか？</summary>
+        <p class="faq__a"><b>A</b>戻せます。使ってみてメリットを感じられない場合は、<span class="verify">違約金なし</span>で他のプランへ変更いただけます。</p>
+      </details>
+      <details data-event="faq_open">
+        <summary><span class="faq__q">Q</span>「選べる特典」と「爆アゲ セレクション」は何が違うのですか？</summary>
+        <p class="faq__a"><b>A</b>選べる特典は、対象4サービスのうち最大2つを<strong>追加料金なしで使える</strong>仕組みです。爆アゲ セレクションは、対象サービスの<strong>支払いに対してポイントが還元される</strong>仕組みで、契約と支払いは続きます。前者は支出がなくなり、後者は支出の一部が戻ります。</p>
+      </details>
+      <details data-event="faq_open">
+        <summary><span class="faq__q">Q</span>U-NEXTやABEMAも安くなりますか？</summary>
+        <p class="faq__a"><b>A</b>いいえ。これらは対象外で、割引も還元もありません。やめていただく必要もありません。動画視聴が多い方ほどデータ量を気にせず使えること、別の動画サービスを追加料金なしで選べることが、この場合のメリットになります。</p>
       </details>
       <details data-event="faq_open">
         <summary><span class="faq__q">Q</span>特典はずっと同じ内容ですか？</summary>
-        <p class="faq__a"><b>A</b>特典は順次入替予定です。最新の対象サービスは公式ページでご確認ください。</p>
+        <p class="faq__a"><b>A</b>対象サービスは順次入替の予定があります。また、利用するサービスは月ごとに切り替えられます。最新の対象サービスは公式ページでご確認ください。</p>
       </details>
       <details data-event="faq_open">
-        <summary><span class="faq__q">Q</span>すでにDAZNやLeminoなどを契約している場合はどうなりますか？</summary>
+        <summary><span class="faq__q">Q</span>すでにDAZNやLeminoを契約しています。どうなりますか？</summary>
         <p class="faq__a"><b>A</b>既存契約の状態によっては、退会手続きや対象条件の確認が必要な場合があります。申込前に各特典ページの注意事項をご確認ください。</p>
       </details>
       <details data-event="faq_open">
-        <summary><span class="faq__q">Q</span>どの特典を選べばよいかわかりません。</summary>
-        <p class="faq__a"><b>A</b>普段よく見るジャンルから選ぶのがおすすめです。スポーツならDAZN/NBA、アニメならdアニメストア、映画・ドラマ・音楽ならLeminoを確認してください。</p>
+        <summary><span class="faq__q">Q</span>手続きが不安です。</summary>
+        <p class="faq__a"><b>A</b>お手続き自体はオンラインで進められます。設定やアプリの使い方などで不安な点があれば、あとからショップでご確認いただくこともできますので、ご自身だけですべて進めていただく必要はありません。</p>
       </details>
     </div>
 
-    <p class="faq__more"><button type="button" id="faq-more-btn" aria-expanded="false" aria-controls="faq-more">よくある質問をすべて見る（＋4件）</button></p>
+    <p class="faq__more"><button type="button" id="faq-more-btn" aria-expanded="false" aria-controls="faq-more">よくある質問をすべて見る（＋6件）</button></p>
   </div>
 </section>
 
-<!-- ============ ⑪ 最終CTA ============ -->
+<!-- ============ ⑪ 最終CTA（結果に応じて出し分け） ============ -->
 <section id="section-b-final-cta" class="sec">
   <div class="wrap" style="max-width:760px">
     <div class="final">
-      <h2 class="final__h">不安を残したまま<br>進める必要はありません。</h2>
-      <p class="final__d">料金、条件、手続きのポイントを確認してから、エントリーへ進んでください。対象外だった場合や、いまは見送るという判断もできます。</p>
+      <div class="final__pat is-on" data-pat="none">
+        <h2 class="final__h">まずは、あなたの数字で<br>確認してみてください。</h2>
+        <p class="final__d">一覧の説明ではなく、いま使っているサービスと料金だけで計算します。結果が「上がる」だった場合も、そのまま表示します。</p>
+      </div>
+      <div class="final__pat" data-pat="down">
+        <span class="final__lb">計算結果：実質的に下がります</span>
+        <h2 class="final__h">いまの使い方なら、<br>トータルの支払いを抑えられます。</h2>
+        <p class="final__d">いま使っているサービスを活かしながら、追加の特典も使える形になります。この内容で進められます。</p>
+      </div>
+      <div class="final__pat" data-pat="mid">
+        <span class="final__lb">計算結果：還元を含めると差は小さくなります</span>
+        <h2 class="final__h">月額の差はありますが、<br>実質負担ではかなり抑えられます。</h2>
+        <p class="final__d">いま使っているサービスに対して還元が入る形なので、支払い総額で見ると差額は小さくなります。</p>
+      </div>
+      <div class="final__pat" data-pat="up">
+        <span class="final__lb">計算結果：料金は上がります</span>
+        <h2 class="final__h">安くはなりません。<br>そのうえで、使える内容は増えます。</h2>
+        <p class="final__d">正直にお伝えすると、料金だけで見ると上がります。ただし、追加料金なしで使える特典、ギガの安心感、家族で使える価値まで含めると、差額以上に使える内容が増える形です。使い切れそうかどうかでご判断ください。</p>
+      </div>
+
       <div class="cta-block">
-        <a class="btn" href="#" data-event="lp_campaign_bottom_cta_click">対象条件を確認してエントリーする<span class="btn__arrow">▶</span></a>
-        <p class="cta-block__note">所要 約3分／エントリーだけでは申込は完了しません</p>
+        <a class="btn" href="#" data-event="application_click">この内容で手続きに進む<span class="btn__arrow">▶</span></a>
+        <p class="cta-block__note">合わなければ違約金なしで変更できます</p>
       </div>
       <div class="cta-subrow">
+        <a class="btn-sub" href="#section-b-simulator" data-event="recalc_click">条件を変えて計算し直す</a>
         <a class="btn-sub" href="#" data-event="consult_click">相談する</a>
         <a class="btn-sub" href="#" data-event="save_for_later_click">あとで確認する</a>
       </div>
@@ -819,76 +910,65 @@ button{font:inherit;color:inherit;cursor:pointer}
 </section>
 
 <!-- ============ ⑫ P.S. ============ -->
-<section id="section-b-ps" class="sec" style="padding-top:0">
+<section id="section-b-ps" class="sec" style="padding-top:0;border-top:none">
   <div class="wrap" style="max-width:760px">
     <div class="ps">
       <p class="ps__lab">P.S.</p>
-      <p class="ps__t">エントリーしても、自動でプラン変更されることはありません。まずは対象条件の確認から始められます。</p>
-      <p class="ps__d">よくある不安はFAQにまとめています。料金、手続き、対象条件を確認してから判断できます。</p>
-      <a class="ps__link" href="#section-b-faq" data-event="ps_cta_click">→ FAQをもう一度確認する</a>
+      <p class="ps__t">「いくら得するか」より先に、「自分に関係があるか」を確かめてください。</p>
+      <p class="ps__d">対象サービスを使っていない方にとっては、このプランは単に高いだけです。関係があるかどうかは、STEP 1の選択だけで判断できます。</p>
+      <a class="ps__link" href="#section-b-survey" data-event="ps_cta_click">→ STEP 1に戻って確認する</a>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ============ ⑬ フッター ============ -->
 <footer id="section-b-footer" class="foot">
   <div class="wrap">
     <ul class="foot__links">
       <li><a href="#">運営会社情報</a></li>
       <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">キャンペーン公式ページ</a></li>
+      <li><a href="entertainment.html">選べる特典の詳細</a></li>
       <li><a href="#">ドコモ MAX プランページ</a></li>
-      <li><a href="#">ドコモ ポイ活 MAX プランページ</a></li>
+      <li><a href="#">爆アゲ セレクション 公式ページ</a></li>
       <li><a href="#">お問い合わせ</a></li>
     </ul>
     <ul class="foot__notes">
       <li>表示金額はすべて税込です。</li>
-      <li>キャンペーンの対象条件・期間・進呈時期・除外条件は、公式キャンペーンページの記載が優先されます。</li>
+      <li>シミュレーション結果は概算であり、実際の請求額を保証するものではありません。割引の適用可否はご契約状況により異なります。</li>
+      <li>爆アゲ セレクションの還元率は対象サービス・契約プランにより異なります。本ページの計算は説明用の仮の還元率によるものです。</li>
+      <li>選べる特典の対象サービスは順次入替の予定があります。すでに対象サービスをご契約中の場合、退会手続きや対象条件の確認が必要な場合があります。</li>
+      <li>U-NEXT・ABEMA・Hulu などは割引・還元の対象外です。</li>
+      <li>大量通信時などに通信制限がかかる場合があります。</li>
       <li>dポイントは期間・用途限定です。用途および有効期限に制限があります。</li>
-      <li>エントリーのみではプラン変更の申込は完了しません。</li>
-      <li>選べる特典の対象サービスは順次入替の予定があります。既存契約がある場合は各サービスの注意事項をご確認ください。</li>
-      <li>対象者チェックは目安の案内であり、対象可否を確定するものではありません。</li>
       <li>記載の会社名・サービス名は各社の商標または登録商標です。</li>
     </ul>
-    <p class="foot__copy">本ページは社内デザインレビュー用のモックアップです。実在の申込・エントリー機能は実装されていません。</p>
+    <p class="foot__copy">本ページは社内デザインレビュー用のモックアップです。実在の申込・手続き機能は実装されていません。</p>
   </div>
 </footer>
 
-<!-- ============ 追従CTA ============ -->
 <div class="sticky" id="sticky">
   <div class="sticky__in">
-    <p class="sticky__txt">対象なら 3,000pt の対象になる可能性<small>エントリーしても自動でプラン変更されません</small></p>
-    <a class="btn" href="#section-b-final-cta" data-event="sticky_cta_click">対象条件を確認する<span class="btn__arrow">▶</span></a>
+    <p class="sticky__txt" id="sticky-txt">月額だけでなく、実質負担で比べる<small>入力は約1分・個人情報なし</small></p>
+    <a class="btn" href="#section-b-simulator" data-event="sticky_cta_click">実質負担を確認する<span class="btn__arrow">▶</span></a>
   </div>
 </div>
 
-<!-- ============ レビュー用ABテスト切替（納品時に削除） ============ -->
 <button class="rev-toggle" id="rev-toggle" aria-label="レビューパネルを開く">AB</button>
 <aside class="rev" id="rev" aria-label="ABテスト表示切替（レビュー用）">
   <button class="rev__close" id="rev-close" aria-label="閉じる">×</button>
   <h3>ABテスト表示切替</h3>
   <p>レビュー用の疑似スイッチです。本番実装ではLPツール／GTM側で出し分けます。</p>
-
   <fieldset>
-    <legend>優先1｜FVヘッドライン</legend>
-    <label><input type="radio" name="fv-headline" value="a" checked><span>A案：プラン変更で迷っている方へ</span></label>
-    <label><input type="radio" name="fv-headline" value="b"><span>B案：高くならない？手続きは面倒？</span></label>
+    <legend>FVヘッドライン</legend>
+    <label><input type="radio" name="fv" value="a" checked><span>A案：月額だけで判断すると、損をしているかもしれません。</span></label>
+    <label><input type="radio" name="fv" value="b"><span>B案：いま払っているサブスク代、そのままで大丈夫ですか。</span></label>
   </fieldset>
-
   <fieldset>
-    <legend>優先2｜FV CTA文言</legend>
-    <label><input type="radio" name="fv-cta" value="a" checked><span>A案：不安を確認してからエントリーする</span></label>
-    <label><input type="radio" name="fv-cta" value="b"><span>B案：料金と手続きを先に確認する</span></label>
+    <legend>シミュレーターの位置</legend>
+    <label><input type="radio" name="sim" value="a" checked><span>A案：問題提起のあと（STEP 3）</span></label>
+    <label><input type="radio" name="sim" value="b"><span>B案：エンタメ問診の直後</span></label>
   </fieldset>
-
-  <fieldset>
-    <legend>優先3｜FAQ配置</legend>
-    <label><input type="radio" name="faq-pos" value="a" checked><span>A案：中盤後半に設置</span></label>
-    <label><input type="radio" name="faq-pos" value="b"><span>B案：FV直下に設置</span></label>
-  </fieldset>
-
   <div class="rev__log">
     <b>計測イベント（dataLayer）</b>
     <ol id="rev-log"><li>―</li></ol>
@@ -900,12 +980,21 @@ button{font:inherit;color:inherit;cursor:pointer}
   'use strict';
   window.dataLayer = window.dataLayer || [];
 
-  /* ---------- 計測イベント ---------- */
-  var logEl = document.getElementById('rev-log');
+  /* ===== 公開前に確定が必要な定数 ===== */
+  var MAX_BASE = 8448;      // ドコモMAX 月額（税込・データ無制限時）※要確認
+  var REWARD_RATE = 0.20;   // 爆アゲ セレクション 還元率（説明用の仮値）※要確認
+  var PERK_LIMIT = 2;       // 選べる特典の選択上限
+
+  var state = { perks:[], rewards:[], outs:[], ctx:[], current:0, rewardFee:0, discounts:0, variant:{fv:'a', sim:'a'} };
   var fired = {};
+  var logEl = document.getElementById('rev-log');
+
+  function variantKey(){ return 'fv' + state.variant.fv + '_sim' + state.variant.sim; }
   function track(name, params){
-    var payload = Object.assign({event:name, lp_type:'b_campaign', lp_variant:variantKey()}, params||{});
-    window.dataLayer.push(payload);
+    window.dataLayer.push(Object.assign({
+      event:name, lp_type:'b_campaign', lp_variant:variantKey(),
+      perks:state.perks.join('|'), rewards:state.rewards.join('|'), ctx:state.ctx.join('|')
+    }, params||{}));
     if(logEl){
       if(logEl.firstElementChild && logEl.firstElementChild.textContent === '―') logEl.innerHTML = '';
       var li = document.createElement('li');
@@ -915,97 +1004,163 @@ button{font:inherit;color:inherit;cursor:pointer}
   }
   function trackOnce(name, params){ if(fired[name]) return; fired[name] = true; track(name, params); }
 
-  /* クリック系：data-event を持つ要素すべて */
   document.addEventListener('click', function(e){
     var t = e.target.closest('[data-event]');
     if(!t) return;
     track(t.getAttribute('data-event'), {label:(t.textContent||'').trim().slice(0,40)});
   });
 
-  /* 表示系：IntersectionObserver */
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
-        if(en.isIntersecting){
-          trackOnce(en.target.getAttribute('data-view-event'));
-          io.unobserve(en.target);
-        }
+        if(en.isIntersecting){ trackOnce(en.target.getAttribute('data-view-event')); io.unobserve(en.target); }
       });
-    }, {threshold:.35});
+    }, {threshold:.3});
     document.querySelectorAll('[data-view-event]').forEach(function(el){ io.observe(el); });
   }
 
-  /* FAQ 開封 */
   document.querySelectorAll('.faq details').forEach(function(d){
     d.addEventListener('toggle', function(){
       if(d.open) track('faq_open', {question:(d.querySelector('summary').textContent||'').trim().slice(0,40)});
     });
   });
 
-  /* ---------- FAQ もっと見る ---------- */
   var moreBtn = document.getElementById('faq-more-btn');
   var moreBox = document.getElementById('faq-more');
-  if(moreBtn && moreBox){
-    moreBtn.addEventListener('click', function(){
-      var open = moreBox.classList.toggle('is-open');
-      moreBtn.setAttribute('aria-expanded', String(open));
-      moreBtn.textContent = open ? '閉じる' : 'よくある質問をすべて見る（＋4件）';
-      if(open) track('faq_expand_all');
-    });
+  moreBtn.addEventListener('click', function(){
+    var open = moreBox.classList.toggle('is-open');
+    moreBtn.setAttribute('aria-expanded', String(open));
+    moreBtn.textContent = open ? '閉じる' : 'よくある質問をすべて見る（＋6件）';
+    if(open) track('faq_expand_all');
+  });
+
+  /* ===== STEP 1：エンタメ問診 ===== */
+  function toggleIn(arr, val){
+    var i = arr.indexOf(val);
+    if(i === -1) arr.push(val); else arr.splice(i, 1);
   }
-
-  /* ---------- 対象者チェック ---------- */
-  var answers = [null,null,null];
-  var bar = document.getElementById('check-bar');
-  var result = document.getElementById('check-result');
-
-  document.querySelectorAll('#eligibility .check__q').forEach(function(q){
-    var idx = Number(q.getAttribute('data-q'));
-    q.querySelectorAll('.opts button').forEach(function(btn){
-      btn.setAttribute('aria-pressed','false');
-      btn.addEventListener('click', function(){
-        trackOnce('eligibility_check_start');
-        q.querySelectorAll('.opts button').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
-        btn.setAttribute('aria-pressed','true');
-        answers[idx] = btn.getAttribute('data-val');
-        render();
-      });
+  document.querySelectorAll('#survey [data-perk], #survey [data-reward], #survey [data-out], #survey [data-ctx]').forEach(function(btn){
+    btn.setAttribute('aria-pressed', 'false');
+    btn.addEventListener('click', function(){
+      trackOnce('entertainment_survey_start');
+      var on = btn.getAttribute('aria-pressed') !== 'true';
+      btn.setAttribute('aria-pressed', String(on));
+      if(btn.dataset.perk)   toggleIn(state.perks, btn.dataset.perk);
+      if(btn.dataset.reward) toggleIn(state.rewards, btn.dataset.reward);
+      if(btn.dataset.out)    toggleIn(state.outs, btn.dataset.out);
+      if(btn.dataset.ctx)    toggleIn(state.ctx, btn.dataset.ctx);
+      syncOptions();
+      calc();
+      track('entertainment_survey_select', {selected:(btn.dataset.name || btn.textContent.trim()).slice(0,24), on:on});
     });
   });
 
-  function render(){
-    var done = answers.filter(Boolean).length;
-    if(bar) bar.style.width = (done/3*100) + '%';
-    if(done < 3) return;
-
-    var kind, title, body, cta;
-    if(answers[0] === 'already'){
-      kind = 'ng';
-      title = 'すでに対象プランをご利用中の可能性があります';
-      body = 'このキャンペーンはプラン変更が条件のため、対象外となる場合があります。選べる特典の使い方や、他のキャンペーンの確認をおすすめします。';
-      cta = '<a class="btn-sub" href="#section-b-plan" data-event="eligibility_alt_click">特典の使い方を確認する</a>';
-    } else if(answers.indexOf('unknown') !== -1 || answers[1] === 'no'){
-      kind = 'maybe';
-      title = '確認が必要な項目があります';
-      body = '現在のプラン・dアカウントの状況によって対象可否が変わります。公式ページで対象条件を確認するか、相談導線からご確認ください。';
-      cta = '<a class="btn-sub" href="#section-b-proof" data-event="eligibility_check_detail_click">対象条件の詳細を見る</a>'
-          + '<a class="btn-sub" href="#" data-event="consult_click">相談する</a>';
-    } else {
-      kind = 'ok';
-      title = '対象になる可能性があります';
-      body = (answers[2] === 'done')
-        ? 'エントリー済みの場合は、同じdアカウントでWeb申込へ進むことで対象になる可能性があります。'
-        : 'まずエントリーを行い、同じdアカウントでWeb申込へ進む流れになります。';
-      cta = '<a class="btn-sub" href="#section-b-flow" data-event="eligibility_flow_click">手続きの流れを見る</a>';
-    }
-
-    result.className = 'check__result is-on check__result--' + kind;
-    result.innerHTML = '<b>' + title + '</b>' + body
-      + '<div class="cta-subrow" style="justify-content:flex-start">' + cta + '</div>';
-    trackOnce('eligibility_complete', {result:kind});
+  function syncOptions(){
+    document.querySelectorAll('.ocard').forEach(function(card){
+      card.classList.toggle('is-hit', state.ctx.indexOf(card.dataset.opt) !== -1);
+    });
   }
 
-  /* ---------- 追従CTA ---------- */
+  /* ===== STEP 3：実質負担シミュレーション ===== */
+  var elCurrent = document.getElementById('sim-current');
+  var elReward  = document.getElementById('sim-reward');
+  var resEmpty  = document.getElementById('res-empty');
+  var resBody   = document.getElementById('res-body');
+  var resRows   = document.getElementById('res-rows');
+  var resTotal  = document.getElementById('res-total');
+  var stickyTxt = document.getElementById('sticky-txt');
+
+  [elCurrent, elReward].forEach(function(el){
+    el.addEventListener('input', function(){ trackOnce('simulator_input'); calc(); });
+  });
+  document.querySelectorAll('.disc input').forEach(function(cb){
+    cb.addEventListener('change', function(){ trackOnce('simulator_input'); calc(); });
+  });
+
+  function yen(n){ return Math.abs(Math.round(n)).toLocaleString('ja-JP'); }
+  function row(k, v, cls){
+    return '<div class="res__row"><span class="k">' + k + '</span><span class="v ' + (cls||'') + '">' + v + '</span></div>';
+  }
+
+  function calc(){
+    state.current   = Number(elCurrent.value) || 0;
+    state.rewardFee = Number(elReward.value) || 0;
+    state.discounts = Array.prototype.reduce.call(
+      document.querySelectorAll('.disc input:checked'),
+      function(s, cb){ return s + Number(cb.dataset.disc); }, 0);
+
+    var hasSelection = state.perks.length || state.rewards.length || state.outs.length;
+    if(!state.current || !hasSelection){
+      resEmpty.hidden = false; resBody.hidden = true;
+      showPattern('none');
+      return;
+    }
+
+    var maxFee = Math.max(0, MAX_BASE - state.discounts);
+    var diff = maxFee - state.current;
+
+    var fees = state.perks.map(function(k){
+      var b = document.querySelector('[data-perk="' + k + '"]');
+      return { name: b.dataset.name, fee: Number(b.dataset.fee) };
+    }).sort(function(a, b){ return b.fee - a.fee; });
+    var covered = fees.slice(0, PERK_LIMIT);
+    var perkSaving = covered.reduce(function(s, x){ return s + x.fee; }, 0);
+
+    var rewardBack = state.rewards.length ? Math.round(state.rewardFee * REWARD_RATE) : 0;
+    var net = diff - perkSaving - rewardBack;
+
+    var rows = '';
+    rows += row('ドコモMAXの月額<small>基本 ' + yen(MAX_BASE) + '円 − 割引 ' + yen(state.discounts) + '円</small>', yen(maxFee) + '円');
+    rows += row('いまのスマホ月額', yen(state.current) + '円');
+    rows += row('<strong>プラン料金の差額</strong>', (diff >= 0 ? '＋' : '−') + yen(diff) + '円', diff < 0 ? 'minus' : '');
+    if(perkSaving){
+      rows += row('選べる特典で不要になる支払い<small>' + covered.map(function(x){ return x.name; }).join('・')
+        + (fees.length > PERK_LIMIT ? '（最大' + PERK_LIMIT + 'つまで）' : '') + '</small>',
+        '−' + yen(perkSaving) + '円', 'minus');
+    }
+    if(rewardBack){
+      rows += row('対象サービスのポイント還元<small>合計 ' + yen(state.rewardFee) + '円 × <span class="verify">仮の還元率</span></small>',
+        '−' + yen(rewardBack) + '円相当', 'minus');
+    }
+    if(state.outs.length){
+      rows += row('対象外のサービス<small>割引・還元の対象外です</small>', '±0円');
+    }
+    resRows.innerHTML = rows;
+
+    var kind, msg, pat;
+    if(net <= 0){
+      kind = 'is-good'; pat = 'down';
+      msg = 'いまの使い方なら、<b>トータルの支払いを抑えられる</b>計算になります。いま払っているサービスを活かしながら、追加の特典も使える形です。';
+    } else if(net <= 500){
+      kind = 'is-mid'; pat = 'mid';
+      msg = '月額の差はありますが、置き換えと還元を含めると<b>差額はかなり小さく</b>なります。使えるサービスが増える分と比べてご判断ください。';
+    } else {
+      kind = 'is-up'; pat = 'up';
+      msg = '正直にお伝えすると、この条件では<b>負担は増えます</b>。ギガの安心感や家族での利用まで含めて、使い切れそうかどうかでご判断ください。';
+    }
+
+    var sign = net > 0 ? '＋' : net < 0 ? '−' : '±';
+    resTotal.className = 'res__total ' + kind;
+    resTotal.innerHTML =
+      '<span class="lb">毎月の実質負担</span>' +
+      '<span class="num">' + sign + yen(net) + '<small>円 / 月</small></span>' +
+      '<p class="msg">' + msg + '</p>';
+
+    resEmpty.hidden = true; resBody.hidden = false;
+    showPattern(pat);
+    if(stickyTxt){
+      stickyTxt.innerHTML = '実質負担 ' + sign + yen(net) + '円/月<small>条件を変えて再計算できます</small>';
+    }
+    track('simulator_complete', {net:Math.round(net), verdict:pat, diff:Math.round(diff), perk_saving:perkSaving, reward_back:rewardBack});
+  }
+
+  function showPattern(pat){
+    document.querySelectorAll('.final__pat').forEach(function(el){
+      el.classList.toggle('is-on', el.dataset.pat === pat);
+    });
+  }
+
+  /* ===== 追従CTA ===== */
   var sticky = document.getElementById('sticky');
   var fv = document.getElementById('section-b-fv');
   var finalCta = document.getElementById('section-b-final-cta');
@@ -1016,33 +1171,26 @@ button{font:inherit;color:inherit;cursor:pointer}
     new IntersectionObserver(function(e){ atFinal = e[0].isIntersecting; syncSticky(); }, {threshold:.2}).observe(finalCta);
   }
 
-  /* ---------- ABテスト表示切替（レビュー用） ---------- */
+  /* ===== ABテスト表示切替（レビュー用） ===== */
   var params = new URLSearchParams(location.search);
-  var state = {
-    'fv-headline': params.get('h') || 'a',
-    'fv-cta':      params.get('c') || 'a',
-    'faq-pos':     params.get('f') || 'a'
-  };
-  function variantKey(){ return 'h' + state['fv-headline'] + '_c' + state['fv-cta'] + '_f' + state['faq-pos']; }
+  state.variant.fv  = params.get('fv')  || 'a';
+  state.variant.sim = params.get('sim') || 'a';
+
+  var H1_A = '月額だけで判断すると、<br><span class="hl">損をしている</span>かもしれません。';
+  var H1_B = 'いま払っているサブスク代、<br><span class="hl">そのままで大丈夫</span>ですか。';
 
   function applyAb(){
-    ['fv-headline','fv-cta'].forEach(function(key){
-      document.querySelectorAll('[data-ab="' + key + '"]').forEach(function(host){
-        host.querySelector('[data-ab-a]').hidden = state[key] !== 'a';
-        host.querySelector('[data-ab-b]').hidden = state[key] !== 'b';
-      });
-    });
-    var faq = document.getElementById('section-b-faq');
-    var anchorB = document.getElementById('section-b-empathy');
-    var anchorA = document.getElementById('section-b-final-cta');
-    if(state['faq-pos'] === 'b'){ anchorB.parentNode.insertBefore(faq, anchorB); }
-    else { anchorA.parentNode.insertBefore(faq, anchorA); }
-    document.querySelectorAll('.rev input').forEach(function(i){ i.checked = state[i.name] === i.value; });
+    document.querySelector('.fv__h1').innerHTML = state.variant.fv === 'b' ? H1_B : H1_A;
+    var sim = document.getElementById('section-b-simulator');
+    var problem = document.getElementById('section-b-problem');
+    var three = document.getElementById('section-b-three');
+    if(state.variant.sim === 'b'){ problem.parentNode.insertBefore(sim, problem); }
+    else { three.parentNode.insertBefore(sim, three); }
+    document.querySelectorAll('.rev input').forEach(function(i){ i.checked = state.variant[i.name] === i.value; });
   }
-
   document.querySelectorAll('.rev input').forEach(function(input){
     input.addEventListener('change', function(){
-      state[input.name] = input.value;
+      state.variant[input.name] = input.value;
       applyAb();
       track('review_variant_change', {variant:variantKey()});
     });
