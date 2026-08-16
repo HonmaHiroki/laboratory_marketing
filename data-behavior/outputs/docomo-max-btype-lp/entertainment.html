@@ -187,9 +187,9 @@ button{font:inherit;color:inherit;cursor:pointer}
     radial-gradient(520px 300px at 12% 24%, rgba(255,132,40,.20), transparent 62%),
     radial-gradient(520px 300px at 90% 34%, rgba(255,90,140,.16), transparent 62%),
     linear-gradient(180deg,#2A1B06 0%, #17100A 48%, #000 100%);
-  padding:24px 0 34px;border-top:none;
+  padding:18px 0 32px;border-top:none;
 }
-.fv__tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;letter-spacing:.05em;color:#2A1B06;background:linear-gradient(135deg,#FFD34D,#E0A400);border-radius:999px;padding:5px 13px;margin-bottom:14px}
+.fv__tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;letter-spacing:.05em;color:#2A1B06;background:linear-gradient(135deg,#FFD34D,#E0A400);border-radius:999px;padding:5px 13px;margin-bottom:10px}
 .fv__h1{font-size:27px;line-height:1.4;font-weight:900;letter-spacing:-.015em;color:#fff;paint-order:stroke fill;-webkit-text-stroke:5px rgba(42,20,4,.55);text-shadow:0 3px 12px rgba(0,0,0,.55)}
 .fv__h1 .hl{color:var(--gold)}
 .fv__sub{margin-top:14px;font-size:14.5px;line-height:1.85;color:#E6DFD2;text-shadow:0 1px 4px rgba(0,0,0,.5)}
@@ -226,19 +226,45 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 
 /* ---------- KVロックアップ（キャンペーンLPと共通） ---------- */
-.kv{margin:0 auto 20px;max-width:520px;text-align:center}
+.kv{margin:0 auto 14px;max-width:520px;text-align:center}
+/* 実写KVの差し込みスロット（assets/kv.jpg があれば自動で切り替わる） */
+.kvimg{margin:0 0 12px;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.kvimg img{width:100%;height:auto;display:block}
+.kvimg__ph{display:none}
+.kvimg.is-missing img{display:none}
+.kvimg.is-missing .kvimg__ph{
+  display:grid;place-content:center;gap:5px;min-height:104px;padding:14px;
+  background:
+    repeating-linear-gradient(135deg, rgba(255,217,0,.06) 0 12px, rgba(255,217,0,.02) 12px 24px),
+    linear-gradient(160deg, rgba(255,196,80,.16), rgba(0,0,0,.35));
+  border:1.5px dashed rgba(255,217,0,.5);border-radius:14px;
+  font-size:11.5px;font-weight:800;color:#FFE9B0;line-height:1.7;text-align:center;
+}
+.kvimg__ph code{display:inline-block;margin-top:2px;font-size:11px;color:#fff;background:rgba(0,0,0,.45);border-radius:5px;padding:2px 8px}
+/* 実画像にはロゴ・オファー帯・注釈が焼き込まれているため、CSS再現版は隠す */
+.kv.has-img .kv__eyebrow,
+.kv.has-img .kv__plans,
+.kv.has-img .kv__band,
+.kv.has-img .kv__note{display:none}
+.kv.has-img .kvimg{margin-bottom:0}
 .kv__eyebrow{display:inline-block;font-size:11.5px;font-weight:900;letter-spacing:.10em;color:#FFE9B0;text-shadow:0 1px 3px rgba(0,0,0,.7);margin-bottom:7px}
 .kv__plans{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
-.kv__plan{display:inline-flex;align-items:center;gap:5px;font-size:19px;font-weight:900;color:#fff;letter-spacing:-.01em;text-shadow:0 2px 6px rgba(0,0,0,.6)}
-.kv__plan b{font-size:14px;font-weight:900;color:#fff;border-radius:6px;padding:3px 8px;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.kv__plan{display:inline-flex;align-items:center;gap:5px;font-size:23px;font-weight:900;color:#fff;letter-spacing:-.02em;font-style:italic;text-shadow:0 2px 6px rgba(0,0,0,.65)}
+.kv__plan b{font-size:14px;font-weight:900;color:#fff;border-radius:6px;padding:3px 8px;font-style:normal;box-shadow:0 2px 8px rgba(0,0,0,.35)}
 .kv__plan--max b{background:#E4007F}
 .kv__plan--poi b{background:linear-gradient(135deg,#FFD34D,#E0A400);color:#2A1B06}
 .kv__band{margin-top:14px;background:rgba(0,0,0,.55);border:1px solid rgba(255,217,0,.45);border-radius:12px;padding:11px 13px}
-.kv__band p{font-size:13px;font-weight:900;line-height:1.6;color:#fff}
+.kv__band p{font-size:13px;font-weight:900;line-height:1.9;color:#fff}
 .kv__band .em{color:var(--gold);font-size:15px}
+.kv__inline{display:inline-flex;flex-wrap:wrap;gap:4px;vertical-align:middle;margin:0 3px}
+.kv__inline i{
+  font-style:normal;font-size:10.5px;font-weight:800;color:#fff;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);
+  border-radius:5px;padding:2px 7px;line-height:1.5;
+}
 .kv__chips{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:8px}
 .kv__chips span{font-size:10.5px;font-weight:800;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:5px;padding:3px 8px}
-.kv__note{margin-top:8px;font-size:9.5px;line-height:1.6;color:rgba(255,255,255,.62)}
+.kv__note{margin-top:6px;font-size:9.5px;line-height:1.6;color:rgba(255,255,255,.62)}
 @media(min-width:900px){.kv{max-width:none;margin-bottom:26px}.kv__plan{font-size:23px}.kv__plan b{font-size:16px}}
 
 /* ---------- ② ジャンル診断：タブ型チップ（参考サイトのサービスタブ相当） ---------- */
@@ -377,14 +403,17 @@ button{font:inherit;color:inherit;cursor:pointer}
 <section id="section-bent-fv" class="fv">
   <div class="wrap">
     <div class="kv">
-      <span class="kv__eyebrow">ギガ無制限エンタメプラン</span>
+      <figure class="kvimg" id="kvimg">
+        <img src="assets/kv.jpg" alt="ドコモ MAX／ドコモ ポイ活 MAX キャンペーンビジュアル">
+        <figcaption class="kvimg__ph">KVビジュアルの差し込み位置<code>assets/kv.jpg</code></figcaption>
+      </figure>
+      <span class="kv__eyebrow">ギガ無制限エンタメプラン<sup>※1</sup></span>
       <div class="kv__plans">
         <span class="kv__plan kv__plan--max"><b>ドコモ</b>MAX</span>
         <span class="kv__plan kv__plan--poi"><b>ドコモポイ活</b>MAX</span>
       </div>
       <div class="kv__band">
-        <p>毎月好きなサービスを<span class="em">追加料金0円で2つ選べる！</span></p>
-        <div class="kv__chips"><span>Lemino</span><span>dアニメストア</span><span>DAZN for docomo</span><span>NBA docomo</span></div>
+        <p>毎月好きなサービス<span class="kv__inline"><i>Lemino</i><i>dアニメストア</i><i>DAZN</i><i>NBA docomo</i></span>を<span class="em">追加料金0円で2つ選べる！</span></p>
       </div>
       <p class="kv__note">※1 大量通信時などに通信制限がかかる場合あり　※2 追加有料コンテンツの取扱いなし　※3 視聴可能コンテンツはサービスサイトへ</p>
     </div>
@@ -886,6 +915,19 @@ button{font:inherit;color:inherit;cursor:pointer}
   var rev = document.getElementById('rev');
   document.getElementById('rev-toggle').addEventListener('click', function(){ rev.classList.add('is-on'); });
   document.getElementById('rev-close').addEventListener('click', function(){ rev.classList.remove('is-on'); });
+
+  /* KV画像が無い場合は代替表示に切り替える */
+  (function(){
+    var fig = document.getElementById('kvimg');
+    if(!fig) return;
+    var img = fig.querySelector('img');
+    var kv = fig.closest('.kv');
+    function missing(){ fig.classList.add('is-missing'); kv.classList.remove('has-img'); }
+    function ok(){ fig.classList.remove('is-missing'); kv.classList.add('has-img'); }
+    img.addEventListener('error', missing);
+    img.addEventListener('load', ok);
+    if(img.complete){ img.naturalWidth ? ok() : missing(); }
+  })();
 
   applyAb();
   track('lp_view');
